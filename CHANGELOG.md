@@ -45,6 +45,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Shows all 6 available wallpapers
   - Available in all 9 languages
   - Fixed: Actually created the Gallery.md files in all locale folders
+  - Fixed: Corrected preview image assignments (preview-2.png = Desktop, preview-1.png = Applications)
 
 ### Changed
 

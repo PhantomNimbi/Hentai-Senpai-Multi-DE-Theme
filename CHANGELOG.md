@@ -34,6 +34,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Social Media Integration**
   - Share buttons for Twitter/X, Reddit, Facebook, LinkedIn, Mastodon, and Telegram
   - Status shields showing version, license, stars, contributors, and issues
+- **Multi-language Documentation**
+  - Restructured docs into locale-based folders (en-us, pt-br, es-es, fr-fr, de-de, it-it, ja-jp, zh-cn, ru-ru)
+  - Complete translations for 9 languages
+  - Language selector dropdowns on all documentation pages
+  - Updated GitHub Actions workflow to support all 9 languages
+- **Gallery Page**
+  - Created Gallery.md showcasing theme previews and wallpapers
+  - Displays preview-1.png and preview-2.png images
+  - Shows all 6 available wallpapers
+  - Available in all 9 languages
+
+### Changed
+
+- **Documentation Structure**: Moved from flat file structure to locale-based folders
+- **Preview Images**: Removed SVG preview images, keeping only PNG previews
+- **Wiki Workflow**: Updated to handle locale-based documentation structure with 9 languages
 
 ### Changed
 

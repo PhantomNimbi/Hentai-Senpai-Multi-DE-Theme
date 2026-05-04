@@ -11,38 +11,26 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - name: Update repository description and settings
-        env:
-          REPO_TOKEN: ${{ secrets.REPO_ADMIN_TOKEN }}
+      - name: Update repository metadata
         run: |
           curl -L \
             -X PATCH \
             -H "Accept: application/vnd.github+json" \
-            -H "Authorization: Bearer $REPO_TOKEN" \
+            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
             -H "X-GitHub-Api-Version: 2022-11-28" \
             https://api.github.com/repos/${{ github.repository }} \
-            -d '{
-              "description": "A beautiful dark GTK theme based on Orchis with the Nord color palette. Supports GNOME, Cinnamon, XFCE, Budgie, and MATE desktop environments.",
-              "homepage": "https://github.com/${{ github.repository }}#readme",
-              "has_issues": true,
-              "has_discussions": true,
-              "has_wiki": false
-            }'
+            -d '{"description":"A beautiful dark GTK theme based on Orchis with the Nord color palette. Supports GNOME, Cinnamon, XFCE, Budgie, and MATE desktop environments.","homepage":"https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme","has_issues":true,"has_projects":true,"has_wiki":true}'
           
-          echo "✅ Repository description updated"
+          echo "✅ Repository metadata updated"
       
       - name: Update repository topics
-        env:
-          REPO_TOKEN: ${{ secrets.REPO_ADMIN_TOKEN }}
         run: |
           curl -L \
             -X PUT \
             -H "Accept: application/vnd.github+json" \
-            -H "Authorization: Bearer $REPO_TOKEN" \
+            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
             -H "X-GitHub-Api-Version: 2022-11-28" \
             https://api.github.com/repos/${{ github.repository }}/topics \
-            -d '{
-              "names": ["gtk-theme", "gtk", "gtk3", "gtk4", "gnome", "gnome-shell", "cinnamon", "xfce", "xfwm4", "budgie", "mate", "linux", "linux-theme", "theme", "dark-theme", "nord", "nord-theme", "orchis", "material-design", "desktop-environment", "ricing", "unixporn", "customization", "opencode", "ai-assisted"]
-            }'
+            -d '{"names":["gtk-theme","gtk","gtk3","gtk4","gnome","gnome-shell","cinnamon","xfce","xfwm4","budgie","mate","linux","linux-theme","theme","dark-theme","nord","nord-theme","orchis","material-design","desktop-environment","ricing","unixporn","customization","opencode","ai-assisted"]}'
           
           echo "✅ Repository topics updated"

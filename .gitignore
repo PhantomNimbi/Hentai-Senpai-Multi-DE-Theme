@@ -1,0 +1,64 @@
+# Build artifacts
+*.css
+*.css.map
+src/gtk-3.0/gtk.css
+src/gtk-4.0/gtk.css
+
+# Local theme installations (for testing)
+~/.themes/
+Hentai-Senpai/
+Hentai-Senpai-*/
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+.Spotlight-V100
+.Trashes
+
+# Editor files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Backup files
+*.bak
+*.backup
+*.old
+
+# Logs
+*.log
+logs/
+
+# Dependencies (if any are installed locally)
+node_modules/
+package-lock.json
+
+# SCSS cache
+.sass-cache/
+
+# Generated assets that may differ per build
+src/gtk-2.0/assets/*.png
+src/gtk-3.0/assets/*.png
+src/gtk-4.0/assets/*.png
+
+# Local configuration files
+.env
+.env.local
+
+# Test directories
+test/
+tests/
+__pycache__/
+*.pyc
+
+# Documentation build artifacts
+docs/_build/
+*.html.pdf

@@ -39,21 +39,12 @@ jobs:
       
       - name: Generate wiki content from docs branch
         run: |
-          # Create Home.md with Google Translate
+          # Create Home.md with translate button
           cat > wiki/Home.md << 'EOF'
           <div align="right">
-            <div id="google_translate_element"></div>
-            <script type="text/javascript">
-              function googleTranslateElementInit() {
-                new google.translate.TranslateElement({
-                  pageLanguage: 'en',
-                  includedLanguages: 'en,pt,es',
-                  layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-                  autoDisplay: false
-                }, 'google_translate_element');
-              }
-            </script>
-            <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+            <a href="https://translate.google.com/translate?sl=en&u=https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/wiki/Home" target="_blank" style="background: #2E3440; color: #D8DEE9; border: 1px solid #4C566A; border-radius: 6px; padding: 8px 16px; text-decoration: none; font-size: 14px; display: inline-flex; align-items: center; gap: 8px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">
+              🌐 Translate
+            </a>
           </div>
           
           # Hentai-Senpai Theme

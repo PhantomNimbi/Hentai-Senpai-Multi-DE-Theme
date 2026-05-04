@@ -41,11 +41,11 @@
 </div>
 
 <p align="center">
-  <a href="https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/releases"><img src="https://img.shields.io/github/v/release/PhantomNimbi/Hentai-Senpai-GTK-Theme?label=%F0%9F%93%A6%20Lanzamiento&style=flat-square&color=88C0D0" alt="Lanzamiento"></a>
-  <a href="https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/blob/main/LICENSE"><img src="https://img.shields.io/badge/%E2%9A%96%EF%B8%8F%20License-GPL--3.0-88C0D0?style=flat-square" alt="Licencia GPL-3.0"></a>
-  <a href="https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/stargazers"><img src="https://img.shields.io/github/stars/PhantomNimbi/Hentai-Senpai-GTK-Theme?label=%E2%AD%90%20Estrellas&style=flat-square&color=88C0D0" alt="Estrellas"></a>
-  <a href="https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/issues"><img src="https://img.shields.io/github/issues/PhantomNimbi/Hentai-Senpai-GTK-Theme?label=%F0%9F%90%9B%20Problemas&style=flat-square&color=88C0D0" alt="Problemas"></a>
-  <a href="https://gtk.org"><img src="https://img.shields.io/badge/GTK-2%2F3%2F4-88C0D0?style=flat-square&logo=gtk" alt="GTK"></a>
+  <a href="https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/releases"><img src="https://img.shields.io/github/v/release/PhantomNimbi/Hentai-Senpai-GTK-Theme?label=%F0%9F%93%A6%20Lanzamiento&style=plastic&color=88C0D0" alt="Lanzamiento"></a>
+  <a href="https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/blob/main/LICENSE"><img src="https://img.shields.io/badge/%E2%9A%96%EF%B8%8F%20License-GPL--3.0-88C0D0?style=plastic" alt="Licencia GPL-3.0"></a>
+  <a href="https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/stargazers"><img src="https://img.shields.io/github/stars/PhantomNimbi/Hentai-Senpai-GTK-Theme?label=%E2%AD%90%20Estrellas&style=plastic&color=88C0D0" alt="Estrellas"></a>
+  <a href="https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/issues"><img src="https://img.shields.io/github/issues/PhantomNimbi/Hentai-Senpai-GTK-Theme?label=%F0%9F%90%9B%20Problemas&style=plastic&color=88C0D0" alt="Problemas"></a>
+  <a href="https://gtk.org"><img src="https://img.shields.io/badge/GTK-2%2F3%2F4-88C0D0?style=plastic&logo=gtk" alt="GTK"></a>
 </p>
 
 <p align="center">Un hermoso tema GTK oscuro basado en <a href="https://github.com/vinceliuice/Orchis-theme">Orchis</a> con la elegante paleta de colores <a href="https://www.nordtheme.com/">Nord</a>.</p>

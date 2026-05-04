@@ -83,10 +83,10 @@
 ### Badges
 Use shields.io with Nord color (#88C0D0) and emojis:
 ```markdown
-[![Release](https://img.shields.io/github/v/release/...?label=%F0%9F%93%A6%20Release&style=flat-square&color=88C0D0)]
-[![License](https://img.shields.io/github/license/...?label=%E2%9A%96%EF%B8%8F%20License&style=flat-square&color=88C0D0)]
-[![Stars](https://img.shields.io/github/stars/...?label=%E2%AD%90%20Stars&style=flat-square&color=88C0D0)]
-[![Issues](https://img.shields.io/github/issues/...?label=%F0%9F%90%9B%20Issues&style=flat-square&color=88C0D0)]
+[![Release](https://img.shields.io/github/v/release/...?label=%F0%9F%93%A6%20Release&style=plastic&color=88C0D0)]
+[![License](https://img.shields.io/github/license/...?label=%E2%9A%96%EF%B8%8F%20License&style=plastic&color=88C0D0)]
+[![Stars](https://img.shields.io/github/stars/...?label=%E2%AD%90%20Stars&style=plastic&color=88C0D0)]
+[![Issues](https://img.shields.io/github/issues/...?label=%F0%9F%90%9B%20Issues&style=plastic&color=88C0D0)]
 ```
 
 ### Language Dropdown Format

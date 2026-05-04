@@ -42,11 +42,11 @@
 </div>
 
 <p align="center">
-  <a href="https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/releases"><img src="https://img.shields.io/github/v/release/PhantomNimbi/Hentai-Senpai-GTK-Theme?label=%F0%9F%93%A6%20%EB%A6%B4%EB%A6%AC%EC%A6%88&style=flat-square&color=88C0D0" alt="릴리즈"></a>
-  <a href="https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/blob/main/LICENSE"><img src="https://img.shields.io/badge/%E2%9A%96%EF%B8%8F%20License-GPL--3.0-88C0D0?style=flat-square" alt="라이선스 GPL-3.0"></a>
-  <a href="https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/stargazers"><img src="https://img.shields.io/github/stars/PhantomNimbi/Hentai-Senpai-GTK-Theme?label=%E2%AD%90%20%EC%8A%A4%ED%83%80&style=flat-square&color=88C0D0" alt="스타"></a>
-  <a href="https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/issues"><img src="https://img.shields.io/github/issues/PhantomNimbi/Hentai-Senpai-GTK-Theme?label=%F0%9F%90%9B%20%EC%9D%B4%EC%8A%88&style=flat-square&color=88C0D0" alt="이슈"></a>
-  <a href="https://gtk.org"><img src="https://img.shields.io/badge/GTK-2%2F3%2F4-88C0D0?style=flat-square&logo=gtk" alt="GTK"></a>
+  <a href="https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/releases"><img src="https://img.shields.io/github/v/release/PhantomNimbi/Hentai-Senpai-GTK-Theme?label=%F0%9F%93%A6%20%EB%A6%B4%EB%A6%AC%EC%A6%88&style=plastic&color=88C0D0" alt="릴리즈"></a>
+  <a href="https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/blob/main/LICENSE"><img src="https://img.shields.io/badge/%E2%9A%96%EF%B8%8F%20License-GPL--3.0-88C0D0?style=plastic" alt="라이선스 GPL-3.0"></a>
+  <a href="https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/stargazers"><img src="https://img.shields.io/github/stars/PhantomNimbi/Hentai-Senpai-GTK-Theme?label=%E2%AD%90%20%EC%8A%A4%ED%83%80&style=plastic&color=88C0D0" alt="스타"></a>
+  <a href="https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/issues"><img src="https://img.shields.io/github/issues/PhantomNimbi/Hentai-Senpai-GTK-Theme?label=%F0%9F%90%9B%20%EC%9D%B4%EC%8A%88&style=plastic&color=88C0D0" alt="이슈"></a>
+  <a href="https://gtk.org"><img src="https://img.shields.io/badge/GTK-2%2F3%2F4-88C0D0?style=plastic&logo=gtk" alt="GTK"></a>
 </p>
 
 <p align="center">우아한 <a href="https://www.nordtheme.com/">Nord</a> 색상 팔레트를 사용한 <a href="https://github.com/vinceliuice/Orchis-theme">Orchis</a> 기반의 아름다운 다크 GTK 테마입니다.</p>

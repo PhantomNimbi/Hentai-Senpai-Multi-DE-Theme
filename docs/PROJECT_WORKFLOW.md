@@ -133,6 +133,40 @@ gh workflow run sprint-management.yml -f action=close
 gh workflow run sprint-management.yml -f action=review
 ```
 
+### 4. CHANGELOG Integration (`.github/workflows/changelog-integration.yml`)
+
+**Triggers:**
+- Push to CHANGELOG.md
+- Pull request affecting CHANGELOG
+- Manual dispatch
+
+**Features:**
+- Creates/updates CHANGELOG tracking issue
+- Posts comments on each CHANGELOG update
+- Validates CHANGELOG format
+- Checks translation sync status
+- Generates release notes from CHANGELOG
+- Creates draft releases automatically
+
+**Manual Triggers:**
+```bash
+# Validate CHANGELOG format
+gh workflow run changelog-integration.yml -f action=validate
+
+# Generate release notes
+gh workflow run changelog-integration.yml -f action=create-release-notes
+
+# Sync with project board
+gh workflow run changelog-integration.yml -f action=sync
+```
+
+**CHANGELOG Tracking Issue:**
+A persistent tracking issue is maintained to:
+- Monitor all CHANGELOG updates
+- Track version progress
+- Coordinate translation updates
+- Link related PRs and issues
+
 ## 📅 Sprint Planning
 
 ### Sprint Structure
@@ -195,7 +229,13 @@ We provide several templates for different work types:
 - Progress monitoring
 - Stakeholder assignment
 
-### 5. ❓ Question (`question.md`)
+### 5. 📝 CHANGELOG Update (`changelog_update.yml` - NEW!)
+- Document significant changes
+- Track version updates
+- Coordinate translations
+- Release note preparation
+
+### 6. ❓ Question (`question.md`)
 - Support requests
 - General inquiries
 

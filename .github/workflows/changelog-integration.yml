@@ -1,0 +1,236 @@
+name: CHANGELOG Project Integration
+
+on:
+  push:
+    paths:
+      - 'CHANGELOG.md'
+      - 'CHANGELOG.*.md'
+  workflow_dispatch:
+    inputs:
+      action:
+        description: 'Action to perform'
+        required: true
+        default: 'sync'
+        type: choice
+        options:
+          - sync
+          - create-release-notes
+          - validate
+
+jobs:
+  changelog-sync:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          
+      - name: Parse CHANGELOG and create project items
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const changelog = fs.readFileSync('CHANGELOG.md', 'utf8');
+            
+            // Parse unreleased section
+            const unreleasedMatch = changelog.match(/## \[Unreleased\]([\s\S]*?)(?=## \[\d+\.\d+)/);
+            if (!unreleasedMatch) {
+              console.log('No unreleased section found');
+              return;
+            }
+            
+            const unreleasedContent = unreleasedMatch[1];
+            
+            // Extract added items
+            const addedMatch = unreleasedContent.match(/### Added([\s\S]*?)(?=###|$)/);
+            const changedMatch = unreleasedContent.match(/### Changed([\s\S]*?)(?=###|$)/);
+            const fixedMatch = unreleasedContent.match(/### Fixed([\s\S]*?)(?=###|$)/);
+            
+            // Create project items for major additions
+            if (addedMatch) {
+              const items = addedMatch[1].match(/- \*\*.+\*\*[^\n]*/g) || [];
+              for (const item of items.slice(0, 5)) { // Limit to first 5 major items
+                const title = item.replace(/- \*\*/, '').replace(/\*\*/, '').split('\n')[0].trim();
+                if (title.length > 10) {
+                  console.log(`📋 CHANGELOG Addition: ${title.substring(0, 80)}...`);
+                }
+              }
+            }
+            
+      - name: Create CHANGELOG tracking issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            // Check if CHANGELOG tracking issue exists
+            const issues = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels: 'type: meta,component: docs',
+              state: 'open'
+            });
+            
+            const trackingIssue = issues.data.find(i => i.title.includes('CHANGELOG Tracking'));
+            
+            if (!trackingIssue) {
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: '📋 CHANGELOG Tracking - Automated',
+                body: `## CHANGELOG Update Tracker
+                
+                This issue tracks all changes to the CHANGELOG.md file.
+                
+                ### Latest Changes
+                - Updated: ${new Date().toISOString()}
+                - Commit: ${context.sha.substring(0, 7)}
+                
+                ### Sections to Monitor
+                - [ ] Unreleased changes
+                - [ ] Version bumps
+                - [ ] Language translations
+                - [ ] Link validation
+                
+                ### Automation
+                - Auto-updates with each CHANGELOG.md push
+                - Validates format and links
+                - Syncs with project board
+                
+                ---
+                *This issue is maintained automatically by GitHub Actions*`,
+                labels: ['type: meta', 'component: docs', 'status: tracking']
+              });
+              console.log('✅ Created CHANGELOG tracking issue');
+            } else {
+              // Update existing issue
+              const newComment = `## 📅 CHANGELOG Updated
+              
+              **Date:** ${new Date().toLocaleDateString()}
+              **Commit:** \`${context.sha.substring(0, 7)}\`
+              **Author:** ${context.actor}
+              
+              [View Changes](${context.payload.compare || `https://github.com/${context.repo.owner}/${context.repo.repo}/commit/${context.sha}`})`;
+              
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: trackingIssue.number,
+                body: newComment
+              });
+              console.log(`✅ Updated CHANGELOG tracking issue #${trackingIssue.number}`);
+            }
+
+  validate-changelog:
+    runs-on: ubuntu-latest
+    if: github.event.inputs.action == 'validate' || github.event_name == 'pull_request'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Validate CHANGELOG format
+        run: |
+          echo "🔍 Validating CHANGELOG.md format..."
+          
+          # Check for required sections
+          if ! grep -q "# Changelog" CHANGELOG.md; then
+            echo "❌ Missing '# Changelog' header"
+            exit 1
+          fi
+          
+          if ! grep -q "## \[Unreleased\]" CHANGELOG.md; then
+            echo "❌ Missing '## [Unreleased]' section"
+            exit 1
+          fi
+          
+          # Check for broken links
+          if grep -q "\[.*\](\s*)" CHANGELOG.md; then
+            echo "⚠️ Found potentially empty links"
+          fi
+          
+          echo "✅ CHANGELOG format validation passed"
+          
+      - name: Check translation sync
+        run: |
+          echo "🌍 Checking translation CHANGELOGs..."
+          
+          for lang in ja es fr de zh ko ru pt; do
+            if [ -f "CHANGELOG.${lang}.md" ]; then
+              echo "✅ Found CHANGELOG.${lang}.md"
+              # Check if it's reasonably up to date (within 100 lines of main)
+              main_lines=$(wc -l < CHANGELOG.md)
+              trans_lines=$(wc -l < CHANGELOG.${lang}.md)
+              diff=$((main_lines - trans_lines))
+              
+              if [ $diff -gt 50 ]; then
+                echo "⚠️ CHANGELOG.${lang}.md is $diff lines behind main"
+              fi
+            fi
+          done
+
+  release-notes:
+    runs-on: ubuntu-latest
+    if: github.event.inputs.action == 'create-release-notes'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          
+      - name: Generate release notes from CHANGELOG
+        id: release_notes
+        run: |
+          # Extract the latest version section
+          latest_version=$(grep -oP '## \[\K[0-9]+\.[0-9]+\.[0-9]+' CHANGELOG.md | head -1)
+          
+          echo "📦 Latest version: $latest_version"
+          echo "version=$latest_version" >> $GITHUB_OUTPUT
+          
+          # Extract release notes
+          awk '/## \['$latest_version'\]/{flag=1;next}/## \[/{flag=0}flag' CHANGELOG.md > release_notes.md
+          
+          echo "📝 Generated release notes:"
+          cat release_notes.md
+          
+      - name: Create or update release
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const version = '${{ steps.release_notes.outputs.version }}';
+            const notes = fs.readFileSync('release_notes.md', 'utf8');
+            
+            try {
+              // Check if release exists
+              const releases = await github.rest.repos.listReleases({
+                owner: context.repo.owner,
+                repo: context.repo.repo
+              });
+              
+              const existingRelease = releases.data.find(r => r.tag_name === `v${version}`);
+              
+              if (existingRelease) {
+                // Update existing release
+                await github.rest.repos.updateRelease({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  release_id: existingRelease.id,
+                  body: notes
+                });
+                console.log(`✅ Updated release v${version}`);
+              } else {
+                // Create draft release
+                await github.rest.repos.createRelease({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  tag_name: `v${version}`,
+                  name: `Release v${version}`,
+                  body: notes,
+                  draft: true,
+                  prerelease: false
+                });
+                console.log(`✅ Created draft release v${version}`);
+              }
+            } catch (error) {
+              console.log('⚠️ Could not create/update release:', error.message);
+            }

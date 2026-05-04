@@ -1,6 +1,22 @@
-# 変更履歴
+<div align="right" style="margin-bottom: 10px;">
+  <details>
+    <summary style="background: #2E3440; color: #D8DEE9; border: 1px solid #4C566A; border-radius: 6px; padding: 6px 12px; cursor: pointer; font-size: 13px; display: inline-flex; align-items: center; gap: 6px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; list-style: none;">🌐 言語</summary>
+    <div style="margin-top: 8px; padding: 10px; background: #3B4252; border: 1px solid #4C566A; border-radius: 6px; text-align: right;">
+      <div style="margin-bottom: 4px;"><a href="../../CHANGELOG.md" style="color: #88C0D0; text-decoration: none;">🇺🇸 English</a></div>
+      <div style="margin-bottom: 4px;"><a href="../pt-br/CHANGELOG.md" style="color: #88C0D0; text-decoration: none;">🇧🇷 Português</a></div>
+      <div style="margin-bottom: 4px;"><a href="../es-es/CHANGELOG.md" style="color: #88C0D0; text-decoration: none;">🇪🇸 Español</a></div>
+      <div style="margin-bottom: 4px;"><a href="../fr-fr/CHANGELOG.md" style="color: #88C0D0; text-decoration: none;">🇫🇷 Français</a></div>
+      <div style="margin-bottom: 4px;"><a href="../de-de/CHANGELOG.md" style="color: #88C0D0; text-decoration: none;">🇩🇪 Deutsch</a></div>
+      <div style="margin-bottom: 4px;"><a href="../it-it/CHANGELOG.md" style="color: #88C0D0; text-decoration: none;">🇮🇹 Italiano</a></div>
+      <div style="margin-bottom: 4px;"><a href="../ja-jp/CHANGELOG.md" style="color: #88C0D0; text-decoration: none;"><strong>🇯🇵 日本語</strong></a></div>
+      <div style="margin-bottom: 4px;"><a href="../ko-kr/CHANGELOG.md" style="color: #88C0D0; text-decoration: none;">🇰🇷 한국어</a></div>
+      <div style="margin-bottom: 4px;"><a href="../zh-cn/CHANGELOG.md" style="color: #88C0D0; text-decoration: none;">🇨🇳 中文</a></div>
+      <div><a href="../ru-ru/CHANGELOG.md" style="color: #88C0D0; text-decoration: none;">🇷🇺 Русский</a></div>
+    </div>
+  </details>
+</div>
 
-> 🌐 **言語:** [English](../en-us/CHANGELOG.md) | **日本語** | [Español](../es-es/CHANGELOG.md) | [Français](../fr-fr/CHANGELOG.md) | [Deutsch](../de-de/CHANGELOG.md) | [Italiano](../it-it/CHANGELOG.md) | [中文](../zh-cn/CHANGELOG.md) | [한국어](../ko-kr/CHANGELOG.md) | [Русский](../ru-ru/CHANGELOG.md) | [Português](../pt-br/CHANGELOG.md)
+# 変更履歴
 
 Hentai-Senpai GTK Themeプロジェクトのすべての重要な変更は、このファイルに記録されます。
 

@@ -44,13 +44,10 @@ jobs:
           <div align="right" style="margin-bottom: 20px;">
             <details>
               <summary style="background: #2E3440; color: #D8DEE9; border: 1px solid #4C566A; border-radius: 6px; padding: 8px 16px; cursor: pointer; font-size: 14px; display: inline-flex; align-items: center; gap: 8px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; list-style: none;">🌐 Language</summary>
-              <div style="margin-top: 10px; padding: 15px; background: #3B4252; border: 1px solid #4C566A; border-radius: 6px; min-width: 200px;">
-                <p style="margin: 0 0 10px 0; color: #D8DEE9; font-size: 13px;">Select your language:</p>
-                <ul style="margin: 0; padding-left: 20px; color: #D8DEE9; font-size: 13px;">
-                  <li><a href="Home" style="color: #88C0D0;">🇺🇸 English</a></li>
-                  <li><a href="Home-pt-br" style="color: #88C0D0;">🇧🇷 Português</a></li>
-                  <li><a href="Home-es-es" style="color: #88C0D0;">🇪🇸 Español</a></li>
-                </ul>
+              <div style="margin-top: 10px; padding: 12px; background: #3B4252; border: 1px solid #4C566A; border-radius: 6px; text-align: right;">
+                <div style="margin-bottom: 6px;"><a href="Home" style="color: #88C0D0; text-decoration: none;">🇺🇸 English</a></div>
+                <div style="margin-bottom: 6px;"><a href="Home-pt-br" style="color: #88C0D0; text-decoration: none;">🇧🇷 Português</a></div>
+                <div><a href="Home-es-es" style="color: #88C0D0; text-decoration: none;">🇪🇸 Español</a></div>
               </div>
             </details>
           </div>

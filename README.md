@@ -26,7 +26,7 @@
   <a href="https://gtk.org"><img src="https://img.shields.io/badge/GTK-2%2F3%2F4-88C0D0?style=flat-square&logo=gtk" alt="GTK"></a>
 </p>
 
-## 🐧 Supported Distributions
+<h2 align="center">🐧 Supported Distributions</h2>
 
 <p align="center">
   <a href="https://ubuntu.com"><img src="https://cdn.simpleicons.org/ubuntu/E95420" height="40" alt="Ubuntu" title="Ubuntu"></a>&nbsp;&nbsp;

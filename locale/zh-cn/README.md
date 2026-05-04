@@ -29,7 +29,7 @@
 
 ![主题预览](../../wallpapers/001.png)
 
-## 🐧 支持的发行版
+<h2 align="center">🐧 支持的发行版</h2>
 
 <p align="center">
   <a href="https://ubuntu.com"><img src="https://assets.ubuntu.com/v1/29985a98-ubuntu-logo32.png" height="40" alt="Ubuntu" title="Ubuntu"></a>&nbsp;&nbsp;

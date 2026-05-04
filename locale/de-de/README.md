@@ -29,7 +29,7 @@ Ein schönes dunkles GTK-Theme basierend auf [Orchis](https://github.com/vinceli
 
 ![Theme-Vorschau](../../wallpapers/001.png)
 
-## 🐧 Unterstützte Distributionen
+<h2 align="center">🐧 Unterstützte Distributionen</h2>
 
 <p align="center">
   <a href="https://ubuntu.com"><img src="https://assets.ubuntu.com/v1/29985a98-ubuntu-logo32.png" height="40" alt="Ubuntu" title="Ubuntu"></a>&nbsp;&nbsp;

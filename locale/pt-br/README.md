@@ -29,7 +29,7 @@ Um belo tema GTK escuro baseado no [Orchis](https://github.com/vinceliuice/Orchi
 
 ![Pré-visualização do Tema](../../wallpapers/001.png)
 
-## 🐧 Distribuições Suportadas
+<h2 align="center">🐧 Distribuições Suportadas</h2>
 
 <p align="center">
   <a href="https://ubuntu.com"><img src="https://assets.ubuntu.com/v1/29985a98-ubuntu-logo32.png" height="40" alt="Ubuntu" title="Ubuntu"></a>&nbsp;&nbsp;

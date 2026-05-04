@@ -24,7 +24,11 @@
 [![Issues](https://img.shields.io/github/issues/PhantomNimbi/Hentai-Senpai-GTK-Theme?label=%F0%9F%90%9B%20Issues&style=flat-square&color=88C0D0)](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/issues)
 
 [![GTK](https://img.shields.io/badge/GTK-2%2F3%2F4-88C0D0?style=flat-square&logo=gtk)](https://gtk.org)
-[![Supports](https://img.shields.io/badge/%F0%9F%96%A5%EF%B8%8F%20Supports-%F0%9F%A6%B6%20%7C%20%F0%9F%8D%AC%20%7C%20%F0%9F%90%AD%20%7C%20%F0%9F%90%A6%20%7C%20%F0%9F%8D%B5-88C0D0?style=flat-square)](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/wiki/Installation-Guide)
+[![GNOME](https://img.shields.io/badge/GNOME-4A90D9?style=flat-square&logo=gnome&logoColor=white)](https://www.gnome.org)
+[![Cinnamon](https://img.shields.io/badge/Cinnamon-DC682E?style=flat-square&logo=linux&logoColor=white)](https://projects.linuxmint.com/cinnamon/)
+[![XFCE](https://img.shields.io/badge/XFCE-2284F2?style=flat-square&logo=xfce&logoColor=white)](https://xfce.org)
+[![Budgie](https://img.shields.io/badge/Budgie-5294E2?style=flat-square&logo=linux&logoColor=white)](https://buddiesofbudgie.org)
+[![MATE](https://img.shields.io/badge/MATE-88C0D0?style=flat-square&logo=linux&logoColor=white)](https://mate-desktop.org)
 
 [![Share on X](https://img.shields.io/badge/Share-X-000000?style=flat-square&logo=x)](https://twitter.com/intent/tweet?text=Check%20out%20Hentai-Senpai%20-%20A%20beautiful%20dark%20GTK%20theme!&url=https%3A%2F%2Fgithub.com%2FPhantomNimbi%2FHentai-Senpai-GTK-Theme)
 [![Share on Reddit](https://img.shields.io/badge/Share-Reddit-FF4500?style=flat-square&logo=reddit)](https://reddit.com/submit?title=Hentai-Senpai%20GTK%20Theme&url=https%3A%2F%2Fgithub.com%2FPhantomNimbi%2FHentai-Senpai-GTK-Theme)

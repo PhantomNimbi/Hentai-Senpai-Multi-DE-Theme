@@ -47,12 +47,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Fixed: Actually created the Gallery.md files in all locale folders
   - Fixed: Corrected preview image assignments (preview-2.png = Desktop, preview-1.png = Applications)
   - Fixed: Corrected wallpaper description (minimalistic, monochrome colors, ecchi themes)
-- **Project Board**
-  - Added PROJECT_BOARD.md documentation
-  - Created project-sync.yml workflow
-  - Defined simple 4-column workflow (Todo/In Progress/Review/Done)
-  - Established label system (Type/Priority/Status)
-  - Added basic sprint planning guidelines
 
 ### Changed
 

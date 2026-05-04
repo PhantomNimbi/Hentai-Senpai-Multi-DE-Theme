@@ -12,6 +12,7 @@ on:
           - setup-all
           - enable-discussions
           - create-posts
+          - delete-duplicates
           - check-status
       force:
         description: 'Force recreate existing discussions'
@@ -291,6 +292,76 @@ jobs:
                 }
                 
                 console.log('\n✅ Status check complete!');
+                return;
+              }
+              
+              if (action === 'delete-duplicates') {
+                console.log('\n🗑️  Finding and deleting duplicate discussions...\n');
+                
+                if (!status.enabled) {
+                  console.error('❌ ERROR: Discussions are not enabled!');
+                  core.setFailed('Discussions not enabled');
+                  return;
+                }
+                
+                const expectedTitles = setupConfig.map(c => c.post.title.toLowerCase());
+                const duplicates = [];
+                const seenTitles = new Map();
+                
+                // Find duplicates
+                for (const discussion of status.discussions) {
+                  const titleLower = discussion.title.toLowerCase();
+                  if (expectedTitles.includes(titleLower)) {
+                    if (seenTitles.has(titleLower)) {
+                      duplicates.push(discussion);
+                    } else {
+                      seenTitles.set(titleLower, discussion);
+                    }
+                  }
+                }
+                
+                if (duplicates.length === 0) {
+                  console.log('✅ No duplicate discussions found!');
+                  console.log('\n   Expected discussions (1 per category):');
+                  seenTitles.forEach((discussion, title) => {
+                    console.log('   - #' + discussion.number + ': ' + discussion.title);
+                  });
+                  return;
+                }
+                
+                console.log('Found ' + duplicates.length + ' duplicate discussion(s):');
+                duplicates.forEach(d => {
+                  console.log('   - #' + d.number + ': ' + d.title + ' [' + d.category.name + ']');
+                });
+                console.log('');
+                
+                console.log('🗑️  Deleting duplicates...\n');
+                let deletedCount = 0;
+                let failedCount = 0;
+                
+                for (const dup of duplicates) {
+                  console.log('Deleting: #' + dup.number + ' - ' + dup.title);
+                  const success = await deleteDiscussion(dup.id);
+                  if (success) {
+                    console.log('   ✅ Deleted');
+                    deletedCount++;
+                  } else {
+                    console.log('   ❌ Failed to delete');
+                    failedCount++;
+                  }
+                }
+                
+                console.log('\n═══════════════════════════════════════════════════');
+                console.log('📊 Deletion Summary');
+                console.log('═══════════════════════════════════════════════════');
+                console.log('Deleted: ' + deletedCount + ' ✅');
+                console.log('Failed:  ' + failedCount + ' ❌');
+                console.log('');
+                console.log('Kept (most recent):');
+                seenTitles.forEach((discussion, title) => {
+                  console.log('   - #' + discussion.number + ': ' + discussion.title);
+                });
+                
                 return;
               }
               

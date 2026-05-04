@@ -32,7 +32,7 @@
 
 ## 🐧 지원 배포판
 
-<p align="left">
+<p align="center">
   <a href="https://ubuntu.com"><img src="https://assets.ubuntu.com/v1/29985a98-ubuntu-logo32.png" height="40" alt="Ubuntu" title="Ubuntu"></a>&nbsp;&nbsp;
   <a href="https://www.debian.org"><img src="https://www.debian.org/logos/openlogo-nd-100.png" height="40" alt="Debian" title="Debian"></a>&nbsp;&nbsp;
   <a href="https://getfedora.org"><img src="https://getfedora.org/static/images/fedora-logotitle.png" height="40" alt="Fedora" title="Fedora"></a>&nbsp;&nbsp;

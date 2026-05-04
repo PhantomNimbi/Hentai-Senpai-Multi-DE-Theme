@@ -28,7 +28,7 @@
 
 ## 🐧 Supported Distributions
 
-<p align="left">
+<p align="center">
   <a href="https://ubuntu.com"><img src="https://cdn.simpleicons.org/ubuntu/E95420" height="40" alt="Ubuntu" title="Ubuntu"></a>&nbsp;&nbsp;
   <a href="https://www.debian.org"><img src="https://cdn.simpleicons.org/debian/A81D33" height="40" alt="Debian" title="Debian"></a>&nbsp;&nbsp;
   <a href="https://getfedora.org"><img src="https://cdn.simpleicons.org/fedora/294172" height="40" alt="Fedora" title="Fedora"></a>&nbsp;&nbsp;

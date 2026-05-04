@@ -19,19 +19,22 @@
 
 Визуальная витрина темы GTK Hentai-Senpai.
 
-## Предпросмотр темы
+## Предпросмотр Темы
 
-### Обзор рабочего стола
-
-![Предпросмотр темы Hentai-Senpai](https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/images/preview-2.png)
-
-Красивая темная тема с цветовой палитрой Nord, обеспечивающая чистый и элегантный вид вашего Linux-рабочего стола.
-
-### Стиль приложений
-
-![Предпросмотр приложений Hentai-Senpai](https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/images/preview-1.png)
-
-Последовательное оформление GTK-приложений с вниманием к деталям кнопок, меню и оформления окон.
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>Приложения</h3>
+      <img src="https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/images/preview-1.png" alt="Предпросмотр Приложений" width="100%"/>
+      <p>Приложения GTK с последовательным стилем, с вниманием к деталям в кнопках, меню и оформлении окон.</p>
+    </td>
+    <td width="50%" valign="top">
+      <h3>Рабочий стол</h3>
+      <img src="https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/images/preview-2.png" alt="Предпросмотр Рабочего стола" width="100%"/>
+      <p>Полный опыт рабочего стола, демонстрирующий красивую тёмную тему с цветовой палитрой Nord для чистого и элегантного вида.</p>
+    </td>
+  </tr>
+</table>
 
 ## Обои
 

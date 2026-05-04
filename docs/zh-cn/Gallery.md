@@ -21,17 +21,20 @@ Hentai-Senpai GTK 主题的视觉展示。
 
 ## 主题预览
 
-### 桌面概览
-
-![Hentai-Senpai 主题预览](https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/images/preview-2.png)
-
-采用 Nord 配色方案的精美深色主题，为您的 Linux 桌面提供干净优雅的外观。
-
-### 应用程序样式
-
-![Hentai-Senpai 应用程序预览](https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/images/preview-1.png)
-
-跨 GTK 应用程序的一致样式，注重按钮、菜单和窗口装饰的细节。
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>应用程序</h3>
+      <img src="https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/images/preview-1.png" alt="应用程序预览" width="100%"/>
+      <p>GTK应用程序采用一致的样式，注重按钮、菜单和窗口装饰的细节。</p>
+    </td>
+    <td width="50%" valign="top">
+      <h3>桌面</h3>
+      <img src="https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/images/preview-2.png" alt="桌面预览" width="100%"/>
+      <p>完整的桌面体验，展示带有Nord调色板的美丽深色主题，呈现干净优雅的外观。</p>
+    </td>
+  </tr>
+</table>
 
 ## 壁纸
 

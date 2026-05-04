@@ -21,17 +21,20 @@ Una vitrina visual del Tema GTK Hentai-Senpai.
 
 ## Vista Previa del Tema
 
-### Vista General del Escritorio
-
-![Vista Previa del Tema Hentai-Senpai](https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/images/preview-2.png)
-
-Un hermoso tema oscuro que presenta la paleta de colores Nord, proporcionando una apariencia limpia y elegante para tu escritorio Linux.
-
-### Estilo de Aplicaciones
-
-![Vista Previa de Aplicaciones Hentai-Senpai](https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/images/preview-1.png)
-
-Estilo consistente en todas las aplicaciones GTK con atención al detalle en botones, menús y decoraciones de ventanas.
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>Aplicaciones</h3>
+      <img src="https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/images/preview-1.png" alt="Vista Previa de Aplicaciones" width="100%"/>
+      <p>Aplicaciones GTK con estilo consistente, con atención al detalle en botones, menús y decoraciones de ventanas.</p>
+    </td>
+    <td width="50%" valign="top">
+      <h3>Escritorio</h3>
+      <img src="https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/images/preview-2.png" alt="Vista Previa del Escritorio" width="100%"/>
+      <p>Experiencia completa del escritorio mostrando el hermoso tema oscuro con la paleta de colores Nord para una apariencia limpia y elegante.</p>
+    </td>
+  </tr>
+</table>
 
 ## Fondos de Pantalla
 

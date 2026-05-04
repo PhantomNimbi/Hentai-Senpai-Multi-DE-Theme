@@ -46,6 +46,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Available in all 9 languages
   - Fixed: Actually created the Gallery.md files in all locale folders
   - Fixed: Corrected preview image assignments (preview-2.png = Desktop, preview-1.png = Applications)
+  - Fixed: Corrected wallpaper description (they look nice but aren't specifically designed for Nord palette)
 
 ### Changed
 

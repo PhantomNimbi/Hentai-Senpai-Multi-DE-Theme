@@ -24,14 +24,18 @@
 [![Issues](https://img.shields.io/github/issues/PhantomNimbi/Hentai-Senpai-GTK-Theme?label=%F0%9F%90%9B%20Issues&style=flat-square&color=88C0D0)](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/issues)
 
 [![GTK](https://img.shields.io/badge/GTK-2%2F3%2F4-88C0D0?style=flat-square&logo=gtk)](https://gtk.org)
-[![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?style=flat-square&logo=ubuntu&logoColor=white)](https://ubuntu.com)
-[![Debian](https://img.shields.io/badge/Debian-A81D33?style=flat-square&logo=debian&logoColor=white)](https://www.debian.org)
-[![Fedora](https://img.shields.io/badge/Fedora-294172?style=flat-square&logo=fedora&logoColor=white)](https://getfedora.org)
-[![Arch Linux](https://img.shields.io/badge/Arch_Linux-1793D1?style=flat-square&logo=arch-linux&logoColor=white)](https://archlinux.org)
-[![Manjaro](https://img.shields.io/badge/Manjaro-35BF5C?style=flat-square&logo=manjaro&logoColor=white)](https://manjaro.org)
-[![openSUSE](https://img.shields.io/badge/openSUSE-73BA25?style=flat-square&logo=opensuse&logoColor=white)](https://www.opensuse.org)
-[![Linux Mint](https://img.shields.io/badge/Linux_Mint-87CF3E?style=flat-square&logo=linux-mint&logoColor=white)](https://linuxmint.com)
-[![Pop!_OS](https://img.shields.io/badge/Pop!_OS-48B9C7?style=flat-square&logo=popos&logoColor=white)](https://pop.system76.com)
+## 🐧 Supported Distributions
+
+<p align="left">
+  <a href="https://ubuntu.com"><img src="https://assets.ubuntu.com/v1/29985a98-ubuntu-logo32.png" height="40" alt="Ubuntu" title="Ubuntu"></a>&nbsp;&nbsp;
+  <a href="https://www.debian.org"><img src="https://www.debian.org/logos/openlogo-nd-100.png" height="40" alt="Debian" title="Debian"></a>&nbsp;&nbsp;
+  <a href="https://getfedora.org"><img src="https://getfedora.org/static/images/fedora-logotitle.png" height="40" alt="Fedora" title="Fedora"></a>&nbsp;&nbsp;
+  <a href="https://archlinux.org"><img src="https://archlinux.org/static/logos/archlinux-logo-dark-1200dpi.31f6835b0109.png" height="40" alt="Arch Linux" title="Arch Linux"></a>&nbsp;&nbsp;
+  <a href="https://manjaro.org"><img src="https://manjaro.org/img/logo.svg" height="40" alt="Manjaro" title="Manjaro"></a>&nbsp;&nbsp;
+  <a href="https://www.opensuse.org"><img src="https://www.opensuse.org/build/images/opensuse-logo.png" height="40" alt="openSUSE" title="openSUSE"></a>&nbsp;&nbsp;
+  <a href="https://linuxmint.com"><img src="https://linuxmint.com/web/img/logo-mono.svg" height="40" alt="Linux Mint" title="Linux Mint"></a>&nbsp;&nbsp;
+  <a href="https://pop.system76.com"><img src="https://pop.system76.com/assets/pop-logo.f4da084f.png" height="40" alt="Pop!_OS" title="Pop!_OS"></a>
+</p>
 
 [![Share on X](https://img.shields.io/badge/Share-X-000000?style=flat-square&logo=x)](https://twitter.com/intent/tweet?text=Check%20out%20Hentai-Senpai%20-%20A%20beautiful%20dark%20GTK%20theme!&url=https%3A%2F%2Fgithub.com%2FPhantomNimbi%2FHentai-Senpai-GTK-Theme)
 [![Share on Reddit](https://img.shields.io/badge/Share-Reddit-FF4500?style=flat-square&logo=reddit)](https://reddit.com/submit?title=Hentai-Senpai%20GTK%20Theme&url=https%3A%2F%2Fgithub.com%2FPhantomNimbi%2FHentai-Senpai-GTK-Theme)

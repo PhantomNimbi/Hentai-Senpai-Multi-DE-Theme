@@ -162,6 +162,16 @@ GPL-3.0 许可证 — 详情请参阅 [LICENSE](../../LICENSE) 文件。
 
 ---
 
+<p align="center">
+  <strong>分享此主题：</strong><br>
+  <a href="https://twitter.com/intent/tweet?text=🎨%20Hentai-Senpai%20GTK%20Theme%0A%0A✨%20功能特性:%0A•%20Nord%20配色的深色主题%0A•%20GTK%202/3/4%20支持%0A•%20GNOME%20Shell%2040+%20主题%0A•%20多桌面环境支持%0A•%20材料设计%0A•%20Flatpak%20就绪%0A%0A🔗%20https%3A%2F%2Fgithub.com%2FPhantomNimbi%2FHentai-Senpai-GTK-Theme"><img src="https://img.shields.io/badge/分享-X-000000?style=plastic&logo=x" alt="分享到 X"></a>
+  <a href="https://reddit.com/submit?title=🎨%20Hentai-Senpai%20GTK%20Theme%20-%20Nord%20配色的深色主题%20|%20GTK%202/3/4%20|%20GNOME%20Shell%2040+%20|%20多桌面环境支持&url=https%3A%2F%2Fgithub.com%2FPhantomNimbi%2FHentai-Senpai-GTK-Theme"><img src="https://img.shields.io/badge/分享-Reddit-FF4500?style=plastic&logo=reddit" alt="分享到 Reddit"></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fgithub.com%2FPhantomNimbi%2FHentai-Senpai-GTK-Theme"><img src="https://img.shields.io/badge/分享-Facebook-1877F2?style=plastic&logo=facebook" alt="分享到 Facebook"></a>
+  <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fgithub.com%2FPhantomNimbi%2FHentai-Senpai-GTK-Theme"><img src="https://img.shields.io/badge/分享-LinkedIn-0A66C2?style=plastic&logo=linkedin" alt="分享到 LinkedIn"></a>
+  <a href="https://mastodonshare.com/?text=🎨%20Hentai-Senpai%20GTK%20Theme%0A%0A✨%20功能特性:%0A•%20Nord%20配色的深色主题%0A•%20GTK%202/3/4%20支持%0A•%20GNOME%20Shell%2040+%20主题%0A•%20多桌面环境支持%0A•%20材料设计%0A•%20Flatpak%20就绪%0A%0A🔗&url=https%3A%2F%2Fgithub.com%2FPhantomNimbi%2FHentai-Senpai-GTK-Theme"><img src="https://img.shields.io/badge/分享-Mastodon-6364FF?style=plastic&logo=mastodon" alt="分享到 Mastodon"></a>
+  <a href="https://t.me/share/url?url=https%3A%2F%2Fgithub.com%2FPhantomNimbi%2FHentai-Senpai-GTK-Theme&text=🎨%20Hentai-Senpai%20GTK%20Theme%0A%0A✨%20功能特性:%0A•%20Nord%20配色的深色主题%0A•%20GTK%202/3/4%20支持%0A•%20GNOME%20Shell%2040+%20主题%0A•%20多桌面环境支持%0A•%20材料设计%0A•%20Flatpak%20就绪%0A%0A🔗"><img src="https://img.shields.io/badge/分享-Telegram-26A5E4?style=plastic&logo=telegram" alt="分享到 Telegram"></a>
+</p>
+
 **享受你的新主题！** 🎨
 
 如需帮助，请查看[文档 wiki](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/wiki)。

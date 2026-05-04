@@ -163,6 +163,16 @@ GPL-3.0 라이선스 — 자세한 내용은 [LICENSE](../../LICENSE) 파일 참
 
 ---
 
+<p align="center">
+  <strong>이 테마 공유:</strong><br>
+  <a href="https://twitter.com/intent/tweet?text=🎨%20Hentai-Senpai%20GTK%20Theme%0A%0A✨%20기능:%0A•%20Nord%20색상의%20다크%20테마%0A•%20GTK%202/3/4%20지원%0A•%20GNOME%20Shell%2040+%20테마%0A•%20다중%20DE%20지원%0A•%20머티리얼%20디자인%0A•%20Flatpak%20준비%0A%0A🔗%20https%3A%2F%2Fgithub.com%2FPhantomNimbi%2FHentai-Senpai-GTK-Theme"><img src="https://img.shields.io/badge/공유-X-000000?style=plastic&logo=x" alt="X에서 공유"></a>
+  <a href="https://reddit.com/submit?title=🎨%20Hentai-Senpai%20GTK%20Theme%20-%20Nord%20색상의%20다크%20테마%20|%20GTK%202/3/4%20|%20GNOME%20Shell%2040+%20|%20다중%20DE%20지원&url=https%3A%2F%2Fgithub.com%2FPhantomNimbi%2FHentai-Senpai-GTK-Theme"><img src="https://img.shields.io/badge/공유-Reddit-FF4500?style=plastic&logo=reddit" alt="Reddit에서 공유"></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fgithub.com%2FPhantomNimbi%2FHentai-Senpai-GTK-Theme"><img src="https://img.shields.io/badge/공유-Facebook-1877F2?style=plastic&logo=facebook" alt="Facebook에서 공유"></a>
+  <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fgithub.com%2FPhantomNimbi%2FHentai-Senpai-GTK-Theme"><img src="https://img.shields.io/badge/공유-LinkedIn-0A66C2?style=plastic&logo=linkedin" alt="LinkedIn에서 공유"></a>
+  <a href="https://mastodonshare.com/?text=🎨%20Hentai-Senpai%20GTK%20Theme%0A%0A✨%20기능:%0A•%20Nord%20색상의%20다크%20테마%0A•%20GTK%202/3/4%20지원%0A•%20GNOME%20Shell%2040+%20테마%0A•%20다중%20DE%20지원%0A•%20머티리얼%20디자인%0A•%20Flatpak%20준비%0A%0A🔗&url=https%3A%2F%2Fgithub.com%2FPhantomNimbi%2FHentai-Senpai-GTK-Theme"><img src="https://img.shields.io/badge/공유-Mastodon-6364FF?style=plastic&logo=mastodon" alt="Mastodon에서 공유"></a>
+  <a href="https://t.me/share/url?url=https%3A%2F%2Fgithub.com%2FPhantomNimbi%2FHentai-Senpai-GTK-Theme&text=🎨%20Hentai-Senpai%20GTK%20Theme%0A%0A✨%20기능:%0A•%20Nord%20색상의%20다크%20테마%0A•%20GTK%202/3/4%20지원%0A•%20GNOME%20Shell%2040+%20테마%0A•%20다중%20DE%20지원%0A•%20머티리얼%20디자인%0A•%20Flatpak%20준비%0A%0A🔗"><img src="https://img.shields.io/badge/공유-Telegram-26A5E4?style=plastic&logo=telegram" alt="Telegram에서 공유"></a>
+</p>
+
 **새로운 테마를 즐기세요!** 🎨
 
 도움이 필요하면 [문서 wiki](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/wiki)를 확인하세요.

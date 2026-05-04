@@ -9,35 +9,36 @@ on:
 jobs:
   update-metadata:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
     
     steps:
-      - name: Update repository description and topics
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Update repository description
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
         run: |
-          # Repository description
-          DESCRIPTION="A beautiful dark GTK theme based on Orchis with the Nord color palette. Supports GNOME, Cinnamon, XFCE, Budgie, and MATE desktop environments."
-          
-          # Repository topics - optimized for GTK theme discovery
-          TOPICS='["gtk-theme", "gtk", "gtk3", "gtk4", "gnome", "gnome-shell", "cinnamon", "xfce", "xfwm4", "budgie", "mate", "linux", "linux-theme", "theme", "dark-theme", "nord", "nord-theme", "orchis", "material-design", "desktop-environment", "ricing", "unixporn", "customization", "opencode", "ai-assisted"]'
-          
-          # Update repository using GitHub API
-          curl -L -X PATCH \
+          gh api \
+            --method PATCH \
             -H "Accept: application/vnd.github+json" \
-            -H "Authorization: Bearer $GITHUB_TOKEN" \
             -H "X-GitHub-Api-Version: 2022-11-28" \
-            https://api.github.com/repos/${{ github.repository }} \
-            -d "{
-              \"description\": \"$DESCRIPTION\",
-              \"homepage\": \"https://github.com/${{ github.repository }}#readme\",
-              \"topics\": $TOPICS,
-              \"has_issues\": true,
-              \"has_discussions\": true,
-              \"has_wiki\": false
-            }"
+            repos/${{ github.repository }} \
+            -f description="A beautiful dark GTK theme based on Orchis with the Nord color palette. Supports GNOME, Cinnamon, XFCE, Budgie, and MATE desktop environments." \
+            -f homepage="https://github.com/${{ github.repository }}#readme"
           
-          echo "✅ Repository metadata updated successfully!"
-          echo "📋 Description: $DESCRIPTION"
-          echo "🏷️  Topics: $(echo $TOPICS | jq -r '. | join(", ")')"
+          echo "✅ Repository description updated"
+      
+      - name: Update repository topics
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # Use gh CLI to replace all topics
+          gh api \
+            --method PUT \
+            -H "Accept: application/vnd.github+json" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            repos/${{ github.repository }}/topics \
+            -f names='["gtk-theme", "gtk", "gtk3", "gtk4", "gnome", "gnome-shell", "cinnamon", "xfce", "xfwm4", "budgie", "mate", "linux", "linux-theme", "theme", "dark-theme", "nord", "nord-theme", "orchis", "material-design", "desktop-environment", "ricing", "unixporn", "customization", "opencode", "ai-assisted"]'
+          
+          echo "✅ Repository topics updated"
+          echo "🏷️  Topics set: gtk-theme, gtk, gtk3, gtk4, gnome, gnome-shell, cinnamon, xfce, xfwm4, budgie, mate, linux, linux-theme, theme, dark-theme, nord, nord-theme, orchis, material-design, desktop-environment, ricing, unixporn, customization, opencode, ai-assisted"

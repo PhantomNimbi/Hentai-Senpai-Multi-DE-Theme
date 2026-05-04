@@ -1,6 +1,21 @@
-# Hentai-Senpai Theme
+<div align="right" style="margin-bottom: 10px;">
+  <details>
+    <summary style="background: #2E3440; color: #D8DEE9; border: 1px solid #4C566A; border-radius: 6px; padding: 6px 12px; cursor: pointer; font-size: 13px; display: inline-flex; align-items: center; gap: 6px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; list-style: none;">🌐 Language</summary>
+    <div style="margin-top: 8px; padding: 10px; background: #3B4252; border: 1px solid #4C566A; border-radius: 6px; text-align: right;">
+      <div style="margin-bottom: 4px;"><a href="https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/wiki" style="color: #88C0D0; text-decoration: none;">🇺🇸 English</a></div>
+      <div style="margin-bottom: 4px;"><a href="https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/wiki/Home-pt-br" style="color: #88C0D0; text-decoration: none;">🇧🇷 Português</a></div>
+      <div style="margin-bottom: 4px;"><a href="https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/wiki/Home-es-es" style="color: #88C0D0; text-decoration: none;">🇪🇸 Español</a></div>
+      <div style="margin-bottom: 4px;"><a href="https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/wiki/Home-fr-fr" style="color: #88C0D0; text-decoration: none;">🇫🇷 Français</a></div>
+      <div style="margin-bottom: 4px;"><a href="https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/wiki/Home-de-de" style="color: #88C0D0; text-decoration: none;">🇩🇪 Deutsch</a></div>
+      <div style="margin-bottom: 4px;"><a href="https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/wiki/Home-it-it" style="color: #88C0D0; text-decoration: none;">🇮🇹 Italiano</a></div>
+      <div style="margin-bottom: 4px;"><a href="https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/wiki/Home-ja-jp" style="color: #88C0D0; text-decoration: none;">🇯🇵 日本語</a></div>
+      <div style="margin-bottom: 4px;"><a href="https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/wiki/Home-zh-cn" style="color: #88C0D0; text-decoration: none;">🇨🇳 中文</a></div>
+      <div><a href="https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/wiki/Home-ru-ru" style="color: #88C0D0; text-decoration: none;">🇷🇺 Русский</a></div>
+    </div>
+  </details>
+</div>
 
-> 🌐 **Languages:** English | [日本語](README.ja.md) | [Español](README.es.md) | [Français](README.fr.md) | [Deutsch](README.de.md) | [中文](README.zh.md) | [한국어](README.ko.md) | [Русский](README.ru.md) | [Português](README.pt.md)
+# Hentai-Senpai Theme
 
 [![Version](https://img.shields.io/github/v/release/PhantomNimbi/Hentai-Senpai-GTK-Theme?include_prereleases&label=Version&style=flat-square&color=blue)](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/releases) [![License](https://img.shields.io/badge/License-GPL%203.0-blue.svg?style=flat-square)](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/blob/main/src/COPYING) [![Stars](https://img.shields.io/github/stars/PhantomNimbi/Hentai-Senpai-GTK-Theme?style=flat-square&color=yellow)](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/stargazers)
 

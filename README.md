@@ -181,7 +181,7 @@ You can contribute by:
 
 ## License
 
-This project is licensed under the GPL-3.0 License — see the [COPYING](src/Hentai-Senpai/COPYING) file for details.
+This project is licensed under the GPL-3.0 License — see the [COPYING](src/COPYING) file for details.
 
 ## Acknowledgments
 

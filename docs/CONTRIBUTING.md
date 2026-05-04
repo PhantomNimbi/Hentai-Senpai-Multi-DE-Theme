@@ -89,7 +89,7 @@ Thank you for your interest in contributing to the Hentai-Senpai GTK Theme! This
 
 ```
 hentai-senpai-theme/
-├── src/Hentai-Senpai/          # Theme source files
+├── src/                         # Theme source files
 │   ├── gtk-2.0/                # GTK 2.0 theme
 │   ├── gtk-3.0/                # GTK 3.0 theme
 │   ├── gtk-4.0/                # GTK 4.0 theme
@@ -104,7 +104,7 @@ hentai-senpai-theme/
 
 ### Making Changes
 
-1. **Edit theme files** in `src/Hentai-Senpai/`
+1. **Edit theme files** in `src/`
 2. **Test your changes** using `./install.sh --update`
 3. **Apply the theme** using `./apply-theme.sh`
 4. **Verify** the changes work in your desktop environment

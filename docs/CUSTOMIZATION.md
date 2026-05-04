@@ -26,7 +26,7 @@ Always make a backup before modifying theme files:
 cp -r ~/.themes/Hentai-Senpai ~/.themes/Hentai-Senpai-backup
 
 # Or backup just the source
-cp -r src/Hentai-Senpai src/Hentai-Senpai-backup
+cp -r src src-backup
 ```
 
 ### Understanding the Structure
@@ -219,7 +219,7 @@ convert wallpapers/001.png -fill '#88c0d0' -colorize 10% wallpapers/001-cool.png
 
 1. Copy the theme:
    ```bash
-   cp -r src/Hentai-Senpai src/Hentai-Senpai-Light
+   cp -r src src-light
    ```
 
 2. Create a color swap script:
@@ -228,10 +228,10 @@ convert wallpapers/001.png -fill '#88c0d0' -colorize 10% wallpapers/001-cool.png
    # Swap dark colors with light equivalents
    
    # nord0 (dark bg) -> nord6 (light bg)
-   find src/Hentai-Senpai-Light -name "*.css" -exec sed -i 's/#2e3440/#eceff4/g' {} \;
+   find src-light -name "*.css" -exec sed -i 's/#2e3440/#eceff4/g' {} \;
    
    # nord4 (light text) -> nord0 (dark text)
-   find src/Hentai-Senpai-Light -name "*.css" -exec sed -i 's/#d8dee9/#2e3440/g' {} \;
+   find src-light -name "*.css" -exec sed -i 's/#d8dee9/#2e3440/g' {} \;
    
    # Adjust other colors as needed...
    ```
@@ -253,14 +253,14 @@ Create different accent color variants:
 
 ```bash
 # Create green accent variant
-cp -r src/Hentai-Senpai src/Hentai-Senpai-Green
+cp -r src src-green
 
 # Replace blue accent with green
-find src/Hentai-Senpai-Green -name "*.css" -exec sed -i 's/#5e81ac/#a3be8c/g' {} \;
-find src/Hentai-Senpai-Green -name "*.css" -exec sed -i 's/#81a1c1/#8fbcbb/g' {} \;
+find src-green -name "*.css" -exec sed -i 's/#5e81ac/#a3be8c/g' {} \;
+find src-green -name "*.css" -exec sed -i 's/#81a1c1/#8fbcbb/g' {} \;
 
 # Update name
-sed -i 's/Hentai-Senpai/Hentai-Senpai-Green/g' src/Hentai-Senpai-Green/index.theme
+sed -i 's/Hentai-Senpai/Hentai-Senpai-Green/g' src-green/index.theme
 
 # Install
 ./install.sh -n Hentai-Senpai-Green

@@ -7,7 +7,7 @@ set -e
 
 THEME_NAME="Hentai-Senpai"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-THEME_SOURCE="${SCRIPT_DIR}/src/${THEME_NAME}"
+THEME_SOURCE="${SCRIPT_DIR}/src"
 USER_THEMES_DIR="${HOME}/.themes"
 LIBADWAITA_CONFIG_DIR="${HOME}/.config/gtk-4.0"
 

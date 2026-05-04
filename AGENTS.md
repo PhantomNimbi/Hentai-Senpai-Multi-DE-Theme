@@ -34,7 +34,7 @@ This is a GTK/GNOME Shell theme based on **Orchis Dark Nord** styling. It combin
 ## Theme Structure
 
 ```
-src/Hentai-Senpai/
+src/
 ├── gtk-2.0/
 │   └── main.rc           # GTK2 theme configuration
 ├── gtk-3.0/

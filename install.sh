@@ -67,7 +67,7 @@ DESCRIPTION:
     This script installs, updates, or uninstalls the Hentai-Senpai GTK theme.
 
     By default (no options), it installs the theme to ~/.themes without
-    applying it. To apply the theme after installation, use apply-theme.sh
+    applying it. To apply the theme after installation, use scripts/apply.sh
 
     The --update option reinstalls the theme, useful when the theme files
     have been modified or updated.
@@ -89,7 +89,7 @@ EXAMPLES:
     $0 --check-deps             # Install missing dependencies
 
     # To apply the theme after installation:
-    ./apply-theme.sh            # Apply the installed theme
+    ./scripts/apply.sh            # Apply the installed theme
 
 EOF
 }
@@ -848,7 +848,7 @@ main() {
     print_success "Theme installation complete!"
     echo "=========================================="
     echo ""
-    print_info "To apply the theme, run: ./apply-theme.sh"
+    print_info "To apply the theme, run: ./scripts/apply.sh"
 }
 
 # Run main function

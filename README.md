@@ -27,7 +27,7 @@ A beautiful dark GTK theme based on [Orchis](https://github.com/vinceliuice/Orch
 ./install.sh --update -l -f --dock
 
 # Apply the theme to your desktop
-./apply-theme.sh
+./scripts/apply.sh
 ```
 
 ## Requirements

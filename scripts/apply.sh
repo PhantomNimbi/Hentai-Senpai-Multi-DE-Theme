@@ -3,7 +3,7 @@
 # Hentai-Senpai Theme Applicator
 # This script applies the Hentai-Senpai GTK theme that was installed via install.sh
 #
-# Usage: ./apply-theme.sh [OPTIONS]
+# Usage: ./scripts/apply.sh [OPTIONS]
 #
 # By default, this script applies all configured options (theme, libadwaita, flatpak,
 # dock, and wallpapers). Use options to selectively apply or skip certain components.

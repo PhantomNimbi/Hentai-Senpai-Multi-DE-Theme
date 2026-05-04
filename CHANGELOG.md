@@ -50,6 +50,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Documentation Structure**: Moved from flat file structure to locale-based folders
 - **Preview Images**: Removed SVG preview images, keeping only PNG previews
 - **Wiki Workflow**: Updated to handle locale-based documentation structure with 9 languages
+- **Script Organization**: Renamed `apply-theme.sh` to `apply.sh` and moved it to `scripts/` directory
+  - Updated all references in documentation and code
+  - Consolidated all scripts in the `scripts/` directory
 
 ### Changed
 
@@ -111,7 +114,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Wallpaper installation
   - Dependency checking with auto-installation
   - System information and compatibility display
-- **Theme application script** (`apply-theme.sh`) for automatic theme activation
+- **Theme application script** (`scripts/apply.sh`) for automatic theme activation
 - **Transparent Plank dock theme** with proper Nord color integration
 - **Comprehensive documentation**:
   - Installation guide with detailed options

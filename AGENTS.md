@@ -76,7 +76,7 @@ src/
 
 ### Apply Theme
 ```bash
-./apply-theme.sh
+./scripts/apply.sh
 ```
 
 ## Key Features

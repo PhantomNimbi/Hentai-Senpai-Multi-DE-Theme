@@ -30,11 +30,11 @@ jobs:
       - name: Checkout main repository
         uses: actions/checkout@v4
         
-      - name: Checkout discussions branch
+      - name: Checkout templates branch
         uses: actions/checkout@v4
         with:
-          ref: discussions
-          path: discussions-content
+          ref: templates
+          path: templates-content
           
       - name: Setup Discussions
         uses: actions/github-script@v7
@@ -143,7 +143,7 @@ jobs:
             
             function readTemplate(filename) {
               try {
-                return fs.readFileSync(path.join('discussions-content/.github/DISCUSSION_TEMPLATE', filename), 'utf8');
+                return fs.readFileSync(path.join('templates-content/discussions', filename), 'utf8');
               } catch (e) {
                 return null;
               }

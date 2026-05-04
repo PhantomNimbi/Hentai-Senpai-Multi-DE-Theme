@@ -3,11 +3,13 @@ name: Generate GitHub Wiki
 on:
   push:
     branches:
-      - docs
+      - templates
+    paths:
+      - 'docs/**'
   workflow_dispatch:
     inputs:
       force_update:
-        description: 'Force update wiki from docs branch'
+        description: 'Force update wiki from templates branch'
         required: false
         default: false
         type: boolean
@@ -23,11 +25,11 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.PAT_TOKEN }}
       
-      - name: Checkout docs branch
+      - name: Checkout templates branch
         uses: actions/checkout@v4
         with:
-          ref: docs
-          path: docs-content
+          ref: templates
+          path: templates-content
           token: ${{ secrets.PAT_TOKEN }}
       
       - name: Checkout wiki repository
@@ -37,7 +39,7 @@ jobs:
           path: wiki
           token: ${{ secrets.PAT_TOKEN }}
       
-      - name: Generate wiki content from docs branch
+      - name: Generate wiki content from templates branch
         run: |
           # Create Home.md with language selector
           cat > wiki/Home.md << 'EOF'
@@ -57,99 +59,99 @@ jobs:
               </div>
             </details>
           </div>
-          
+
           # Hentai-Senpai Theme
-          
+
           A beautiful dark GTK theme based on Orchis with Nord colors.
-          
+
           ## Quick Links
-          
+
           - [Installation Guide](Installation-Guide)
           - [Troubleshooting](Troubleshooting)
           - [Customization](Customization)
           - [Color Palette](Color-Palette)
           - [Contributing](Contributing)
           - [Gallery](Gallery) - Theme previews & wallpapers
-          
+
           ## Quick Start
-          
+
           ```bash
           ./install.sh --update -l -f --dock
           ./scripts/apply.sh
           ```
-          
+
           ## Features
-          
+
           - Dark & Elegant Nord colors
           - Material Design principles
           - Multi-DE Support (GNOME, Cinnamon, XFCE, Budgie, MATE)
           - GTK 2/3/4, GNOME Shell, window decorations
           - Modern GTK4/libadwaita support
           - Flatpak Ready
-          
+
           [View on GitHub](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme)
           EOF
-          
+
           # Function to copy documentation for a locale
           copy_locale_docs() {
             local locale=$1
             local suffix=$2
-            
-            if [ -d "docs-content/docs/$locale" ]; then
-              cp "docs-content/docs/$locale/INSTALLATION.md" "wiki/Installation-Guide$suffix.md"
-              cp "docs-content/docs/$locale/TROUBLESHOOTING.md" "wiki/Troubleshooting$suffix.md"
-              cp "docs-content/docs/$locale/CUSTOMIZATION.md" "wiki/Customization$suffix.md"
-              cp "docs-content/docs/$locale/COLOR_PALETTE.md" "wiki/Color-Palette$suffix.md"
-              cp "docs-content/docs/$locale/CONTRIBUTING.md" "wiki/Contributing$suffix.md"
-              if [ -f "docs-content/docs/$locale/Gallery.md" ]; then
-                cp "docs-content/docs/$locale/Gallery.md" "wiki/Gallery$suffix.md"
+
+            if [ -d "templates-content/docs/$locale" ]; then
+              cp "templates-content/docs/$locale/INSTALLATION.md" "wiki/Installation-Guide$suffix.md"
+              cp "templates-content/docs/$locale/TROUBLESHOOTING.md" "wiki/Troubleshooting$suffix.md"
+              cp "templates-content/docs/$locale/CUSTOMIZATION.md" "wiki/Customization$suffix.md"
+              cp "templates-content/docs/$locale/COLOR_PALETTE.md" "wiki/Color-Palette$suffix.md"
+              cp "templates-content/docs/$locale/CONTRIBUTING.md" "wiki/Contributing$suffix.md"
+              if [ -f "templates-content/docs/$locale/Gallery.md" ]; then
+                cp "templates-content/docs/$locale/Gallery.md" "wiki/Gallery$suffix.md"
               fi
               echo "✅ $locale documentation copied"
             fi
           }
-          
-          # Copy all docs from docs branch to wiki (locale-based structure)
-          if [ -d "docs-content/docs" ]; then
+
+          # Copy all docs from templates branch to wiki (locale-based structure)
+          if [ -d "templates-content/docs" ]; then
             # English (default)
             copy_locale_docs "en-us" ""
-            
+
             # Portuguese (Brazil)
             copy_locale_docs "pt-br" "-pt-br"
-            
+
             # Spanish
             copy_locale_docs "es-es" "-es-es"
-            
+
             # French
             copy_locale_docs "fr-fr" "-fr-fr"
-            
+
             # German
             copy_locale_docs "de-de" "-de-de"
-            
+
             # Italian
             copy_locale_docs "it-it" "-it-it"
-            
+
             # Japanese
             copy_locale_docs "ja-jp" "-ja-jp"
-            
+
             # Chinese (Simplified)
             copy_locale_docs "zh-cn" "-zh-cn"
-            
+
             # Russian
             copy_locale_docs "ru-ru" "-ru-ru"
-            
+
             # Copy Home pages from each locale
             for locale in en-us pt-br es-es fr-fr de-de it-it ja-jp zh-cn ru-ru; do
-              if [ -f "docs-content/docs/$locale/Home.md" ]; then
+              if [ -f "templates-content/docs/$locale/Home.md" ]; then
                 suffix=""
                 [ "$locale" != "en-us" ] && suffix="-${locale}"
-                cp "docs-content/docs/$locale/Home.md" "wiki/Home${suffix}.md"
+                cp "templates-content/docs/$locale/Home.md" "wiki/Home${suffix}.md"
                 echo "✅ Home page for $locale copied"
               fi
             done
-            
-            echo "✅ Wiki content generated from docs branch"
+
+            echo "✅ Wiki content generated from templates branch"
           else
-            echo "⚠️  docs/ directory not found in docs branch"
+            echo "⚠️  docs/ directory not found in templates branch"
             exit 1
           fi
       

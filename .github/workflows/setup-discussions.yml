@@ -1,0 +1,177 @@
+name: Setup GitHub Discussions
+
+on:
+  workflow_dispatch:
+    inputs:
+      action:
+        description: 'Setup action to perform'
+        required: true
+        default: 'seed-discussions'
+        type: choice
+        options:
+          - seed-discussions
+          - create-welcome-post
+          - update-categories
+
+jobs:
+  setup-discussions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main repository
+        uses: actions/checkout@v4
+        
+      - name: Checkout discussions branch
+        uses: actions/checkout@v4
+        with:
+          ref: discussions
+          path: discussions-content
+          
+      - name: Load templates from discussions branch
+        id: load-templates
+        run: |
+          echo "Loading discussion templates from discussions branch..."
+          
+          # Check if templates exist
+          if [ ! -f "discussions-content/.github/DISCUSSION_TEMPLATE/general.md" ]; then
+            echo "❌ Templates not found in discussions branch"
+            exit 1
+          fi
+          
+          # Display available templates
+          echo "✅ Available templates:"
+          ls -1 discussions-content/.github/DISCUSSION_TEMPLATE/
+          
+          echo "✅ Loaded all templates from discussions branch"
+          
+      - name: Display discussion setup instructions
+        run: |
+          echo "=========================================="
+          echo "📋 GitHub Discussions Setup"
+          echo "=========================================="
+          echo ""
+          echo "Templates loaded from: discussions branch"
+          echo "Template location: .github/DISCUSSION_TEMPLATE/"
+          echo ""
+          echo "Available Categories:"
+          echo "  💬 General"
+          echo "  🎨 Showcase"
+          echo "  🐛 Q&A"
+          echo "  💡 Ideas"
+          echo "  🔧 Development"
+          echo "  📢 Announcements"
+          echo ""
+          echo "Next Steps:"
+          echo "  1. Enable Discussions in repository settings"
+          echo "  2. Create categories listed above"
+          echo "  3. Copy templates from discussions branch"
+          echo "  4. Create initial discussion posts"
+          echo ""
+          echo "Template files:"
+          ls -1 discussions-content/.github/DISCUSSION_TEMPLATE/ | sed 's/^/    - /'
+          echo ""
+          echo "Guide file:"
+          echo "    - DISCUSSION_GUIDE.md"
+          echo "=========================================="
+          
+      - name: Generate discussion content from templates
+        run: |
+          # Read templates
+          echo "Generating discussion content from templates..."
+          
+          # Create output directory
+          mkdir -p discussion-posts
+          
+          # Generate welcome post from general template
+          cat discussions-content/.github/DISCUSSION_TEMPLATE/general.md > discussion-posts/welcome.md
+          
+          # Generate FAQ from Q&A template
+          cat discussions-content/.github/DISCUSSION_TEMPLATE/q-a.md > discussion-posts/faq.md
+          
+          # Generate showcase template
+          cat discussions-content/.github/DISCUSSION_TEMPLATE/showcase.md > discussion-posts/showcase.md
+          
+          # Generate ideas template
+          cat discussions-content/.github/DISCUSSION_TEMPLATE/ideas.md > discussion-posts/ideas.md
+          
+          # Generate dev template
+          cat discussions-content/.github/DISCUSSION_TEMPLATE/development.md > discussion-posts/development.md
+          
+          echo "✅ Generated discussion posts in discussion-posts/"
+          ls -1 discussion-posts/
+          
+      - name: Upload discussion content
+        uses: actions/upload-artifact@v3
+        with:
+          name: discussion-posts
+          path: discussion-posts/
+          
+      - name: Create setup instructions
+        run: |
+          cat << 'EOF' > DISCUSSION_SETUP.md
+          # GitHub Discussions Setup
+          
+          ## Overview
+          
+          This repository uses a separate `discussions` branch to store discussion templates.
+          
+          ## Source
+          
+          **Branch:** `discussions`
+          **Templates:** `.github/DISCUSSION_TEMPLATE/`
+          **Guide:** `.github/DISCUSSION_GUIDE.md`
+          
+          ## Categories to Create
+          
+          1. **💬 General** - General conversation template
+          2. **🎨 Showcase** - Desktop setup sharing template
+          3. **🐛 Q&A** - Help and troubleshooting template
+          4. **💡 Ideas** - Feature suggestions template
+          5. **🔧 Development** - Technical discussions template
+          6. **📢 Announcements** - Official announcements (maintainers only)
+          
+          ## Setup Steps
+          
+          ### 1. Enable Discussions
+          
+          Repository Settings → Features → Enable Discussions
+          
+          ### 2. Create Categories
+          
+          Go to Discussions tab → Manage categories → Create the 6 categories above
+          
+          ### 3. Copy Templates
+          
+          ```bash
+          # Checkout discussions branch
+          git fetch origin discussions
+          git checkout origin/discussions -- .github/DISCUSSION_TEMPLATE/
+          git checkout origin/discussions -- .github/DISCUSSION_GUIDE.md
+          ```
+          
+          ### 4. Create Initial Posts
+          
+          Download the `discussion-posts` artifact from this workflow run and use the content to create initial discussions in each category.
+          
+          ## Maintenance
+          
+          To update templates:
+          1. Edit files in `discussions` branch
+          2. Commit and push
+          3. Changes are automatically available
+          
+          ## Templates Location
+          
+          - General: `discussions-content/.github/DISCUSSION_TEMPLATE/general.md`
+          - Showcase: `discussions-content/.github/DISCUSSION_TEMPLATE/showcase.md`
+          - Q&A: `discussions-content/.github/DISCUSSION_TEMPLATE/q-a.md`
+          - Ideas: `discussions-content/.github/DISCUSSION_TEMPLATE/ideas.md`
+          - Development: `discussions-content/.github/DISCUSSION_TEMPLATE/development.md`
+          EOF
+          
+          echo "✅ Created DISCUSSION_SETUP.md"
+          
+      - name: Upload setup guide
+        uses: actions/upload-artifact@v3
+        with:
+          name: discussion-setup-guide
+          path: DISCUSSION_SETUP.md

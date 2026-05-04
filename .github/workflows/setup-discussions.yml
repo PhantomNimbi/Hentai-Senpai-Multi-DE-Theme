@@ -42,8 +42,8 @@ jobs:
             console.log('═══════════════════════════════════════════════════');
             console.log('🚀 GitHub Discussions Setup');
             console.log('═══════════════════════════════════════════════════');
-            console.log(`Repository: ${owner}/${repo}`);
-            console.log(`Action: ${action}`);
+            console.log('Repository: ' + owner + '/' + repo);
+            console.log('Action: ' + action);
             console.log('');
             
             // Check function
@@ -113,7 +113,7 @@ jobs:
                 const content = fs.readFileSync(path.join('discussions-content/.github/DISCUSSION_TEMPLATE', filename), 'utf8');
                 return content;
               } catch (e) {
-                console.log(`⚠️  Could not read template ${filename}: ${e.message}`);
+                console.log('⚠️  Could not read template ' + filename + ': ' + e.message);
                 return null;
               }
             }
@@ -159,20 +159,17 @@ jobs:
                 post: {
                   title: '👋 Welcome to Hentai-Senpai Discussions!',
                   template: 'general.md',
-                  fallback: `Welcome to the Hentai-Senpai community! 🎨
-
-This is a space for general conversations about the theme, sharing ideas, and connecting with other users.
-
-## Quick Links
-- 📖 [Installation Guide](https://github.com/${owner}/${repo}/wiki/Installation-Guide)
-- 🐛 [Report Issues](https://github.com/${owner}/${repo}/issues)
-- 🎨 [View Gallery](https://github.com/${owner}/${repo}/wiki/Gallery)
-
-## Community Guidelines
-- Be respectful and constructive
-- Search before posting
-- Use appropriate categories
-- Have fun! ✨`
+                  fallback: 'Welcome to the Hentai-Senpai community! 🎨\n\n' +
+                    'This is a space for general conversations about the theme, sharing ideas, and connecting with other users.\n\n' +
+                    '## Quick Links\n' +
+                    '- 📖 [Installation Guide](https://github.com/' + owner + '/' + repo + '/wiki/Installation-Guide)\n' +
+                    '- 🐛 [Report Issues](https://github.com/' + owner + '/' + repo + '/issues)\n' +
+                    '- 🎨 [View Gallery](https://github.com/' + owner + '/' + repo + '/wiki/Gallery)\n\n' +
+                    '## Community Guidelines\n' +
+                    '- Be respectful and constructive\n' +
+                    '- Search before posting\n' +
+                    '- Use appropriate categories\n' +
+                    '- Have fun! ✨'
                 }
               },
               {
@@ -182,19 +179,15 @@ This is a space for general conversations about the theme, sharing ideas, and co
                 post: {
                   title: '❓ Frequently Asked Questions',
                   template: 'q-a.md',
-                  fallback: `## Common Questions
-
-### How do I install the theme?
-Run \`./install.sh\` from the repository root.
-
-### Which desktop environments are supported?
-GNOME, Cinnamon, XFCE, MATE, and Budgie.
-
-### How do I apply the theme?
-Use the included \`scripts/apply.sh\` script or your desktop settings.
-
-### Need more help?
-Check the [Wiki](https://github.com/${owner}/${repo}/wiki) for detailed guides!`
+                  fallback: '## Common Questions\n\n' +
+                    '### How do I install the theme?\n' +
+                    'Run `./install.sh` from the repository root.\n\n' +
+                    '### Which desktop environments are supported?\n' +
+                    'GNOME, Cinnamon, XFCE, MATE, and Budgie.\n\n' +
+                    '### How do I apply the theme?\n' +
+                    'Use the included `scripts/apply.sh` script or your desktop settings.\n\n' +
+                    '### Need more help?\n' +
+                    'Check the [Wiki](https://github.com/' + owner + '/' + repo + '/wiki) for detailed guides!'
                 }
               },
               {
@@ -204,14 +197,12 @@ Check the [Wiki](https://github.com/${owner}/${repo}/wiki) for detailed guides!`
                 post: {
                   title: '🎨 Desktop Showcase - Share Your Setup!',
                   template: 'showcase.md',
-                  fallback: `Show off your desktop setup featuring Hentai-Senpai theme!
-
-## How to Participate
-1. Take a screenshot of your desktop
-2. Share details (DE, distro, customizations)
-3. Post below with the template
-
-Best setups will be featured in our README! 🌟`
+                  fallback: 'Show off your desktop setup featuring Hentai-Senpai theme!\n\n' +
+                    '## How to Participate\n' +
+                    '1. Take a screenshot of your desktop\n' +
+                    '2. Share details (DE, distro, customizations)\n' +
+                    '3. Post below\n\n' +
+                    'Best setups will be featured in our README! 🌟'
                 }
               },
               {
@@ -221,14 +212,12 @@ Best setups will be featured in our README! 🌟`
                 post: {
                   title: '💡 Feature Request Hub',
                   template: 'ideas.md',
-                  fallback: `Have an idea for improving Hentai-Senpai? Share it here!
-
-## How to Submit
-- Describe your idea clearly
-- Explain the use case
-- Vote on existing ideas with 👍
-
-Popular requests will be added to our roadmap! 🗺️`
+                  fallback: 'Have an idea for improving Hentai-Senpai? Share it here!\n\n' +
+                    '## How to Submit\n' +
+                    '- Describe your idea clearly\n' +
+                    '- Explain the use case\n' +
+                    '- Vote on existing ideas with 👍\n\n' +
+                    'Popular requests will be added to our roadmap! 🗺️'
                 }
               },
               {
@@ -238,15 +227,13 @@ Popular requests will be added to our roadmap! 🗺️`
                 post: {
                   title: '🔧 Developer Discussions',
                   template: 'development.md',
-                  fallback: `Welcome developers! 👋
-
-This category is for technical discussions about:
-- Theme development
-- Code contributions
-- Architecture decisions
-- Testing and CI/CD
-
-Check out [good first issues](https://github.com/${owner}/${repo}/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) to get started!`
+                  fallback: 'Welcome developers! 👋\n\n' +
+                    'This category is for technical discussions about:\n' +
+                    '- Theme development\n' +
+                    '- Code contributions\n' +
+                    '- Architecture decisions\n' +
+                    '- Testing and CI/CD\n\n' +
+                    'Check out [good first issues](https://github.com/' + owner + '/' + repo + '/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) to get started!'
                 }
               }
             ];
@@ -258,13 +245,13 @@ Check out [good first issues](https://github.com/${owner}/${repo}/issues?q=is%3A
               // Check status only
               if (action === 'check-status') {
                 console.log('\n📊 Status Report:');
-                console.log(`   Discussions Enabled: ${status.enabled ? '✅ Yes' : '❌ No'}`);
-                console.log(`   Categories Found: ${status.categories.length}`);
+                console.log('   Discussions Enabled: ' + (status.enabled ? '✅ Yes' : '❌ No'));
+                console.log('   Categories Found: ' + status.categories.length);
                 
                 if (status.categories.length > 0) {
                   console.log('\n   Categories:');
                   status.categories.forEach(cat => {
-                    console.log(`   - ${cat.name}`);
+                    console.log('   - ' + cat.name);
                   });
                 }
                 
@@ -277,9 +264,9 @@ Check out [good first issues](https://github.com/${owner}/${repo}/issues?q=is%3A
                 if (missingCategories.length > 0) {
                   console.log('\n   Missing Categories:');
                   missingCategories.forEach(config => {
-                    console.log(`   - ${config.emoji} ${config.categoryName}`);
+                    console.log('   - ' + config.emoji + ' ' + config.categoryName);
                   });
-                  console.log(`\n   Create them at: https://github.com/${owner}/${repo}/discussions/categories`);
+                  console.log('\n   Create them at: https://github.com/' + owner + '/' + repo + '/discussions/categories');
                 }
                 
                 console.log('\n✅ Status check complete!');
@@ -298,10 +285,10 @@ Check out [good first issues](https://github.com/${owner}/${repo}/issues?q=is%3A
                 
                 if (action === 'enable-discussions') {
                   console.log('\n⚠️  Next: Create categories manually at:');
-                  console.log(`   https://github.com/${owner}/${repo}/discussions/categories`);
+                  console.log('   https://github.com/' + owner + '/' + repo + '/discussions/categories');
                   console.log('\n   Required categories:');
                   setupConfig.forEach(config => {
-                    console.log(`   - ${config.emoji} ${config.categoryName}: ${config.description}`);
+                    console.log('   - ' + config.emoji + ' ' + config.categoryName + ': ' + config.description);
                   });
                   return;
                 }
@@ -328,36 +315,36 @@ Check out [good first issues](https://github.com/${owner}/${repo}/issues?q=is%3A
                   );
                   
                   if (!category) {
-                    console.log(`⏭️  Skipping "${config.post.title}" - Category "${config.categoryName}" not found`);
-                    console.log(`   Create it manually at: https://github.com/${owner}/${repo}/discussions/categories`);
+                    console.log('⏭️  Skipping "' + config.post.title + '" - Category "' + config.categoryName + '" not found');
+                    console.log('   Create it manually at: https://github.com/' + owner + '/' + repo + '/discussions/categories');
                     console.log('');
-                    results.push({ ...config, status: 'skipped', reason: 'Category not found' });
+                    results.push({ category: config.categoryName, title: config.post.title, status: 'skipped', reason: 'Category not found' });
                     continue;
                   }
                   
-                  console.log(`🔄 Creating: ${config.post.title}`);
-                  console.log(`   Category: ${category.name} (${category.id})`);
+                  console.log('🔄 Creating: ' + config.post.title);
+                  console.log('   Category: ' + category.name + ' (' + category.id + ')');
                   
                   // Read template or use fallback
                   let body = readTemplate(config.post.template);
                   if (!body) {
-                    console.log(`   Using fallback content`);
+                    console.log('   Using fallback content');
                     body = config.post.fallback;
                   } else {
-                    console.log(`   Using template: ${config.post.template}`);
+                    console.log('   Using template: ' + config.post.template);
                   }
                   
                   const result = await createDiscussion(status.repoId, category.id, config.post.title, body);
                   
                   if (result.success) {
-                    console.log(`   ✅ Created: ${result.discussion.url}`);
-                    results.push({ ...config, status: 'created', url: result.discussion.url });
+                    console.log('   ✅ Created: ' + result.discussion.url);
+                    results.push({ category: config.categoryName, title: config.post.title, status: 'created', url: result.discussion.url });
                   } else {
-                    console.log(`   ❌ Failed: ${result.error}`);
+                    console.log('   ❌ Failed: ' + result.error);
                     if (result.error.includes('already exists') || result.error.includes('duplicate')) {
-                      console.log(`   ℹ️  A discussion with this title may already exist.`);
+                      console.log('   ℹ️  A discussion with this title may already exist.');
                     }
-                    results.push({ ...config, status: 'failed', error: result.error });
+                    results.push({ category: config.categoryName, title: config.post.title, status: 'failed', error: result.error });
                   }
                   console.log('');
                 }
@@ -370,23 +357,23 @@ Check out [good first issues](https://github.com/${owner}/${repo}/issues?q=is%3A
                 console.log('═══════════════════════════════════════════════════');
                 console.log('📊 Summary');
                 console.log('═══════════════════════════════════════════════════');
-                console.log(`Created:  ${created} ✅`);
-                console.log(`Failed:   ${failed} ❌`);
-                console.log(`Skipped:  ${skipped} ⏭️`);
+                console.log('Created:  ' + created + ' ✅');
+                console.log('Failed:   ' + failed + ' ❌');
+                console.log('Skipped:  ' + skipped + ' ⏭️');
                 console.log('');
                 
                 if (created > 0) {
                   console.log('✅ Successfully Created:');
                   results.filter(r => r.status === 'created').forEach(r => {
-                    console.log(`   - ${r.post.title}`);
-                    console.log(`     ${r.url}`);
+                    console.log('   - ' + r.title);
+                    console.log('     ' + r.url);
                   });
                 }
                 
                 if (skipped > 0) {
                   console.log('\n⚠️  Skipped (create categories first):');
                   results.filter(r => r.status === 'skipped').forEach(r => {
-                    console.log(`   - ${r.categoryName}`);
+                    console.log('   - ' + r.category);
                   });
                 }
                 
@@ -395,7 +382,7 @@ Check out [good first issues](https://github.com/${owner}/${repo}/issues?q=is%3A
                   timestamp: new Date().toISOString(),
                   action: action,
                   results: results,
-                  summary: { created, failed, skipped }
+                  summary: { created: created, failed: failed, skipped: skipped }
                 }, null, 2));
                 
                 console.log('\n📝 Results saved to: setup-results.json');

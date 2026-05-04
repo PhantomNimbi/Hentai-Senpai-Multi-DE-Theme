@@ -42,16 +42,9 @@ jobs:
           # Create Home.md with translate button
           cat > wiki/Home.md << 'EOF'
           <div align="right">
-            <a href="#translation-options" style="text-decoration: none;">
-              <img src="https://img.shields.io/badge/🌐%20Translate-2E3440?style=for-the-badge&color=2E3440&logoColor=white" alt="Translate">
-            </a>
-          </div>
-          
-          <div id="translation-options" style="margin-top: 10px; padding: 10px; background: #3B4252; border-radius: 6px; display: inline-block;">
-            <strong>🌐 Available Languages:</strong><br>
-            <a href="Home">English</a> •
-            <a href="Home-pt">Português</a> •
-            <a href="Home-es">Español</a>
+            <button onclick="switchLanguage(prompt('Enter language code (en, pt, es):') || 'en')" style="background: #2E3440; color: #D8DEE9; border: 1px solid #4C566A; border-radius: 6px; padding: 8px 16px; cursor: pointer; font-size: 14px; display: inline-flex; align-items: center; gap: 8px;">
+              🌐 Translate
+            </button>
           </div>
           
           # Hentai-Senpai Theme

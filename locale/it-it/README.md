@@ -48,7 +48,7 @@
   <a href="https://gtk.org"><img src="https://img.shields.io/badge/GTK-2%2F3%2F4-88C0D0?style=flat-square&logo=gtk" alt="GTK"></a>
 </p>
 
-Un bellissimo tema GTK scuro basato su [Orchis](https://github.com/vinceliuice/Orchis-theme) con l'elegante palette di colori [Nord](https://www.nordtheme.com/).
+<p align="center">Un bellissimo tema GTK scuro basato su [Orchis](https://github.com/vinceliuice/Orchis-theme) con l'elegante palette di colori [Nord](https://www.nordtheme.com/).</p>
 
 ## 📸 Galleria
 

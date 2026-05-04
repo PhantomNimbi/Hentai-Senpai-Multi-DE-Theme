@@ -48,7 +48,7 @@
   <a href="https://gtk.org"><img src="https://img.shields.io/badge/GTK-2%2F3%2F4-88C0D0?style=flat-square&logo=gtk" alt="GTK"></a>
 </p>
 
-[Nord](https://www.nordtheme.com/) カラーパレットを使用した美しいダークGTKテーマ。
+<p align="center">[Nord](https://www.nordtheme.com/) カラーパレットを使用した美しいダークGTKテーマ。</p>
 
 ## 📸 ギャラリー
 

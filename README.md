@@ -62,7 +62,7 @@
   <a href="https://pop.system76.com"><img src="https://cdn.simpleicons.org/popos/48B9C7" height="40" alt="Pop!_OS" title="Pop!_OS"></a>
 </p>
 
-A beautiful dark GTK theme based on [Orchis](https://github.com/vinceliuice/Orchis-theme) with the elegant [Nord](https://www.nordtheme.com/) color palette.
+<p align="center">A beautiful dark GTK theme based on [Orchis](https://github.com/vinceliuice/Orchis-theme) with the elegant [Nord](https://www.nordtheme.com/) color palette.</p>
 
 ![Theme Preview](images/preview-1.png)
 

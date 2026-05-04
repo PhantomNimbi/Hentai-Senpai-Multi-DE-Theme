@@ -48,7 +48,7 @@
   <a href="https://gtk.org"><img src="https://img.shields.io/badge/GTK-2%2F3%2F4-88C0D0?style=flat-square&logo=gtk" alt="GTK"></a>
 </p>
 
-基于 [Orchis](https://github.com/vinceliuice/Orchis-theme) 和优雅的 [Nord](https://www.nordtheme.com/) 调色板的精美深色 GTK 主题。
+<p align="center">基于 [Orchis](https://github.com/vinceliuice/Orchis-theme) 和优雅的 [Nord](https://www.nordtheme.com/) 调色板的精美深色 GTK 主题。</p>
 
 ## 📸 图库
 

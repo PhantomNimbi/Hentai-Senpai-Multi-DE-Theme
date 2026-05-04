@@ -49,7 +49,7 @@
   <a href="https://gtk.org"><img src="https://img.shields.io/badge/GTK-2%2F3%2F4-88C0D0?style=flat-square&logo=gtk" alt="GTK"></a>
 </p>
 
-우아한 [Nord](https://www.nordtheme.com/) 색상 팔레트를 사용한 [Orchis](https://github.com/vinceliuice/Orchis-theme) 기반의 아름다운 다크 GTK 테마입니다.
+<p align="center">우아한 [Nord](https://www.nordtheme.com/) 색상 팔레트를 사용한 [Orchis](https://github.com/vinceliuice/Orchis-theme) 기반의 아름다운 다크 GTK 테마입니다.</p>
 
 ## 📸 갤러리
 

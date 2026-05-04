@@ -33,32 +33,32 @@ jobs:
           
           # Check if templates exist
           if [ ! -f "discussions-content/.github/DISCUSSION_TEMPLATE/general.md" ]; then
-            echo "❌ Templates not found in discussions branch"
+            echo "Templates not found in discussions branch"
             exit 1
           fi
           
           # Display available templates
-          echo "✅ Available templates:"
+          echo "Available templates:"
           ls -1 discussions-content/.github/DISCUSSION_TEMPLATE/
           
-          echo "✅ Loaded all templates from discussions branch"
+          echo "Loaded all templates from discussions branch"
           
       - name: Display discussion setup instructions
         run: |
           echo "=========================================="
-          echo "📋 GitHub Discussions Setup"
+          echo "GitHub Discussions Setup"
           echo "=========================================="
           echo ""
           echo "Templates loaded from: discussions branch"
           echo "Template location: .github/DISCUSSION_TEMPLATE/"
           echo ""
           echo "Available Categories:"
-          echo "  💬 General"
-          echo "  🎨 Showcase"
-          echo "  🐛 Q&A"
-          echo "  💡 Ideas"
-          echo "  🔧 Development"
-          echo "  📢 Announcements"
+          echo "  General"
+          echo "  Showcase"
+          echo "  Q&A"
+          echo "  Ideas"
+          echo "  Development"
+          echo "  Announcements"
           echo ""
           echo "Next Steps:"
           echo "  1. Enable Discussions in repository settings"
@@ -75,28 +75,27 @@ jobs:
           
       - name: Generate discussion content from templates
         run: |
-          # Read templates
           echo "Generating discussion content from templates..."
           
           # Create output directory
           mkdir -p discussion-posts
           
           # Generate welcome post from general template
-          cat discussions-content/.github/DISCUSSION_TEMPLATE/general.md > discussion-posts/welcome.md
+          cp discussions-content/.github/DISCUSSION_TEMPLATE/general.md discussion-posts/welcome.md
           
           # Generate FAQ from Q&A template
-          cat discussions-content/.github/DISCUSSION_TEMPLATE/q-a.md > discussion-posts/faq.md
+          cp discussions-content/.github/DISCUSSION_TEMPLATE/q-a.md discussion-posts/faq.md
           
           # Generate showcase template
-          cat discussions-content/.github/DISCUSSION_TEMPLATE/showcase.md > discussion-posts/showcase.md
+          cp discussions-content/.github/DISCUSSION_TEMPLATE/showcase.md discussion-posts/showcase.md
           
           # Generate ideas template
-          cat discussions-content/.github/DISCUSSION_TEMPLATE/ideas.md > discussion-posts/ideas.md
+          cp discussions-content/.github/DISCUSSION_TEMPLATE/ideas.md discussion-posts/ideas.md
           
           # Generate dev template
-          cat discussions-content/.github/DISCUSSION_TEMPLATE/development.md > discussion-posts/development.md
+          cp discussions-content/.github/DISCUSSION_TEMPLATE/development.md discussion-posts/development.md
           
-          echo "✅ Generated discussion posts in discussion-posts/"
+          echo "Generated discussion posts in discussion-posts/"
           ls -1 discussion-posts/
           
       - name: Upload discussion content
@@ -107,7 +106,7 @@ jobs:
           
       - name: Create setup instructions
         run: |
-          cat << 'EOF' > DISCUSSION_SETUP.md
+          cat > DISCUSSION_SETUP.md << 'ENDOFFILE'
           # GitHub Discussions Setup
           
           ## Overview
@@ -122,12 +121,12 @@ jobs:
           
           ## Categories to Create
           
-          1. **💬 General** - General conversation template
-          2. **🎨 Showcase** - Desktop setup sharing template
-          3. **🐛 Q&A** - Help and troubleshooting template
-          4. **💡 Ideas** - Feature suggestions template
-          5. **🔧 Development** - Technical discussions template
-          6. **📢 Announcements** - Official announcements (maintainers only)
+          1. **General** - General conversation template
+          2. **Showcase** - Desktop setup sharing template
+          3. **Q&A** - Help and troubleshooting template
+          4. **Ideas** - Feature suggestions template
+          5. **Development** - Technical discussions template
+          6. **Announcements** - Official announcements (maintainers only)
           
           ## Setup Steps
           
@@ -166,9 +165,9 @@ jobs:
           - Q&A: `discussions-content/.github/DISCUSSION_TEMPLATE/q-a.md`
           - Ideas: `discussions-content/.github/DISCUSSION_TEMPLATE/ideas.md`
           - Development: `discussions-content/.github/DISCUSSION_TEMPLATE/development.md`
-          EOF
+          ENDOFFILE
           
-          echo "✅ Created DISCUSSION_SETUP.md"
+          echo "Created DISCUSSION_SETUP.md"
           
       - name: Upload setup guide
         uses: actions/upload-artifact@v3

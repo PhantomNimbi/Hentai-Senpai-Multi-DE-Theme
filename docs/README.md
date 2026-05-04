@@ -1,54 +1,47 @@
-# Documentation Index
+# Hentai-Senpai Documentation
 
-Welcome to the Hentai-Senpai theme documentation.
+> 🌐 **Languages:** English | [日本語](README.ja.md) | [Español](README.es.md) | [Français](README.fr.md) | [Deutsch](README.de.md) | [中文](README.zh.md) | [한국어](README.ko.md) | [Русский](README.ru.md) | [Português](README.pt.md)
 
-## Quick Links
+Welcome to the documentation for the Hentai-Senpai GTK theme.
 
-| Document | Description |
-|----------|-------------|
-| [Installation Guide](INSTALLATION.md) | How to install, update, and uninstall the theme |
-| [Troubleshooting](TROUBLESHOOTING.md) | Solutions to common problems |
-| [Color Palette](COLOR_PALETTE.md) | Complete Nord color reference |
-| [Customization](CUSTOMIZATION.md) | Personalize the theme to your taste |
+## Available Guides
+
+### 📖 [Installation Guide](INSTALLATION.md)
+How to install, update, and configure the theme on your system.
+
+### 🐛 [Troubleshooting](TROUBLESHOOTING.md)
+Solutions for common issues like GTK4 apps not being themed or Flatpak support.
+
+### 🎨 [Customization](CUSTOMIZATION.md)
+Learn how to customize colors, transparency, and create theme variants.
+
+### 🌈 [Color Palette](COLOR_PALETTE.md)
+Reference for the Nord color palette used throughout the theme.
+
+### 🤝 [Contributing](CONTRIBUTING.md)
+Guidelines for contributing to the project, including code style and pull request process.
+
+---
 
 ## Quick Start
 
-New to the theme? Start here:
-
-1. **Install**: Run `./install.sh` then `./apply-theme.sh`
-2. **Fix GTK4**: Run `./install.sh -l` for modern apps
-3. **Fix Flatpak**: Run `./install.sh -f` for sandboxed apps
-
-## Common Commands
-
 ```bash
-# Install with all fixes
+# Install the theme
 ./install.sh --update -l -f --dock
 
-# Just fix the dock
-./install.sh --dock transparent
-
-# Check and install missing dependencies
-./install.sh --check-deps
-
-# Show system information
-./install.sh --system-info
-
-# Remove the theme
-./install.sh --uninstall
-
-# Apply settings
+# Apply it
 ./apply-theme.sh
 ```
 
-## Getting Help
+## Quick Fixes
 
-- Check [Troubleshooting](TROUBLESHOOTING.md) for common issues
-- Review [Installation Guide](INSTALLATION.md) for detailed setup
-- See [Customization](CUSTOMIZATION.md) to personalize the theme
+| Problem | Solution |
+|---------|----------|
+| GTK4 apps not themed | `./install.sh -l` |
+| Flatpak apps not themed | `./install.sh -f` |
+| Dock not styled | `./install.sh --dock` |
+| Need to update | `./install.sh --update` |
 
-## External Resources
+---
 
-- [Orchis Theme](https://github.com/vinceliuice/Orchis-theme) — Base theme
-- [Nord Theme](https://www.nordtheme.com/) — Color palette
-- [GNOME Shell Extensions](https://extensions.gnome.org/)
+Back to [main README](../README.md) | [Documentation Home](HOME.md)

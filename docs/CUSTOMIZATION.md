@@ -1,5 +1,7 @@
 # Customization Guide
 
+> 🌐 **Languages:** English | [日本語](CUSTOMIZATION.ja.md) | [Español](CUSTOMIZATION.es.md) | [Français](CUSTOMIZATION.fr.md) | [Deutsch](CUSTOMIZATION.de.md) | [中文](CUSTOMIZATION.zh.md) | [한국어](CUSTOMIZATION.ko.md) | [Русский](CUSTOMIZATION.ru.md) | [Português](CUSTOMIZATION.pt.md)
+
 How to customize and personalize the Hentai-Senpai theme.
 
 ## Table of Contents
@@ -342,3 +344,7 @@ cp -r ~/.themes/Hentai-Senpai-backup/* ~/.themes/Hentai-Senpai/
 - [Installation Guide](INSTALLATION.md)
 - [Troubleshooting Guide](TROUBLESHOOTING.md)
 - [Color Palette Reference](COLOR_PALETTE.md)
+
+---
+
+[← Back to Documentation Home](HOME.md) | [Docs Index](README.md) | [Main README](../README.md)

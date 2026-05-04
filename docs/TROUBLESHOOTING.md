@@ -1,5 +1,7 @@
 # Troubleshooting Guide
 
+> 🌐 **Languages:** English | [日本語](TROUBLESHOOTING.ja.md) | [Español](TROUBLESHOOTING.es.md) | [Français](TROUBLESHOOTING.fr.md) | [Deutsch](TROUBLESHOOTING.de.md) | [中文](TROUBLESHOOTING.zh.md) | [한국어](TROUBLESHOOTING.ko.md) | [Русский](TROUBLESHOOTING.ru.md) | [Português](TROUBLESHOOTING.pt.md)
+
 Common issues and their solutions for the Hentai-Senpai theme.
 
 ## Table of Contents
@@ -274,3 +276,7 @@ If none of these solutions work:
 - [Installation Guide](INSTALLATION.md)
 - [Customization Guide](CUSTOMIZATION.md)
 - [Color Palette Reference](COLOR_PALETTE.md)
+
+---
+
+[← Back to Documentation Home](HOME.md) | [Docs Index](README.md) | [Main README](../README.md)

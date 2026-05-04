@@ -58,6 +58,7 @@ OPTIONS:
     -l, --libadwaita    Apply the libadwaita fix for GTK4 applications
     -f, --flatpak       Apply the Flatpak theme fix for sandboxed apps
     --dock [TYPE]       Apply dock theme fix (TYPE: transparent|solid, default: transparent)
+    -w, --wallpapers    Apply theme wallpapers
     --check-deps        Check and install missing dependencies
     --system-info       Show system information and compatibility
     -h, --help          Show this help message
@@ -78,8 +79,13 @@ EXAMPLES:
     $0 --update                 # Update/reinstall the theme
     $0 --uninstall              # Remove the theme
     $0 -l                       # Install and apply libadwaita fix
-    $0 --update -l -f --dock    # Update with transparent dock (default)
-    $0 --dock solid             # Update with solid dock
+    $0 -f                       # Install and apply flatpak fix
+    $0 --dock                   # Install with transparent dock (default)
+    $0 --dock solid             # Install with solid dock
+    $0 -w                       # Install and apply wallpapers
+    $0 -lfd                     # Install with libadwaita, flatpak, and dock
+    $0 -lfdw                    # Install with all fixes including wallpapers
+    $0 -lfd solid               # All fixes with solid dock
     $0 --check-deps             # Install missing dependencies
 
     # To apply the theme after installation:
@@ -532,6 +538,129 @@ apply_dock_fix() {
     print_info "Note: You may need to restart GNOME Shell for changes to take effect"
 }
 
+# Function to apply wallpapers
+apply_wallpapers() {
+    local name="${1:-$THEME_NAME}"
+    local dest="${2:-$USER_THEMES_DIR}"
+
+    print_info "Applying ${name} wallpapers..."
+
+    local wallpapers_dir="${dest}/${name}/wallpapers"
+    local backgrounds_dir="${dest}/${name}/backgrounds"
+    local slideshow_xml="${backgrounds_dir}/${name}-slideshow.xml"
+    local first_wallpaper=""
+
+    # Check if wallpapers directory exists
+    if [[ -d "$wallpapers_dir" ]]; then
+        # Find the first wallpaper file
+        first_wallpaper=$(find "$wallpapers_dir" -type f \( -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" -o -name "*.webp" \) | sort | head -n 1)
+    fi
+
+    # Check if slideshow XML exists - if so, create a version with absolute paths
+    if [[ -f "$slideshow_xml" ]] && [[ -n "$first_wallpaper" ]]; then
+        print_info "Found slideshow configuration"
+
+        # Create a temporary slideshow XML with absolute paths
+        local temp_slideshow="${backgrounds_dir}/${name}-slideshow-absolute.xml"
+
+        cat > "$temp_slideshow" << EOF
+<?xml version="1.0" encoding="UTF-8"?>
+<background>
+  <starttime>
+    <year>2024</year>
+    <month>01</month>
+    <day>01</day>
+    <hour>00</hour>
+    <minute>00</minute>
+    <second>00</second>
+  </starttime>
+
+  <!-- Wallpaper 001 -->
+  <static>
+    <duration>3600.0</duration>
+    <file>${wallpapers_dir}/001.png</file>
+  </static>
+  <transition>
+    <duration>5.0</duration>
+    <from>${wallpapers_dir}/001.png</from>
+    <to>${wallpapers_dir}/002.png</to>
+  </transition>
+
+  <!-- Wallpaper 002 -->
+  <static>
+    <duration>3600.0</duration>
+    <file>${wallpapers_dir}/002.png</file>
+  </static>
+  <transition>
+    <duration>5.0</duration>
+    <from>${wallpapers_dir}/002.png</from>
+    <to>${wallpapers_dir}/003.png</to>
+  </transition>
+
+  <!-- Wallpaper 003 -->
+  <static>
+    <duration>3600.0</duration>
+    <file>${wallpapers_dir}/003.png</file>
+  </static>
+  <transition>
+    <duration>5.0</duration>
+    <from>${wallpapers_dir}/003.png</from>
+    <to>${wallpapers_dir}/004.png</to>
+  </transition>
+
+  <!-- Wallpaper 004 -->
+  <static>
+    <duration>3600.0</duration>
+    <file>${wallpapers_dir}/004.png</file>
+  </static>
+  <transition>
+    <duration>5.0</duration>
+    <from>${wallpapers_dir}/004.png</from>
+    <to>${wallpapers_dir}/005.png</to>
+  </transition>
+
+  <!-- Wallpaper 005 -->
+  <static>
+    <duration>3600.0</duration>
+    <file>${wallpapers_dir}/005.png</file>
+  </static>
+  <transition>
+    <duration>5.0</duration>
+    <from>${wallpapers_dir}/005.png</from>
+    <to>${wallpapers_dir}/006.png</to>
+  </transition>
+
+  <!-- Wallpaper 006 -->
+  <static>
+    <duration>3600.0</duration>
+    <file>${wallpapers_dir}/006.png</file>
+  </static>
+  <transition>
+    <duration>5.0</duration>
+    <from>${wallpapers_dir}/006.png</from>
+    <to>${wallpapers_dir}/001.png</to>
+  </transition>
+
+</background>
+EOF
+
+        # Apply the absolute path slideshow
+        gsettings set org.gnome.desktop.background picture-uri "file://${temp_slideshow}"
+        gsettings set org.gnome.desktop.background picture-uri-dark "file://${temp_slideshow}"
+        print_success "Slideshow wallpaper applied with absolute paths!"
+
+    elif [[ -n "$first_wallpaper" ]]; then
+        print_info "Found wallpaper: $(basename "$first_wallpaper")"
+        # Apply single wallpaper
+        gsettings set org.gnome.desktop.background picture-uri "file://$first_wallpaper"
+        gsettings set org.gnome.desktop.background picture-uri-dark "file://$first_wallpaper"
+        print_success "Wallpaper applied!"
+    else
+        print_warning "No wallpapers found in ${name} theme"
+        print_info "Wallpapers can be added to: ${wallpapers_dir}/"
+    fi
+}
+
 # Main function
 main() {
     local uninstall=false
@@ -539,6 +668,7 @@ main() {
     local libadwaita_fix=false
     local flatpak_fix=false
     local dock_fix=false
+    local wallpapers_fix=false
     local check_deps=false
     local show_info=false
     local dock_type="transparent"
@@ -581,6 +711,54 @@ main() {
                 else
                     shift
                 fi
+                ;;
+            -w|--wallpapers)
+                wallpapers_fix=true
+                shift
+                ;;
+            -lfdw|-lfd|-ldf|-fld|-fdl|-dlf|-dfl|-wlf|-wld|-wfl|-wfd|-wdl|-wdf)
+                # Combined short options with wallpapers
+                libadwaita_fix=true
+                flatpak_fix=true
+                dock_fix=true
+                wallpapers_fix=true
+                shift
+                ;;
+            -lf|-fl)
+                # Combined: libadwaita + flatpak
+                libadwaita_fix=true
+                flatpak_fix=true
+                shift
+                ;;
+            -ld|-dl)
+                # Combined: libadwaita + dock
+                libadwaita_fix=true
+                dock_fix=true
+                shift
+                ;;
+            -fd|-df)
+                # Combined: flatpak + dock
+                flatpak_fix=true
+                dock_fix=true
+                shift
+                ;;
+            -lw|-wl)
+                # Combined: libadwaita + wallpapers
+                libadwaita_fix=true
+                wallpapers_fix=true
+                shift
+                ;;
+            -fw|-wf)
+                # Combined: flatpak + wallpapers
+                flatpak_fix=true
+                wallpapers_fix=true
+                shift
+                ;;
+            -dw|-wd)
+                # Combined: dock + wallpapers
+                dock_fix=true
+                wallpapers_fix=true
+                shift
                 ;;
             --check-deps)
                 check_deps=true
@@ -637,7 +815,7 @@ main() {
     install_theme "$dest" "$name"
 
     # Check dependencies for fixes if any are requested
-    if [[ "$libadwaita_fix" == true ]] || [[ "$flatpak_fix" == true ]] || [[ "$dock_fix" == true ]]; then
+    if [[ "$libadwaita_fix" == true ]] || [[ "$flatpak_fix" == true ]] || [[ "$dock_fix" == true ]] || [[ "$wallpapers_fix" == true ]]; then
         check_fix_dependencies
     fi
 
@@ -657,6 +835,12 @@ main() {
     if [[ "$dock_fix" == true ]]; then
         echo ""
         apply_dock_fix "$name" "$dock_type"
+    fi
+
+    # Apply wallpapers if requested
+    if [[ "$wallpapers_fix" == true ]]; then
+        echo ""
+        apply_wallpapers "$name" "$dest"
     fi
 
     echo ""

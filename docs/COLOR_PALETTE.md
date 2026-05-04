@@ -1,5 +1,7 @@
 # Color Palette Reference
 
+> 🌐 **Languages:** English | [日本語](COLOR_PALETTE.ja.md) | [Español](COLOR_PALETTE.es.md) | [Français](COLOR_PALETTE.fr.md) | [Deutsch](COLOR_PALETTE.de.md) | [中文](COLOR_PALETTE.zh.md) | [한국어](COLOR_PALETTE.ko.md) | [Русский](COLOR_PALETTE.ru.md) | [Português](COLOR_PALETTE.pt.md)
+
 Complete reference for the Nord color palette used in the Hentai-Senpai theme.
 
 ## Overview
@@ -194,3 +196,7 @@ All text meets WCAG AA standards for contrast ratios.
 
 - [Nord Theme Official Site](https://www.nordtheme.com/)
 - [Nord Color Swatches](https://www.nordtheme.com/docs/colors-and-palettes)
+
+---
+
+[← Back to Documentation Home](HOME.md) | [Docs Index](README.md) | [Main README](../README.md)

@@ -183,6 +183,17 @@ You can contribute by:
 
 This project is licensed under the GPL-3.0 License — see the [COPYING](src/Hentai-Senpai/COPYING) file for details.
 
+## Acknowledgments
+
+This project was developed with assistance from [OpenCode](https://opencode.ai/), an AI-powered coding agent. OpenCode helped with:
+- Documentation structure and content
+- GitHub issue templates
+- Contributing guidelines
+- Translation infrastructure
+- Social media integration
+
+Human oversight and decision-making guided all AI-generated content.
+
 ---
 
 **Enjoy your new theme!** 🎨

@@ -39,12 +39,8 @@ jobs:
       
       - name: Generate wiki content from docs branch
         run: |
-          # Create Home.md with translation bar
+          # Create Home.md (translation handled in docs branch)
           cat > wiki/Home.md << 'EOF'
-          🌐 **Translations**: [English](Home) | [Português](Home-pt) | [Español](Home-es)
-          
-          ---
-          
           # Hentai-Senpai Theme
           
           A beautiful dark GTK theme based on Orchis with Nord colors.

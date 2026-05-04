@@ -1,0 +1,141 @@
+name: Generate GitHub Wiki
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'docs/**'
+      - '.github/workflows/generate-wiki.yml'
+  workflow_dispatch:
+
+jobs:
+  generate-wiki:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout main repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Checkout wiki repository
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ github.repository }}.wiki
+          path: wiki
+          token: ${{ secrets.PAT_TOKEN }}
+      
+      - name: Generate wiki content
+        run: |
+          # Create Home.md from README and docs/HOME.md
+          cat > wiki/Home.md << 'EOF'
+          # Hentai-Senpai Theme
+          
+          A beautiful dark GTK theme based on Orchis with Nord colors.
+          
+          ## Quick Links
+          
+          - [Installation Guide](Installation-Guide)
+          - [Troubleshooting](Troubleshooting)
+          - [Customization](Customization)
+          - [Color Palette](Color-Palette)
+          - [Contributing](Contributing)
+          
+          ## Quick Start
+          
+          ```bash
+          ./install.sh --update -l -f --dock
+          ./apply-theme.sh
+          ```
+          
+          ## Features
+          
+          - Dark & Elegant Nord colors
+          - Material Design principles
+          - Multi-DE Support (GNOME, Cinnamon, XFCE, Budgie, MATE)
+          - GTK 2/3/4, GNOME Shell, window decorations
+          - Modern GTK4/libadwaita support
+          - Flatpak Ready
+          
+          [View on GitHub](https://github.com/${{ github.repository }})
+          EOF
+          
+          # Convert docs to wiki pages
+          cp docs/INSTALLATION.md wiki/Installation-Guide.md
+          cp docs/TROUBLESHOOTING.md wiki/Troubleshooting.md
+          cp docs/CUSTOMIZATION.md wiki/Customization.md
+          cp docs/COLOR_PALETTE.md wiki/Color-Palette.md
+          cp docs/CONTRIBUTING.md wiki/Contributing.md
+          
+          # Create _Sidebar.md for navigation
+          cat > wiki/_Sidebar.md << 'EOF'
+          ## Navigation
+          
+          [Home](Home)
+          
+          ### Guides
+          - [Installation Guide](Installation-Guide)
+          - [Troubleshooting](Troubleshooting)
+          - [Customization](Customization)
+          
+          ### Reference
+          - [Color Palette](Color-Palette)
+          
+          ### Contributing
+          - [Contributing Guide](Contributing)
+          
+          ---
+          
+          [GitHub Repository](https://github.com/${{ github.repository }})
+          EOF
+          
+          # Create _Footer.md
+          cat > wiki/_Footer.md << 'EOF'
+          **Hentai-Senpai Theme** - A beautiful dark GTK theme
+          
+          [GitHub](https://github.com/${{ github.repository }}) • [Issues](https://github.com/${{ github.repository }}/issues)
+          EOF
+          
+          echo "✅ Wiki content generated"
+      
+      - name: Commit and push wiki
+        working-directory: wiki
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          
+          # Add all files
+          git add .
+          
+          # Check if there are changes
+          if git diff --cached --quiet; then
+            echo "No changes to wiki"
+          else
+            git commit -m "Update wiki from docs
+          
+          - Synchronized documentation with main repository
+          - Updated: $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
+            git push
+            echo "✅ Wiki updated successfully"
+          fi
+      
+      - name: Update docs/README with wiki link
+        run: |
+          # Check if docs/README.md exists and update it
+          if [ -f docs/README.md ]; then
+            # Add wiki link at the top if not present
+            if ! grep -q "GitHub Wiki" docs/README.md; then
+              cat > docs/README.md.new << 'EOF'
+          # Hentai-Senpai Documentation
+          
+          > 📚 **[View Documentation on GitHub Wiki](https://github.com/${{ github.repository }}/wiki)**
+          
+          This documentation is also available on our GitHub Wiki for better navigation and search.
+          
+          EOF
+              tail -n +2 docs/README.md >> docs/README.md.new
+              mv docs/README.md.new docs/README.md
+              echo "✅ Added wiki link to docs/README.md"
+            fi
+          fi

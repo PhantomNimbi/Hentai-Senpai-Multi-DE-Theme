@@ -39,18 +39,17 @@ jobs:
       
       - name: Generate wiki content from docs branch
         run: |
-          # Create Home.md with translation notice
+          # Create Home.md with language selector
           cat > wiki/Home.md << 'EOF'
           <div align="right" style="margin-bottom: 20px;">
             <details>
-              <summary style="background: #2E3440; color: #D8DEE9; border: 1px solid #4C566A; border-radius: 6px; padding: 8px 16px; cursor: pointer; font-size: 14px; display: inline-flex; align-items: center; gap: 8px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; list-style: none;">🌐 Translate</summary>
+              <summary style="background: #2E3440; color: #D8DEE9; border: 1px solid #4C566A; border-radius: 6px; padding: 8px 16px; cursor: pointer; font-size: 14px; display: inline-flex; align-items: center; gap: 8px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; list-style: none;">🌐 Language</summary>
               <div style="margin-top: 10px; padding: 15px; background: #3B4252; border: 1px solid #4C566A; border-radius: 6px; min-width: 200px;">
-                <p style="margin: 0 0 10px 0; color: #D8DEE9; font-size: 13px;">Use your browser's translate feature or:</p>
+                <p style="margin: 0 0 10px 0; color: #D8DEE9; font-size: 13px;">Select your language:</p>
                 <ul style="margin: 0; padding-left: 20px; color: #D8DEE9; font-size: 13px;">
-                  <li><strong>Chrome:</strong> Right-click → "Translate to [language]"</li>
-                  <li><strong>Firefox:</strong> Install "To Google Translate" extension</li>
-                  <li><strong>Edge:</strong> Right-click → "Translate"</li>
-                  <li><strong>Safari:</strong> Use "Safari Translate" extension</li>
+                  <li><a href="Home" style="color: #88C0D0;">🇺🇸 English</a></li>
+                  <li><a href="Home-pt-br" style="color: #88C0D0;">🇧🇷 Português</a></li>
+                  <li><a href="Home-es-es" style="color: #88C0D0;">🇪🇸 Español</a></li>
                 </ul>
               </div>
             </details>
@@ -87,21 +86,37 @@ jobs:
           [View on GitHub](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme)
           EOF
           
-          # Copy all docs from docs branch to wiki
+          # Copy all docs from docs branch to wiki (locale-based structure)
           if [ -d "docs-content/docs" ]; then
-            cp docs-content/docs/INSTALLATION.md wiki/Installation-Guide.md
-            cp docs-content/docs/TROUBLESHOOTING.md wiki/Troubleshooting.md
-            cp docs-content/docs/CUSTOMIZATION.md wiki/Customization.md
-            cp docs-content/docs/COLOR_PALETTE.md wiki/Color-Palette.md
-            cp docs-content/docs/CONTRIBUTING.md wiki/Contributing.md
+            # English (default)
+            if [ -d "docs-content/docs/en-us" ]; then
+              cp docs-content/docs/en-us/INSTALLATION.md wiki/Installation-Guide.md
+              cp docs-content/docs/en-us/TROUBLESHOOTING.md wiki/Troubleshooting.md
+              cp docs-content/docs/en-us/CUSTOMIZATION.md wiki/Customization.md
+              cp docs-content/docs/en-us/COLOR_PALETTE.md wiki/Color-Palette.md
+              cp docs-content/docs/en-us/CONTRIBUTING.md wiki/Contributing.md
+              echo "✅ English documentation copied"
+            fi
             
-            # Copy translation pages if they exist
-            for file in docs-content/docs/*-*.md; do
-              if [ -f "$file" ]; then
-                filename=$(basename "$file")
-                cp "$file" "wiki/$filename"
-              fi
-            done
+            # Portuguese (Brazil)
+            if [ -d "docs-content/docs/pt-br" ]; then
+              cp docs-content/docs/pt-br/INSTALLATION.md wiki/Installation-Guide-pt-br.md
+              cp docs-content/docs/pt-br/TROUBLESHOOTING.md wiki/Troubleshooting-pt-br.md
+              cp docs-content/docs/pt-br/CUSTOMIZATION.md wiki/Customization-pt-br.md
+              cp docs-content/docs/pt-br/COLOR_PALETTE.md wiki/Color-Palette-pt-br.md
+              cp docs-content/docs/pt-br/CONTRIBUTING.md wiki/Contributing-pt-br.md
+              echo "✅ Portuguese documentation copied"
+            fi
+            
+            # Spanish
+            if [ -d "docs-content/docs/es-es" ]; then
+              cp docs-content/docs/es-es/INSTALLATION.md wiki/Installation-Guide-es-es.md
+              cp docs-content/docs/es-es/TROUBLESHOOTING.md wiki/Troubleshooting-es-es.md
+              cp docs-content/docs/es-es/CUSTOMIZATION.md wiki/Customization-es-es.md
+              cp docs-content/docs/es-es/COLOR_PALETTE.md wiki/Color-Palette-es-es.md
+              cp docs-content/docs/es-es/CONTRIBUTING.md wiki/Contributing-es-es.md
+              echo "✅ Spanish documentation copied"
+            fi
             
             echo "✅ Wiki content generated from docs branch"
           else
@@ -119,14 +134,24 @@ jobs:
           
           ### Guides
           - [Installation Guide](Installation-Guide)
+            - [🇧🇷 Português](Installation-Guide-pt-br)
+            - [🇪🇸 Español](Installation-Guide-es-es)
           - [Troubleshooting](Troubleshooting)
+            - [🇧🇷 Português](Troubleshooting-pt-br)
+            - [🇪🇸 Español](Troubleshooting-es-es)
           - [Customization](Customization)
+            - [🇧🇷 Português](Customization-pt-br)
+            - [🇪🇸 Español](Customization-es-es)
           
           ### Reference
           - [Color Palette](Color-Palette)
+            - [🇧🇷 Português](Color-Palette-pt-br)
+            - [🇪🇸 Español](Color-Palette-es-es)
           
           ### Contributing
           - [Contributing Guide](Contributing)
+            - [🇧🇷 Português](Contributing-pt-br)
+            - [🇪🇸 Español](Contributing-es-es)
           
           ---
           

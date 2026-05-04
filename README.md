@@ -65,6 +65,21 @@ A beautiful dark GTK theme based on [Orchis](https://github.com/vinceliuice/Orch
 
 ![Theme Preview](images/preview-1.png)
 
+## 📸 Gallery
+
+<table>
+  <tr>
+    <td width="50%">
+      <img src="images/preview-1.png" alt="Applications Preview" width="100%"/>
+      <p align="center"><strong>Applications</strong> - GTK apps with the theme</p>
+    </td>
+    <td width="50%">
+      <img src="images/preview-2.png" alt="Desktop Preview" width="100%"/>
+      <p align="center"><strong>Desktop</strong> - Full desktop experience</p>
+    </td>
+  </tr>
+</table>
+
 ## ✨ Features
 
 - 🌙 **Dark & Elegant** — Deep blue-gray backgrounds with comfortable contrast

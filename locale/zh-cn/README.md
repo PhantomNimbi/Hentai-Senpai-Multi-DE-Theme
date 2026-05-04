@@ -49,7 +49,20 @@
 
 基于 [Orchis](https://github.com/vinceliuice/Orchis-theme) 和优雅的 [Nord](https://www.nordtheme.com/) 调色板的精美深色 GTK 主题。
 
-![主题预览](../../images/preview-1.png)
+## 📸 图库
+
+<table>
+  <tr>
+    <td width="50%">
+      <img src="../../images/preview-1.png" alt="Applications Preview" width="100%"/>
+      <p align="center"><strong>应用程序</strong> - 应用了主题的GTK应用</p>
+    </td>
+    <td width="50%">
+      <img src="../../images/preview-2.png" alt="Desktop Preview" width="100%"/>
+      <p align="center"><strong>桌面</strong> - 完整的桌面体验</p>
+    </td>
+  </tr>
+</table>
 
 <h2 align="center">🐧 支持的发行版</h2>
 

@@ -50,7 +50,20 @@
 
 우아한 [Nord](https://www.nordtheme.com/) 색상 팔레트를 사용한 [Orchis](https://github.com/vinceliuice/Orchis-theme) 기반의 아름다운 다크 GTK 테마입니다.
 
-![테마 미리보기](../../images/preview-1.png)
+## 📸 갤러리
+
+<table>
+  <tr>
+    <td width="50%">
+      <img src="../../images/preview-1.png" alt="Applications Preview" width="100%"/>
+      <p align="center"><strong>애플리케이션</strong> - 테마가 적용된 GTK 앱</p>
+    </td>
+    <td width="50%">
+      <img src="../../images/preview-2.png" alt="Desktop Preview" width="100%"/>
+      <p align="center"><strong>데스크톱</strong> - 완전한 데스크톱 경험</p>
+    </td>
+  </tr>
+</table>
 
 <h2 align="center">🐧 지원 배포판</h2>
 

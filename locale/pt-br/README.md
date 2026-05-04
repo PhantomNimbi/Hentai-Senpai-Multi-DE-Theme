@@ -49,7 +49,20 @@
 
 Um belo tema GTK escuro baseado no [Orchis](https://github.com/vinceliuice/Orchis-theme) com a elegante paleta de cores [Nord](https://www.nordtheme.com/).
 
-![Pré-visualização do Tema](../../images/preview-1.png)
+## 📸 Galeria
+
+<table>
+  <tr>
+    <td width="50%">
+      <img src="../../images/preview-1.png" alt="Applications Preview" width="100%"/>
+      <p align="center"><strong>Aplicações</strong> - Aplicativos GTK com o tema</p>
+    </td>
+    <td width="50%">
+      <img src="../../images/preview-2.png" alt="Desktop Preview" width="100%"/>
+      <p align="center"><strong>Área de Trabalho</strong> - Experiência completa do desktop</p>
+    </td>
+  </tr>
+</table>
 
 <h2 align="center">🐧 Distribuições Suportadas</h2>
 

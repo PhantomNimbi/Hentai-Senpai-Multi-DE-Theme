@@ -23,6 +23,17 @@ All notable changes to the Hentai-Senpai GTK Theme project will be documented in
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### 📸 Updated
+
+- **Gallery Images**
+  - Fixed case sensitivity of preview images (`Preview-1.png` → `preview-1.png`, `Preview-2.png` → `preview-2.png`)
+  - Added new gallery section to all README files (English + 9 locales)
+  - Gallery displays both preview images side-by-side with captions
+  - Preview-1.png: GTK applications showcase
+  - Preview-2.png: Full desktop experience showcase
+
 ## [1.0.0] - 2026-05-04
 
 ### ✨ Added

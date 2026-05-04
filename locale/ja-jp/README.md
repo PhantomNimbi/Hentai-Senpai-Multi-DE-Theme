@@ -49,7 +49,20 @@
 
 [Nord](https://www.nordtheme.com/) カラーパレットを使用した美しいダークGTKテーマ。
 
-![テーマプレビュー](../../images/preview-1.png)
+## 📸 ギャラリー
+
+<table>
+  <tr>
+    <td width="50%">
+      <img src="../../images/preview-1.png" alt="Applications Preview" width="100%"/>
+      <p align="center"><strong>アプリケーション</strong> - テーマ適用されたGTKアプリ</p>
+    </td>
+    <td width="50%">
+      <img src="../../images/preview-2.png" alt="Desktop Preview" width="100%"/>
+      <p align="center"><strong>デスクトップ</strong> - フルデスクトップ体験</p>
+    </td>
+  </tr>
+</table>
 
 <h2 align="center">🐧 対応ディストリビューション</h2>
 

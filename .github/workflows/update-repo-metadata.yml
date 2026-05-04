@@ -23,7 +23,7 @@ jobs:
             -H "X-GitHub-Api-Version: 2022-11-28" \
             "https://api.github.com/repos/$REPO" \
             -d '{
-              "description": "A beautiful dark GTK theme based on Orchis with the Nord color palette. Supports GNOME, Cinnamon, XFCE, Budgie, and MATE desktop environments.",
+              "description": "A beautiful dark GTK theme based on Orchis with Nord colors",
               "homepage": "https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme",
               "has_issues": true,
               "has_projects": true,
@@ -67,9 +67,7 @@ jobs:
                 "desktop-environment",
                 "ricing",
                 "unixporn",
-                "customization",
-                "opencode",
-                "ai-assisted"
+                "customization"
               ]
             }'
           

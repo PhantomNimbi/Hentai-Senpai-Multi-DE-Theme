@@ -1,0 +1,128 @@
+name: GitHub Projects Automation
+
+on:
+  issues:
+    types: [opened, edited, closed, reopened, labeled, unlabeled]
+  pull_request:
+    types: [opened, edited, closed, reopened, labeled, unlabeled, ready_for_review]
+  project_card:
+    types: [created, moved, deleted]
+
+jobs:
+  project-automation:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Process Issue for Project Board
+        if: github.event_name == 'issues'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issue = context.payload.issue;
+            const labels = issue.labels.map(l => l.name);
+            
+            // Auto-assign priority based on labels
+            let priority = 'Medium';
+            if (labels.includes('priority: high') || labels.includes('bug: critical')) {
+              priority = 'High';
+            } else if (labels.includes('priority: low')) {
+              priority = 'Low';
+            }
+            
+            // Determine status based on issue state
+            let status = 'Todo';
+            if (issue.state === 'closed') {
+              status = 'Done';
+            }
+            
+            // Add project item with metadata
+            console.log(`Processing issue #${issue.number}: ${issue.title}`);
+            console.log(`Priority: ${priority}, Status: ${status}`);
+            
+      - name: Process PR for Project Board
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const pr = context.payload.pull_request;
+            
+            // Determine status based on PR state
+            let status = 'In Progress';
+            if (pr.merged) {
+              status = 'Done';
+            } else if (pr.draft) {
+              status = 'Todo';
+            } else if (pr.ready_for_review) {
+              status = 'In Review';
+            }
+            
+            console.log(`Processing PR #${pr.number}: ${pr.title}`);
+            console.log(`Status: ${status}`);
+
+  auto-label:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'issues' && github.event.action == 'opened'
+    steps:
+      - name: Auto-label new issues
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issue = context.payload.issue;
+            const title = issue.title.toLowerCase();
+            const body = (issue.body || '').toLowerCase();
+            const labelsToAdd = [];
+            
+            // Auto-detect issue type from title/body
+            if (title.includes('bug') || title.includes('fix') || title.includes('error') || title.includes('crash')) {
+              labelsToAdd.push('type: bug');
+            } else if (title.includes('feature') || title.includes('add') || title.includes('request')) {
+              labelsToAdd.push('type: feature');
+            } else if (title.includes('docs') || title.includes('documentation') || title.includes('readme')) {
+              labelsToAdd.push('type: documentation');
+            } else if (title.includes('refactor') || title.includes('clean') || title.includes('organize')) {
+              labelsToAdd.push('type: refactor');
+            } else if (title.includes('test') || title.includes('testing')) {
+              labelsToAdd.push('type: testing');
+            } else if (title.includes('translation') || title.includes('i18n') || title.includes('locale')) {
+              labelsToAdd.push('type: translation');
+            }
+            
+            // Auto-detect priority
+            if (title.includes('urgent') || title.includes('critical') || title.includes('blocking') || title.includes('broken')) {
+              labelsToAdd.push('priority: high');
+            } else if (title.includes('todo') || title.includes('low priority')) {
+              labelsToAdd.push('priority: low');
+            } else {
+              labelsToAdd.push('priority: medium');
+            }
+            
+            // Add labels if any detected
+            if (labelsToAdd.length > 0) {
+              github.rest.issues.addLabels({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number,
+                labels: labelsToAdd
+              });
+              console.log(`Added labels to issue #${issue.number}: ${labelsToAdd.join(', ')}`);
+            }
+
+  stale-check:
+    runs-on: ubuntu-latest
+    if: github.event.schedule == '0 0 * * *'  # Run daily at midnight
+    steps:
+      - name: Mark stale issues
+        uses: actions/stale@v8
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          stale-issue-message: '📋 This issue has been automatically marked as stale because it has not had recent activity. It will be closed in 7 days if no further activity occurs.'
+          stale-pr-message: '📋 This pull request has been automatically marked as stale because it has not had recent activity. Please update or close if no longer needed.'
+          close-issue-message: '✅ This issue has been closed due to inactivity. Please reopen if still relevant.'
+          days-before-stale: 30
+          days-before-close: 7
+          stale-issue-label: 'status: stale'
+          stale-pr-label: 'status: stale'
+          exempt-issue-labels: 'priority: high,status: in-progress,status: blocked'
+          exempt-pr-labels: 'status: in-review,status: blocked'

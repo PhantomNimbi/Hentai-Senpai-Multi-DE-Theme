@@ -1,0 +1,104 @@
+name: Epic/Tracking Issue
+about: Track a large feature or initiative that spans multiple issues
+title: '[EPIC] '
+labels: ['type: epic', 'status: planning']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🎯 Epic Creation
+        Use this template for tracking large features, initiatives, or milestones that require multiple issues/tasks.
+
+  - type: input
+    id: epic_title
+    attributes:
+      label: Epic Title
+      description: Clear, concise title for this epic
+      placeholder: "e.g., Multi-language Documentation Overhaul"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Epic Description
+      description: High-level overview of what this epic encompasses
+      placeholder: |
+        ## Overview
+        Describe the overall goal and scope of this epic.
+
+        ## Objectives
+        - Objective 1
+        - Objective 2
+        - Objective 3
+
+        ## Success Criteria
+        How will we know this epic is complete?
+    validations:
+      required: true
+
+  - type: textarea
+    id: related_issues
+    attributes:
+      label: Related Issues
+      description: List all related issues, tasks, and PRs
+      placeholder: |
+        ### Tasks
+        - [ ] #1 - Task description
+        - [ ] #2 - Task description
+        - [ ] #3 - Task description
+
+        ### Sub-epics (if any)
+        - #10 - Sub-epic name
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: Overall priority of this epic
+      options:
+        - 🔴 High (Critical for release)
+        - 🟡 Medium (Important but not blocking)
+        - 🟢 Low (Nice to have)
+    validations:
+      required: true
+
+  - type: input
+    id: target_date
+    attributes:
+      label: Target Completion Date
+      description: When should this epic be completed?
+      placeholder: "YYYY-MM-DD"
+
+  - type: textarea
+    id: stakeholders
+    attributes:
+      label: Stakeholders
+      description: Who is involved in this epic?
+      placeholder: |
+        - **Owner:** @username
+        - **Contributors:** @username1, @username2
+        - **Reviewers:** @username3
+
+  - type: dropdown
+    id: status
+    attributes:
+      label: Current Status
+      description: What is the current state of this epic?
+      options:
+        - 📋 Planning
+        - 🏃 In Progress
+        - ⏸️ Paused/Blocked
+        - ✅ Complete
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional Notes
+      description: Any other relevant information
+      placeholder: |
+        ## Progress Updates
+        Use this section to post regular updates on the epic's progress.
+
+        ## Risks/Blockers
+        Document any risks or blockers here.

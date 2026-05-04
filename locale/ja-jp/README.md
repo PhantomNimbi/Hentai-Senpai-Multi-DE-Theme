@@ -164,12 +164,12 @@ GPL-3.0 License — 詳細は [LICENSE](../../LICENSE) ファイルを参照
 
 <p align="center">
   <strong>このテーマをシェア：</strong><br>
-  <a href="https://twitter.com/intent/tweet?text=🎨%20Hentai-Senpai%20GTK%20Theme%0A%0A✨%20特徴:%0A•%20Nordカラーのダークテーマ%0A•%20GTK%202/3/4%20対応%0A•%20GNOME%20Shell%2040+%20テーマ%0A•%20マルチDE対応%0A•%20マテリアルデザイン%0A•%20Flatpak対応%0A%0A🔗%20https%3A%2F%2Fgithub.com%2FPhantomNimbi%2FHentai-Senpai-GTK-Theme"><img src="https://img.shields.io/badge/シェア-X-000000?style=plastic&logo=x" alt="Xでシェア"></a>
-  <a href="https://reddit.com/submit?title=🎨%20Hentai-Senpai%20GTK%20Theme%20-%20Nordカラーのダークテーマ%20|%20GTK%202/3/4%20|%20GNOME%20Shell%2040+%20|%20マルチDE対応&url=https%3A%2F%2Fgithub.com%2FPhantomNimbi%2FHentai-Senpai-GTK-Theme"><img src="https://img.shields.io/badge/シェア-Reddit-FF4500?style=plastic&logo=reddit" alt="Redditでシェア"></a>
+  <a href="https://twitter.com/intent/tweet?text=Hentai-Senpai%20GTK%20Theme%20https%3A%2F%2Fgithub.com%2FPhantomNimbi%2FHentai-Senpai-GTK-Theme"><img src="https://img.shields.io/badge/シェア-X-000000?style=plastic&logo=x" alt="Xでシェア"></a>
+  <a href="https://reddit.com/submit?title=Hentai-Senpai%20GTK%20Theme&url=https%3A%2F%2Fgithub.com%2FPhantomNimbi%2FHentai-Senpai-GTK-Theme"><img src="https://img.shields.io/badge/シェア-Reddit-FF4500?style=plastic&logo=reddit" alt="Redditでシェア"></a>
   <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fgithub.com%2FPhantomNimbi%2FHentai-Senpai-GTK-Theme"><img src="https://img.shields.io/badge/シェア-Facebook-1877F2?style=plastic&logo=facebook" alt="Facebookでシェア"></a>
   <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fgithub.com%2FPhantomNimbi%2FHentai-Senpai-GTK-Theme"><img src="https://img.shields.io/badge/シェア-LinkedIn-0A66C2?style=plastic&logo=linkedin" alt="LinkedInでシェア"></a>
-  <a href="https://mastodonshare.com/?text=🎨%20Hentai-Senpai%20GTK%20Theme%0A%0A✨%20特徴:%0A•%20Nordカラーのダークテーマ%0A•%20GTK%202/3/4%20対応%0A•%20GNOME%20Shell%2040+%20テーマ%0A•%20マルチDE対応%0A•%20マテリアルデザイン%0A•%20Flatpak対応%0A%0A🔗&url=https%3A%2F%2Fgithub.com%2FPhantomNimbi%2FHentai-Senpai-GTK-Theme"><img src="https://img.shields.io/badge/シェア-Mastodon-6364FF?style=plastic&logo=mastodon" alt="Mastodonでシェア"></a>
-  <a href="https://t.me/share/url?url=https%3A%2F%2Fgithub.com%2FPhantomNimbi%2FHentai-Senpai-GTK-Theme&text=🎨%20Hentai-Senpai%20GTK%20Theme%0A%0A✨%20特徴:%0A•%20Nordカラーのダークテーマ%0A•%20GTK%202/3/4%20対応%0A•%20GNOME%20Shell%2040+%20テーマ%0A•%20マルチDE対応%0A•%20マテリアルデザイン%0A•%20Flatpak対応%0A%0A🔗"><img src="https://img.shields.io/badge/シェア-Telegram-26A5E4?style=plastic&logo=telegram" alt="Telegramでシェア"></a>
+  <a href="https://mastodonshare.com/?text=Hentai-Senpai%20GTK%20Theme&url=https%3A%2F%2Fgithub.com%2FPhantomNimbi%2FHentai-Senpai-GTK-Theme"><img src="https://img.shields.io/badge/シェア-Mastodon-6364FF?style=plastic&logo=mastodon" alt="Mastodonでシェア"></a>
+  <a href="https://t.me/share/url?url=https%3A%2F%2Fgithub.com%2FPhantomNimbi%2FHentai-Senpai-GTK-Theme&text=Hentai-Senpai%20GTK%20Theme"><img src="https://img.shields.io/badge/シェア-Telegram-26A5E4?style=plastic&logo=telegram" alt="Telegramでシェア"></a>
 </p>
 
 **新しいテーマをお楽しみください！** 🎨

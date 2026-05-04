@@ -42,7 +42,7 @@
 
 <p align="center">
   <a href="https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/releases"><img src="https://img.shields.io/github/v/release/PhantomNimbi/Hentai-Senpai-GTK-Theme?label=%F0%9F%93%A6%20Vers%C3%A3o&style=flat-square&color=88C0D0" alt="Versão"></a>
-  <a href="https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/blob/main/LICENSE"><img src="https://img.shields.io/github/license/PhantomNimbi/Hentai-Senpai-GTK-Theme?label=%E2%9A%96%EF%B8%8F%20Licen%C3%A7a&style=flat-square&color=88C0D0" alt="Licença"></a>
+  <a href="https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/blob/main/LICENSE"><img src="https://img.shields.io/badge/%E2%9A%96%EF%B8%8F%20License-GPL--3.0-88C0D0?style=flat-square" alt="Licença GPL-3.0"></a>
   <a href="https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/stargazers"><img src="https://img.shields.io/github/stars/PhantomNimbi/Hentai-Senpai-GTK-Theme?label=%E2%AD%90%20Estrelas&style=flat-square&color=88C0D0" alt="Estrelas"></a>
   <a href="https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/issues"><img src="https://img.shields.io/github/issues/PhantomNimbi/Hentai-Senpai-GTK-Theme?label=%F0%9F%90%9B%20Problemas&style=flat-square&color=88C0D0" alt="Problemas"></a>
   <a href="https://gtk.org"><img src="https://img.shields.io/badge/GTK-2%2F3%2F4-88C0D0?style=flat-square&logo=gtk" alt="GTK"></a>

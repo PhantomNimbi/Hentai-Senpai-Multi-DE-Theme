@@ -27,14 +27,14 @@
 ## 🐧 Supported Distributions
 
 <p align="left">
-  <a href="https://ubuntu.com"><img src="https://assets.ubuntu.com/v1/29985a98-ubuntu-logo32.png" height="40" alt="Ubuntu" title="Ubuntu"></a>&nbsp;&nbsp;
-  <a href="https://www.debian.org"><img src="https://www.debian.org/logos/openlogo-nd-100.png" height="40" alt="Debian" title="Debian"></a>&nbsp;&nbsp;
-  <a href="https://getfedora.org"><img src="https://getfedora.org/static/images/fedora-logotitle.png" height="40" alt="Fedora" title="Fedora"></a>&nbsp;&nbsp;
-  <a href="https://archlinux.org"><img src="https://archlinux.org/static/logos/archlinux-logo-dark-1200dpi.31f6835b0109.png" height="40" alt="Arch Linux" title="Arch Linux"></a>&nbsp;&nbsp;
-  <a href="https://manjaro.org"><img src="https://manjaro.org/img/logo.svg" height="40" alt="Manjaro" title="Manjaro"></a>&nbsp;&nbsp;
-  <a href="https://www.opensuse.org"><img src="https://www.opensuse.org/build/images/opensuse-logo.png" height="40" alt="openSUSE" title="openSUSE"></a>&nbsp;&nbsp;
-  <a href="https://linuxmint.com"><img src="https://linuxmint.com/web/img/logo-mono.svg" height="40" alt="Linux Mint" title="Linux Mint"></a>&nbsp;&nbsp;
-  <a href="https://pop.system76.com"><img src="https://pop.system76.com/assets/pop-logo.f4da084f.png" height="40" alt="Pop!_OS" title="Pop!_OS"></a>
+  <a href="https://ubuntu.com"><img src="https://cdn.simpleicons.org/ubuntu/E95420" height="40" alt="Ubuntu" title="Ubuntu"></a>&nbsp;&nbsp;
+  <a href="https://www.debian.org"><img src="https://cdn.simpleicons.org/debian/A81D33" height="40" alt="Debian" title="Debian"></a>&nbsp;&nbsp;
+  <a href="https://getfedora.org"><img src="https://cdn.simpleicons.org/fedora/294172" height="40" alt="Fedora" title="Fedora"></a>&nbsp;&nbsp;
+  <a href="https://archlinux.org"><img src="https://cdn.simpleicons.org/archlinux/1793D1" height="40" alt="Arch Linux" title="Arch Linux"></a>&nbsp;&nbsp;
+  <a href="https://manjaro.org"><img src="https://cdn.simpleicons.org/manjaro/35BF5C" height="40" alt="Manjaro" title="Manjaro"></a>&nbsp;&nbsp;
+  <a href="https://www.opensuse.org"><img src="https://cdn.simpleicons.org/opensuse/73BA25" height="40" alt="openSUSE" title="openSUSE"></a>&nbsp;&nbsp;
+  <a href="https://linuxmint.com"><img src="https://cdn.simpleicons.org/linuxmint/87CF3E" height="40" alt="Linux Mint" title="Linux Mint"></a>&nbsp;&nbsp;
+  <a href="https://pop.system76.com"><img src="https://cdn.simpleicons.org/popos/48B9C7" height="40" alt="Pop!_OS" title="Pop!_OS"></a>
 </p>
 
 [![Share on X](https://img.shields.io/badge/Share-X-000000?style=flat-square&logo=x)](https://twitter.com/intent/tweet?text=Check%20out%20Hentai-Senpai%20-%20A%20beautiful%20dark%20GTK%20theme!&url=https%3A%2F%2Fgithub.com%2FPhantomNimbi%2FHentai-Senpai-GTK-Theme)

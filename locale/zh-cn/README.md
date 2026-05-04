@@ -49,7 +49,7 @@
 
 基于 [Orchis](https://github.com/vinceliuice/Orchis-theme) 和优雅的 [Nord](https://www.nordtheme.com/) 调色板的精美深色 GTK 主题。
 
-![主题预览](../../wallpapers/001.png)
+![主题预览](../../images/preview-2.png)
 
 <h2 align="center">🐧 支持的发行版</h2>
 

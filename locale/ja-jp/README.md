@@ -49,7 +49,7 @@
 
 [Nord](https://www.nordtheme.com/) カラーパレットを使用した美しいダークGTKテーマ。
 
-![テーマプレビュー](../../wallpapers/001.png)
+![テーマプレビュー](../../images/preview-2.png)
 
 <h2 align="center">🐧 対応ディストリビューション</h2>
 

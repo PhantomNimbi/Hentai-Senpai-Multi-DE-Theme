@@ -63,7 +63,7 @@
 
 A beautiful dark GTK theme based on [Orchis](https://github.com/vinceliuice/Orchis-theme) with the elegant [Nord](https://www.nordtheme.com/) color palette.
 
-![Theme Preview](wallpapers/001.png)
+![Theme Preview](images/preview-2.png)
 
 ## ✨ Features
 

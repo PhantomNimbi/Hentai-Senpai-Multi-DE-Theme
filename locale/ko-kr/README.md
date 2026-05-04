@@ -43,7 +43,7 @@
 
 <p align="center">
   <a href="https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/releases"><img src="https://img.shields.io/github/v/release/PhantomNimbi/Hentai-Senpai-GTK-Theme?label=%F0%9F%93%A6%20%EB%A6%B4%EB%A6%AC%EC%A6%88&style=flat-square&color=88C0D0" alt="릴리즈"></a>
-  <a href="https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/blob/main/src/COPYING"><img src="https://img.shields.io/github/license/PhantomNimbi/Hentai-Senpai-GTK-Theme?label=%E2%9A%96%EF%B8%8F%20%EB%9D%BC%EC%9D%B4%EC%84%A0%EC%8A%A4&style=flat-square&color=88C0D0" alt="라이선스"></a>
+  <a href="https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/blob/main/LICENSE"><img src="https://img.shields.io/github/license/PhantomNimbi/Hentai-Senpai-GTK-Theme?label=%E2%9A%96%EF%B8%8F%20%EB%9D%BC%EC%9D%B4%EC%84%A0%EC%8A%A4&style=flat-square&color=88C0D0" alt="라이선스"></a>
   <a href="https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/stargazers"><img src="https://img.shields.io/github/stars/PhantomNimbi/Hentai-Senpai-GTK-Theme?label=%E2%AD%90%20%EC%8A%A4%ED%83%80&style=flat-square&color=88C0D0" alt="스타"></a>
   <a href="https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/issues"><img src="https://img.shields.io/github/issues/PhantomNimbi/Hentai-Senpai-GTK-Theme?label=%F0%9F%90%9B%20%EC%9D%B4%EC%8A%88&style=flat-square&color=88C0D0" alt="이슈"></a>
   <a href="https://gtk.org"><img src="https://img.shields.io/badge/GTK-2%2F3%2F4-88C0D0?style=flat-square&logo=gtk" alt="GTK"></a>
@@ -159,7 +159,7 @@
 
 ## 라이선스
 
-GPL-3.0 라이선스 — 자세한 내용은 [COPYING](../../src/COPYING) 파일 참조
+GPL-3.0 라이선스 — 자세한 내용은 [LICENSE](../../LICENSE) 파일 참조
 
 ---
 

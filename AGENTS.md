@@ -208,7 +208,7 @@ When adding documentation sections:
 ### Do NOT Delete
 - `.github/workflows/` - Required for GitHub Actions (must be on main)
 - `.github/ISSUE_TEMPLATE/` - Required for issue templates (must be on main)
-- `src/COPYING` - License file
+- `LICENSE` - License file in root directory
 
 ### Files That Can Be Deleted
 - `VERSION` - Was removed; version is now managed via git tags only

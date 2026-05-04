@@ -42,7 +42,7 @@
 
 <p align="center">
   <a href="https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/releases"><img src="https://img.shields.io/github/v/release/PhantomNimbi/Hentai-Senpai-GTK-Theme?label=%F0%9F%93%A6%20%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9&style=flat-square&color=88C0D0" alt="リリース"></a>
-  <a href="https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/blob/main/src/COPYING"><img src="https://img.shields.io/github/license/PhantomNimbi/Hentai-Senpai-GTK-Theme?label=%E2%9A%96%EF%B8%8F%20%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9&style=flat-square&color=88C0D0" alt="ライセンス"></a>
+  <a href="https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/blob/main/LICENSE"><img src="https://img.shields.io/github/license/PhantomNimbi/Hentai-Senpai-GTK-Theme?label=%E2%9A%96%EF%B8%8F%20%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9&style=flat-square&color=88C0D0" alt="ライセンス"></a>
   <a href="https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/stargazers"><img src="https://img.shields.io/github/stars/PhantomNimbi/Hentai-Senpai-GTK-Theme?label=%E2%AD%90%20%E3%82%B9%E3%82%BF%E3%83%BC&style=flat-square&color=88C0D0" alt="スター"></a>
   <a href="https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/issues"><img src="https://img.shields.io/github/issues/PhantomNimbi/Hentai-Senpai-GTK-Theme?label=%F0%9F%90%9B%20%E3%82%A4%E3%82%B7%E3%83%A5%E3%83%BC&style=flat-square&color=88C0D0" alt="イシュー"></a>
   <a href="https://gtk.org"><img src="https://img.shields.io/badge/GTK-2%2F3%2F4-88C0D0?style=flat-square&logo=gtk" alt="GTK"></a>
@@ -158,7 +158,7 @@
 
 ## ライセンス
 
-GPL-3.0 License — 詳細は [COPYING](../../src/COPYING) ファイルを参照
+GPL-3.0 License — 詳細は [LICENSE](../../LICENSE) ファイルを参照
 
 ---
 

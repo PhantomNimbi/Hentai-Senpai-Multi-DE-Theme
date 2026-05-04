@@ -4,14 +4,15 @@ on:
   workflow_dispatch:
     inputs:
       action:
-        description: 'Setup action to perform'
+        description: 'Action to perform'
         required: true
-        default: 'seed-discussions'
+        default: 'setup-all'
         type: choice
         options:
-          - seed-discussions
-          - create-welcome-post
-          - update-categories
+          - setup-all
+          - enable-discussions
+          - create-posts
+          - check-status
 
 jobs:
   setup-discussions:
@@ -26,151 +27,393 @@ jobs:
           ref: discussions
           path: discussions-content
           
-      - name: Load templates from discussions branch
-        id: load-templates
-        run: |
-          echo "Loading discussion templates from discussions branch..."
-          
-          # Check if templates exist
-          if [ ! -f "discussions-content/.github/DISCUSSION_TEMPLATE/general.md" ]; then
-            echo "Templates not found in discussions branch"
-            exit 1
-          fi
-          
-          # Display available templates
-          echo "Available templates:"
-          ls -1 discussions-content/.github/DISCUSSION_TEMPLATE/
-          
-          echo "Loaded all templates from discussions branch"
-          
-      - name: Display discussion setup instructions
-        run: |
-          echo "=========================================="
-          echo "GitHub Discussions Setup"
-          echo "=========================================="
-          echo ""
-          echo "Templates loaded from: discussions branch"
-          echo "Template location: .github/DISCUSSION_TEMPLATE/"
-          echo ""
-          echo "Available Categories:"
-          echo "  General"
-          echo "  Showcase"
-          echo "  Q&A"
-          echo "  Ideas"
-          echo "  Development"
-          echo "  Announcements"
-          echo ""
-          echo "Next Steps:"
-          echo "  1. Enable Discussions in repository settings"
-          echo "  2. Create categories listed above"
-          echo "  3. Copy templates from discussions branch"
-          echo "  4. Create initial discussion posts"
-          echo ""
-          echo "Template files:"
-          ls -1 discussions-content/.github/DISCUSSION_TEMPLATE/ | sed 's/^/    - /'
-          echo ""
-          echo "Guide file:"
-          echo "    - DISCUSSION_GUIDE.md"
-          echo "=========================================="
-          
-      - name: Generate discussion content from templates
-        run: |
-          echo "Generating discussion content from templates..."
-          
-          # Create output directory
-          mkdir -p discussion-posts
-          
-          # Generate welcome post from general template
-          cp discussions-content/.github/DISCUSSION_TEMPLATE/general.md discussion-posts/welcome.md
-          
-          # Generate FAQ from Q&A template
-          cp discussions-content/.github/DISCUSSION_TEMPLATE/q-a.md discussion-posts/faq.md
-          
-          # Generate showcase template
-          cp discussions-content/.github/DISCUSSION_TEMPLATE/showcase.md discussion-posts/showcase.md
-          
-          # Generate ideas template
-          cp discussions-content/.github/DISCUSSION_TEMPLATE/ideas.md discussion-posts/ideas.md
-          
-          # Generate dev template
-          cp discussions-content/.github/DISCUSSION_TEMPLATE/development.md discussion-posts/development.md
-          
-          echo "Generated discussion posts in discussion-posts/"
-          ls -1 discussion-posts/
-          
-      - name: Upload discussion content
+      - name: Setup Discussions
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.PAT_TOKEN || secrets.GITHUB_TOKEN }}
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+            
+            // Get inputs
+            const action = '${{ github.event.inputs.action }}';
+            const [owner, repo] = process.env.GITHUB_REPOSITORY.split('/');
+            
+            console.log('═══════════════════════════════════════════════════');
+            console.log('🚀 GitHub Discussions Setup');
+            console.log('═══════════════════════════════════════════════════');
+            console.log(`Repository: ${owner}/${repo}`);
+            console.log(`Action: ${action}`);
+            console.log('');
+            
+            // Check function
+            async function checkStatus() {
+              console.log('🔍 Checking repository status...');
+              
+              try {
+                const result = await github.graphql(`
+                  query CheckDiscussions($owner: String!, $repo: String!) {
+                    repository(owner: $owner, name: $repo) {
+                      id
+                      hasDiscussionsEnabled
+                      discussionCategories(first: 20) {
+                        nodes {
+                          id
+                          name
+                          emoji
+                          description
+                        }
+                      }
+                    }
+                  }
+                `, { owner, repo });
+                
+                return {
+                  enabled: result.repository.hasDiscussionsEnabled,
+                  repoId: result.repository.id,
+                  categories: result.repository.discussionCategories.nodes
+                };
+              } catch (error) {
+                console.error('❌ Error checking status:', error.message);
+                throw error;
+              }
+            }
+            
+            // Enable discussions function
+            async function enableDiscussions(repoId) {
+              console.log('🔄 Enabling discussions...');
+              
+              try {
+                const result = await github.graphql(`
+                  mutation EnableDiscussions($repositoryId: ID!) {
+                    enableDiscussions(input: { repositoryId: $repositoryId }) {
+                      repository {
+                        id
+                        hasDiscussionsEnabled
+                      }
+                    }
+                  }
+                `, { repositoryId: repoId });
+                
+                console.log('✅ Discussions enabled successfully!');
+                return result.enableDiscussions.repository.hasDiscussionsEnabled;
+              } catch (error) {
+                console.error('❌ Error enabling discussions:', error.message);
+                if (error.message.includes('permission') || error.message.includes('access')) {
+                  console.log('   ℹ️  Your token needs admin permissions to enable discussions.');
+                  console.log('   Go to Settings → Discussions and enable manually.');
+                }
+                throw error;
+              }
+            }
+            
+            // Read template
+            function readTemplate(filename) {
+              try {
+                const content = fs.readFileSync(path.join('discussions-content/.github/DISCUSSION_TEMPLATE', filename), 'utf8');
+                return content;
+              } catch (e) {
+                console.log(`⚠️  Could not read template ${filename}: ${e.message}`);
+                return null;
+              }
+            }
+            
+            // Create discussion function
+            async function createDiscussion(repoId, categoryId, title, body) {
+              try {
+                const result = await github.graphql(`
+                  mutation CreateDiscussion($repositoryId: ID!, $categoryId: ID!, $title: String!, $body: String!) {
+                    createDiscussion(input: {
+                      repositoryId: $repositoryId,
+                      categoryId: $categoryId,
+                      title: $title,
+                      body: $body
+                    }) {
+                      discussion {
+                        id
+                        number
+                        url
+                        title
+                      }
+                    }
+                  }
+                `, {
+                  repositoryId: repoId,
+                  categoryId: categoryId,
+                  title: title,
+                  body: body
+                });
+                
+                return { success: true, discussion: result.createDiscussion.discussion };
+              } catch (error) {
+                return { success: false, error: error.message };
+              }
+            }
+            
+            // Required categories and their posts
+            const setupConfig = [
+              {
+                categoryName: 'General',
+                emoji: '💬',
+                description: 'General conversations about the theme',
+                post: {
+                  title: '👋 Welcome to Hentai-Senpai Discussions!',
+                  template: 'general.md',
+                  fallback: `Welcome to the Hentai-Senpai community! 🎨
+
+This is a space for general conversations about the theme, sharing ideas, and connecting with other users.
+
+## Quick Links
+- 📖 [Installation Guide](https://github.com/${owner}/${repo}/wiki/Installation-Guide)
+- 🐛 [Report Issues](https://github.com/${owner}/${repo}/issues)
+- 🎨 [View Gallery](https://github.com/${owner}/${repo}/wiki/Gallery)
+
+## Community Guidelines
+- Be respectful and constructive
+- Search before posting
+- Use appropriate categories
+- Have fun! ✨`
+                }
+              },
+              {
+                categoryName: 'Q&A',
+                emoji: '❓',
+                description: 'Questions and troubleshooting',
+                post: {
+                  title: '❓ Frequently Asked Questions',
+                  template: 'q-a.md',
+                  fallback: `## Common Questions
+
+### How do I install the theme?
+Run \`./install.sh\` from the repository root.
+
+### Which desktop environments are supported?
+GNOME, Cinnamon, XFCE, MATE, and Budgie.
+
+### How do I apply the theme?
+Use the included \`scripts/apply.sh\` script or your desktop settings.
+
+### Need more help?
+Check the [Wiki](https://github.com/${owner}/${repo}/wiki) for detailed guides!`
+                }
+              },
+              {
+                categoryName: 'Showcase',
+                emoji: '🎨',
+                description: 'Share your desktop setups',
+                post: {
+                  title: '🎨 Desktop Showcase - Share Your Setup!',
+                  template: 'showcase.md',
+                  fallback: `Show off your desktop setup featuring Hentai-Senpai theme!
+
+## How to Participate
+1. Take a screenshot of your desktop
+2. Share details (DE, distro, customizations)
+3. Post below with the template
+
+Best setups will be featured in our README! 🌟`
+                }
+              },
+              {
+                categoryName: 'Ideas',
+                emoji: '💡',
+                description: 'Feature suggestions and ideas',
+                post: {
+                  title: '💡 Feature Request Hub',
+                  template: 'ideas.md',
+                  fallback: `Have an idea for improving Hentai-Senpai? Share it here!
+
+## How to Submit
+- Describe your idea clearly
+- Explain the use case
+- Vote on existing ideas with 👍
+
+Popular requests will be added to our roadmap! 🗺️`
+                }
+              },
+              {
+                categoryName: 'Development',
+                emoji: '🔧',
+                description: 'Developer discussions',
+                post: {
+                  title: '🔧 Developer Discussions',
+                  template: 'development.md',
+                  fallback: `Welcome developers! 👋
+
+This category is for technical discussions about:
+- Theme development
+- Code contributions
+- Architecture decisions
+- Testing and CI/CD
+
+Check out [good first issues](https://github.com/${owner}/${repo}/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) to get started!`
+                }
+              }
+            ];
+            
+            // Main logic
+            try {
+              let status = await checkStatus();
+              
+              // Check status only
+              if (action === 'check-status') {
+                console.log('\n📊 Status Report:');
+                console.log(`   Discussions Enabled: ${status.enabled ? '✅ Yes' : '❌ No'}`);
+                console.log(`   Categories Found: ${status.categories.length}`);
+                
+                if (status.categories.length > 0) {
+                  console.log('\n   Categories:');
+                  status.categories.forEach(cat => {
+                    console.log(`   - ${cat.name}`);
+                  });
+                }
+                
+                const missingCategories = setupConfig.filter(config => 
+                  !status.categories.some(cat => 
+                    cat.name.toLowerCase().includes(config.categoryName.toLowerCase())
+                  )
+                );
+                
+                if (missingCategories.length > 0) {
+                  console.log('\n   Missing Categories:');
+                  missingCategories.forEach(config => {
+                    console.log(`   - ${config.emoji} ${config.categoryName}`);
+                  });
+                  console.log(`\n   Create them at: https://github.com/${owner}/${repo}/discussions/categories`);
+                }
+                
+                console.log('\n✅ Status check complete!');
+                return;
+              }
+              
+              // Enable discussions if needed
+              if (action === 'enable-discussions' || (action === 'setup-all' && !status.enabled)) {
+                if (!status.enabled) {
+                  console.log('Discussions are currently disabled.');
+                  await enableDiscussions(status.repoId);
+                  status = await checkStatus(); // Refresh status
+                } else {
+                  console.log('✅ Discussions are already enabled.');
+                }
+                
+                if (action === 'enable-discussions') {
+                  console.log('\n⚠️  Next: Create categories manually at:');
+                  console.log(`   https://github.com/${owner}/${repo}/discussions/categories`);
+                  console.log('\n   Required categories:');
+                  setupConfig.forEach(config => {
+                    console.log(`   - ${config.emoji} ${config.categoryName}: ${config.description}`);
+                  });
+                  return;
+                }
+              }
+              
+              // Create posts
+              if (action === 'create-posts' || action === 'setup-all') {
+                if (!status.enabled) {
+                  console.error('❌ ERROR: Discussions are not enabled!');
+                  console.log('   Run with "enable-discussions" first, or enable manually.');
+                  core.setFailed('Discussions not enabled');
+                  return;
+                }
+                
+                console.log('\n📝 Creating Discussion Posts...\n');
+                
+                const results = [];
+                
+                for (const config of setupConfig) {
+                  // Find matching category
+                  const category = status.categories.find(cat => 
+                    cat.name.toLowerCase().includes(config.categoryName.toLowerCase()) ||
+                    config.categoryName.toLowerCase().includes(cat.name.toLowerCase())
+                  );
+                  
+                  if (!category) {
+                    console.log(`⏭️  Skipping "${config.post.title}" - Category "${config.categoryName}" not found`);
+                    console.log(`   Create it manually at: https://github.com/${owner}/${repo}/discussions/categories`);
+                    console.log('');
+                    results.push({ ...config, status: 'skipped', reason: 'Category not found' });
+                    continue;
+                  }
+                  
+                  console.log(`🔄 Creating: ${config.post.title}`);
+                  console.log(`   Category: ${category.name} (${category.id})`);
+                  
+                  // Read template or use fallback
+                  let body = readTemplate(config.post.template);
+                  if (!body) {
+                    console.log(`   Using fallback content`);
+                    body = config.post.fallback;
+                  } else {
+                    console.log(`   Using template: ${config.post.template}`);
+                  }
+                  
+                  const result = await createDiscussion(status.repoId, category.id, config.post.title, body);
+                  
+                  if (result.success) {
+                    console.log(`   ✅ Created: ${result.discussion.url}`);
+                    results.push({ ...config, status: 'created', url: result.discussion.url });
+                  } else {
+                    console.log(`   ❌ Failed: ${result.error}`);
+                    if (result.error.includes('already exists') || result.error.includes('duplicate')) {
+                      console.log(`   ℹ️  A discussion with this title may already exist.`);
+                    }
+                    results.push({ ...config, status: 'failed', error: result.error });
+                  }
+                  console.log('');
+                }
+                
+                // Summary
+                const created = results.filter(r => r.status === 'created').length;
+                const failed = results.filter(r => r.status === 'failed').length;
+                const skipped = results.filter(r => r.status === 'skipped').length;
+                
+                console.log('═══════════════════════════════════════════════════');
+                console.log('📊 Summary');
+                console.log('═══════════════════════════════════════════════════');
+                console.log(`Created:  ${created} ✅`);
+                console.log(`Failed:   ${failed} ❌`);
+                console.log(`Skipped:  ${skipped} ⏭️`);
+                console.log('');
+                
+                if (created > 0) {
+                  console.log('✅ Successfully Created:');
+                  results.filter(r => r.status === 'created').forEach(r => {
+                    console.log(`   - ${r.post.title}`);
+                    console.log(`     ${r.url}`);
+                  });
+                }
+                
+                if (skipped > 0) {
+                  console.log('\n⚠️  Skipped (create categories first):');
+                  results.filter(r => r.status === 'skipped').forEach(r => {
+                    console.log(`   - ${r.categoryName}`);
+                  });
+                }
+                
+                // Save results
+                fs.writeFileSync('setup-results.json', JSON.stringify({
+                  timestamp: new Date().toISOString(),
+                  action: action,
+                  results: results,
+                  summary: { created, failed, skipped }
+                }, null, 2));
+                
+                console.log('\n📝 Results saved to: setup-results.json');
+                
+                if (created === 0 && (failed > 0 || skipped > 0)) {
+                  core.setFailed('No discussions were created. Check errors above.');
+                }
+              }
+              
+            } catch (error) {
+              console.error('\n❌ Workflow failed:', error.message);
+              core.setFailed(error.message);
+            }
+            
+      - name: Upload results
+        if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: discussion-posts
-          path: discussion-posts/
-          
-      - name: Create setup instructions
-        run: |
-          cat > DISCUSSION_SETUP.md << 'ENDOFFILE'
-          # GitHub Discussions Setup
-          
-          ## Overview
-          
-          This repository uses a separate `discussions` branch to store discussion templates.
-          
-          ## Source
-          
-          **Branch:** `discussions`
-          **Templates:** `.github/DISCUSSION_TEMPLATE/`
-          **Guide:** `.github/DISCUSSION_GUIDE.md`
-          
-          ## Categories to Create
-          
-          1. **General** - General conversation template
-          2. **Showcase** - Desktop setup sharing template
-          3. **Q&A** - Help and troubleshooting template
-          4. **Ideas** - Feature suggestions template
-          5. **Development** - Technical discussions template
-          6. **Announcements** - Official announcements (maintainers only)
-          
-          ## Setup Steps
-          
-          ### 1. Enable Discussions
-          
-          Repository Settings → Features → Enable Discussions
-          
-          ### 2. Create Categories
-          
-          Go to Discussions tab → Manage categories → Create the 6 categories above
-          
-          ### 3. Copy Templates
-          
-          ```bash
-          # Checkout discussions branch
-          git fetch origin discussions
-          git checkout origin/discussions -- .github/DISCUSSION_TEMPLATE/
-          git checkout origin/discussions -- .github/DISCUSSION_GUIDE.md
-          ```
-          
-          ### 4. Create Initial Posts
-          
-          Download the `discussion-posts` artifact from this workflow run and use the content to create initial discussions in each category.
-          
-          ## Maintenance
-          
-          To update templates:
-          1. Edit files in `discussions` branch
-          2. Commit and push
-          3. Changes are automatically available
-          
-          ## Templates Location
-          
-          - General: `discussions-content/.github/DISCUSSION_TEMPLATE/general.md`
-          - Showcase: `discussions-content/.github/DISCUSSION_TEMPLATE/showcase.md`
-          - Q&A: `discussions-content/.github/DISCUSSION_TEMPLATE/q-a.md`
-          - Ideas: `discussions-content/.github/DISCUSSION_TEMPLATE/ideas.md`
-          - Development: `discussions-content/.github/DISCUSSION_TEMPLATE/development.md`
-          ENDOFFILE
-          
-          echo "Created DISCUSSION_SETUP.md"
-          
-      - name: Upload setup guide
-        uses: actions/upload-artifact@v4
-        with:
-          name: discussion-setup-guide
-          path: DISCUSSION_SETUP.md
+          name: setup-results
+          path: setup-results.json
+          if-no-files-found: ignore

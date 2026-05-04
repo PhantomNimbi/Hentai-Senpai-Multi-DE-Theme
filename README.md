@@ -26,6 +26,13 @@
 [![GTK](https://img.shields.io/badge/GTK-2%2F3%2F4-88C0D0?style=flat-square&logo=gtk)](https://gtk.org)
 [![Supports](https://img.shields.io/badge/Supports-GNOME%20%7C%20Cinnamon%20%7C%20XFCE%20%7C%20Budgie%20%7C%20MATE-88C0D0?style=flat-square)](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/wiki/Installation-Guide)
 
+[![Share on X](https://img.shields.io/badge/Share-X-000000?style=flat-square&logo=x)](https://twitter.com/intent/tweet?text=Check%20out%20Hentai-Senpai%20-%20A%20beautiful%20dark%20GTK%20theme!&url=https%3A%2F%2Fgithub.com%2FPhantomNimbi%2FHentai-Senpai-GTK-Theme)
+[![Share on Reddit](https://img.shields.io/badge/Share-Reddit-FF4500?style=flat-square&logo=reddit)](https://reddit.com/submit?title=Hentai-Senpai%20GTK%20Theme&url=https%3A%2F%2Fgithub.com%2FPhantomNimbi%2FHentai-Senpai-GTK-Theme)
+[![Share on Facebook](https://img.shields.io/badge/Share-Facebook-1877F2?style=flat-square&logo=facebook)](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fgithub.com%2FPhantomNimbi%2FHentai-Senpai-GTK-Theme)
+[![Share on LinkedIn](https://img.shields.io/badge/Share-LinkedIn-0A66C2?style=flat-square&logo=linkedin)](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fgithub.com%2FPhantomNimbi%2FHentai-Senpai-GTK-Theme)
+[![Share on Mastodon](https://img.shields.io/badge/Share-Mastodon-6364FF?style=flat-square&logo=mastodon)](https://mastodonshare.com/?text=Hentai-Senpai%20GTK%20Theme&url=https%3A%2F%2Fgithub.com%2FPhantomNimbi%2FHentai-Senpai-GTK-Theme)
+[![Share on Telegram](https://img.shields.io/badge/Share-Telegram-26A5E4?style=flat-square&logo=telegram)](https://t.me/share/url?url=https%3A%2F%2Fgithub.com%2FPhantomNimbi%2FHentai-Senpai-GTK-Theme&text=Hentai-Senpai%20GTK%20Theme)
+
 A beautiful dark GTK theme based on [Orchis](https://github.com/vinceliuice/Orchis-theme) with the elegant [Nord](https://www.nordtheme.com/) color palette.
 
 ![Theme Preview](wallpapers/001.png)

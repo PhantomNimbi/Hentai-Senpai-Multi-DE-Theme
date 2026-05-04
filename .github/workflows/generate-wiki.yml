@@ -69,6 +69,7 @@ jobs:
           - [Customization](Customization)
           - [Color Palette](Color-Palette)
           - [Contributing](Contributing)
+          - [Gallery](Gallery) - Theme previews & wallpapers
           
           ## Quick Start
           
@@ -100,6 +101,9 @@ jobs:
               cp "docs-content/docs/$locale/CUSTOMIZATION.md" "wiki/Customization$suffix.md"
               cp "docs-content/docs/$locale/COLOR_PALETTE.md" "wiki/Color-Palette$suffix.md"
               cp "docs-content/docs/$locale/CONTRIBUTING.md" "wiki/Contributing$suffix.md"
+              if [ -f "docs-content/docs/$locale/Gallery.md" ]; then
+                cp "docs-content/docs/$locale/Gallery.md" "wiki/Gallery$suffix.md"
+              fi
               echo "✅ $locale documentation copied"
             fi
           }
@@ -196,6 +200,15 @@ jobs:
             - [🇯🇵 日本語](Color-Palette-ja-jp)
             - [🇨🇳 中文](Color-Palette-zh-cn)
             - [🇷🇺 Русский](Color-Palette-ru-ru)
+          - [Gallery](Gallery) - Theme previews & wallpapers
+            - [🇧🇷 Português](Gallery-pt-br)
+            - [🇪🇸 Español](Gallery-es-es)
+            - [🇫🇷 Français](Gallery-fr-fr)
+            - [🇩🇪 Deutsch](Gallery-de-de)
+            - [🇮🇹 Italiano](Gallery-it-it)
+            - [🇯🇵 日本語](Gallery-ja-jp)
+            - [🇨🇳 中文](Gallery-zh-cn)
+            - [🇷🇺 Русский](Gallery-ru-ru)
           
           ### Contributing
           - [Contributing Guide](Contributing)

@@ -3,11 +3,11 @@ name: Generate GitHub Wiki
 on:
   push:
     branches:
-      - main
+      - docs
   workflow_dispatch:
     inputs:
       force_update:
-        description: 'Force update wiki from docs (if docs still exists)'
+        description: 'Force update wiki from docs branch'
         required: false
         default: false
         type: boolean
@@ -17,10 +17,17 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - name: Checkout main repository
+      - name: Checkout main repository (for workflow context)
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          token: ${{ secrets.PAT_TOKEN }}
+      
+      - name: Checkout docs branch
+        uses: actions/checkout@v4
+        with:
+          ref: docs
+          path: docs-content
           token: ${{ secrets.PAT_TOKEN }}
       
       - name: Checkout wiki repository
@@ -30,21 +37,9 @@ jobs:
           path: wiki
           token: ${{ secrets.PAT_TOKEN }}
       
-      - name: Check if docs directory exists
-        id: check_docs
+      - name: Generate wiki content from docs branch
         run: |
-          if [ -d "docs" ]; then
-            echo "exists=true" >> $GITHUB_OUTPUT
-            echo "✅ docs/ directory found - will sync to wiki"
-          else
-            echo "exists=false" >> $GITHUB_OUTPUT
-            echo "ℹ️  docs/ directory not found - wiki is independent"
-          fi
-      
-      - name: Generate wiki content from docs
-        if: steps.check_docs.outputs.exists == 'true'
-        run: |
-          # Create Home.md
+          # Create Home.md with translation bar
           cat > wiki/Home.md << 'EOF'
           🌐 **Translations**: [English](Home) | [Português](Home-pt) | [Español](Home-es)
           
@@ -81,14 +76,27 @@ jobs:
           [View on GitHub](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme)
           EOF
           
-          # Copy all docs to wiki
-          cp docs/INSTALLATION.md wiki/Installation-Guide.md
-          cp docs/TROUBLESHOOTING.md wiki/Troubleshooting.md
-          cp docs/CUSTOMIZATION.md wiki/Customization.md
-          cp docs/COLOR_PALETTE.md wiki/Color-Palette.md
-          cp docs/CONTRIBUTING.md wiki/Contributing.md
-          
-          echo "✅ Wiki content generated from docs/"
+          # Copy all docs from docs branch to wiki
+          if [ -d "docs-content/docs" ]; then
+            cp docs-content/docs/INSTALLATION.md wiki/Installation-Guide.md
+            cp docs-content/docs/TROUBLESHOOTING.md wiki/Troubleshooting.md
+            cp docs-content/docs/CUSTOMIZATION.md wiki/Customization.md
+            cp docs-content/docs/COLOR_PALETTE.md wiki/Color-Palette.md
+            cp docs-content/docs/CONTRIBUTING.md wiki/Contributing.md
+            
+            # Copy translation pages if they exist
+            for file in docs-content/docs/*-*.md; do
+              if [ -f "$file" ]; then
+                filename=$(basename "$file")
+                cp "$file" "wiki/$filename"
+              fi
+            done
+            
+            echo "✅ Wiki content generated from docs branch"
+          else
+            echo "⚠️  docs/ directory not found in docs branch"
+            exit 1
+          fi
       
       - name: Ensure wiki navigation exists
         run: |
@@ -134,41 +142,10 @@ jobs:
           if git diff --cached --quiet; then
             echo "ℹ️  No changes to wiki"
           else
-            git commit -m "Initial wiki creation from docs directory
+            git commit -m "Update wiki from docs branch
           
-          - Migrated all documentation from repository
-          - Wiki is now the primary documentation source
-          - Created: $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
+          - Synchronized documentation from docs branch
+          - Updated: $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
             git push
-            echo "✅ Wiki created successfully"
-          fi
-      
-      - name: Delete docs folder from repository
-        if: steps.check_docs.outputs.exists == 'true'
-        run: |
-          echo "🗑️  Removing docs/ directory from repository..."
-          rm -rf docs/
-          echo "✅ docs/ directory removed"
-      
-      - name: Commit docs removal
-        if: steps.check_docs.outputs.exists == 'true'
-        run: |
-          git config user.name "GitHub Actions"
-          git config user.email "actions@github.com"
-          
-          git add -A
-          
-          if git diff --cached --quiet; then
-            echo "ℹ️  No changes to commit"
-          else
-            git commit -m "docs: remove docs/ directory - documentation moved to wiki
-          
-          All documentation has been migrated to the GitHub Wiki.
-          The wiki is now the primary and only documentation source.
-          
-          View documentation at: https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/wiki
-          
-          This change reduces repository size and centralizes docs."
-            git push
-            echo "✅ docs/ directory deletion committed and pushed"
+            echo "✅ Wiki updated successfully"
           fi

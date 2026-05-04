@@ -18,7 +18,18 @@
 
 # Hentai-Senpai Theme
 
-[![Version](https://img.shields.io/github/v/release/PhantomNimbi/Hentai-Senpai-GTK-Theme?include_prereleases&label=Version&style=flat-square&color=88C0D0)](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/releases) [![License](https://img.shields.io/badge/License-GPL%203.0-88C0D0?style=flat-square)](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/blob/main/src/COPYING) [![Stars](https://img.shields.io/github/stars/PhantomNimbi/Hentai-Senpai-GTK-Theme?style=flat-square&color=88C0D0)](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/stargazers)
+[![Version](https://img.shields.io/github/v/release/PhantomNimbi/Hentai-Senpai-GTK-Theme?label=Version&style=flat-square&color=88C0D0)](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/releases)
+[![License](https://img.shields.io/badge/License-GPL%203.0-88C0D0?style=flat-square)](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/blob/main/src/COPYING)
+[![Downloads](https://img.shields.io/github/downloads/PhantomNimbi/Hentai-Senpai-GTK-Theme/total?label=Downloads&style=flat-square&color=88C0D0)](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/releases)
+[![Stars](https://img.shields.io/github/stars/PhantomNimbi/Hentai-Senpai-GTK-Theme?label=Stars&style=flat-square&color=88C0D0)](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/stargazers)
+[![Forks](https://img.shields.io/github/forks/PhantomNimbi/Hentai-Senpai-GTK-Theme?label=Forks&style=flat-square&color=88C0D0)](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/forks)
+[![Issues](https://img.shields.io/github/issues/PhantomNimbi/Hentai-Senpai-GTK-Theme?label=Issues&style=flat-square&color=88C0D0)](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/issues)
+[![Contributors](https://img.shields.io/github/contributors/PhantomNimbi/Hentai-Senpai-GTK-Theme?label=Contributors&style=flat-square&color=88C0D0)](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/graphs/contributors)
+[![Last Commit](https://img.shields.io/github/last-commit/PhantomNimbi/Hentai-Senpai-GTK-Theme?label=Last%20Commit&style=flat-square&color=88C0D0)](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/commits/main)
+[![Repo Size](https://img.shields.io/github/repo-size/PhantomNimbi/Hentai-Senpai-GTK-Theme?label=Size&style=flat-square&color=88C0D0)](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme)
+
+[![GTK](https://img.shields.io/badge/GTK-2%2F3%2F4-88C0D0?style=flat-square&logo=gtk)](https://gtk.org)
+[![Supports](https://img.shields.io/badge/Supports-GNOME%20%7C%20Cinnamon%20%7C%20XFCE%20%7C%20Budgie%20%7C%20MATE-88C0D0?style=flat-square)](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/wiki/Installation-Guide)
 
 A beautiful dark GTK theme based on [Orchis](https://github.com/vinceliuice/Orchis-theme) with the elegant [Nord](https://www.nordtheme.com/) color palette.
 

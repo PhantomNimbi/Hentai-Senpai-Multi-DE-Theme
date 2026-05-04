@@ -165,7 +165,7 @@ jobs:
         run: |
           # Add wiki link to main README.md if not present
           if [ -f README.md ] && ! grep -q "github.com/${{ github.repository }}/wiki" README.md; then
-            sed -i '2a\
-📚 **[Documentation Wiki](https://github.com/'${{ github.repository }}'/wiki)**' README.md
+            sed -i "2a\\
+📚 **[Documentation Wiki](https://github.com/${{ github.repository }}/wiki)**" README.md
             echo "✅ Added wiki link to README.md"
           fi

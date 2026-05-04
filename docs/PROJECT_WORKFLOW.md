@@ -2,13 +2,36 @@
 
 This document describes the comprehensive project management system for the Hentai-Senpai GTK Theme repository using GitHub Projects.
 
+## ⚠️ IMPORTANT: Project Setup Required
+
+**GitHub Projects cannot be automatically created from repository files.** You must manually create the project using the steps below.
+
+### Quick Setup (5 minutes)
+
+1. **Create Project:** Go to https://github.com/users/PhantomNimbi/projects
+2. **Click:** "New project" → Select "Table" template
+3. **Configure:**
+   - Name: `Hentai-Senpai GTK Theme`
+   - Description: `Project board for tracking theme development`
+4. **Link Repository:** Settings → Manage access → Add `PhantomNimbi/Hentai-Senpai-GTK-Theme`
+5. **Done!** Workflows will activate automatically
+
+### Detailed Setup Instructions
+
+See full setup guide below or run:
+```bash
+./scripts/setup-project.sh
+```
+
+---
+
 ## 📊 Project Board Overview
 
 We use GitHub Projects (Beta) to track all work across the repository. The project board provides a kanban-style interface with automated workflows.
 
 ### Access the Project Board
 
-**URL:** `https://github.com/users/PhantomNimbi/projects/`
+**URL:** `https://github.com/users/PhantomNimbi/projects/` (after creation)
 
 ## 🏗️ Board Structure
 
@@ -360,6 +383,40 @@ Contact repository maintainers to be added to the project.
 
 Open a [Question issue](../../issues/new?template=question.md) or start a [Discussion](../../discussions).
 
+## 🔧 Project Creation Details
+
+### Why Manual Creation?
+
+GitHub Projects (v2) cannot be created via repository files for security reasons. The project must be created through the GitHub UI or API by a user with appropriate permissions.
+
+### Required Permissions
+
+- Repository admin or owner
+- GitHub Projects access enabled
+- PAT token with `project` scope (for API access)
+
+### Post-Creation Checklist
+
+After creating the project:
+
+- [ ] Project linked to repository
+- [ ] Custom fields configured
+- [ ] Views created (Board, Roadmap, Table)
+- [ ] Columns set up in Board view
+- [ ] Workflows enabled in Actions tab
+- [ ] `PAT_TOKEN` secret configured
+- [ ] Test automation by creating an issue
+
+### Automation Activation
+
+Once set up, these automations will work:
+
+- ✅ New issues auto-added to project
+- ✅ Labels auto-assigned based on content
+- ✅ Status updates sync to project board
+- ✅ Sprint management runs weekly
+- ✅ CHANGELOG updates tracked
+
 ## 📝 Changelog
 
 - **2024-05-03** - Initial GitHub Projects workflow setup
@@ -367,3 +424,5 @@ Open a [Question issue](../../issues/new?template=question.md) or start a [Discu
 - Created sprint management
 - Added task and epic templates
 - Configured stale issue management
+- Added CHANGELOG integration
+- **Note:** GitHub Projects requires manual creation (see setup instructions above)

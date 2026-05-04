@@ -1,0 +1,238 @@
+name: Create GitHub Project
+
+on:
+  workflow_dispatch:
+    inputs:
+      project_name:
+        description: 'Name for the new project'
+        required: true
+        default: 'Hentai-Senpai GTK Theme'
+      create_project:
+        description: 'Attempt to create project via API'
+        required: true
+        type: boolean
+        default: true
+
+jobs:
+  create-project:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Create GitHub Project via API
+        if: github.event.inputs.create_project == 'true'
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.PAT_TOKEN }}
+          script: |
+            const projectName = '${{ github.event.inputs.project_name }}';
+            
+            try {
+              // Try to create a user project (Beta)
+              const project = await github.graphql(`
+                mutation createProject($ownerId: ID!, $title: String!) {
+                  createProjectV2(input: {
+                    ownerId: $ownerId,
+                    title: $title
+                  }) {
+                    projectV2 {
+                      id
+                      number
+                      url
+                    }
+                  }
+                }
+              `, {
+                ownerId: context.repo.owner,
+                title: projectName
+              });
+              
+              console.log('✅ Project created successfully!');
+              console.log('URL:', project.createProjectV2.projectV2.url);
+              
+            } catch (error) {
+              console.log('⚠️ Could not auto-create project via API');
+              console.log('Error:', error.message);
+              console.log('');
+              console.log('📋 Manual creation required:');
+              console.log('1. Visit: https://github.com/users/' + context.repo.owner + '/projects');
+              console.log('2. Click "New project"');
+              console.log('3. Use Table template');
+              console.log('4. Name: ' + projectName);
+              core.setFailed('Project requires manual creation');
+            }
+            
+      - name: Generate setup instructions
+        run: |
+          cat << 'EOF' > PROJECT_SETUP_INSTRUCTIONS.md
+          # GitHub Project Setup Instructions
+          
+          ## ⚠️ Important: Manual Creation Required
+          
+          GitHub Projects **cannot** be automatically created from repository files.
+          You must create the project manually through the GitHub UI.
+          
+          ## Quick Setup Steps
+          
+          ### Step 1: Create the Project
+          
+          1. Go to: https://github.com/users/PhantomNimbi/projects
+          2. Click **"New project"**
+          3. Select **"Table"** template
+          4. Fill in details:
+             - **Name:** `Hentai-Senpai GTK Theme`
+             - **Description:** `Project board for tracking theme development, documentation, and releases`
+             - **README:** Link to `docs/PROJECT_WORKFLOW.md`
+          5. Click **"Create project"**
+          
+          ### Step 2: Link to Repository
+          
+          1. In your new project, click **Settings** (⚙️)
+          2. Go to **Manage access**
+          3. Click **"Add repositories"**
+          4. Select: `PhantomNimbi/Hentai-Senpai-GTK-Theme`
+          5. Click **"Add repository"**
+          
+          ### Step 3: Add Custom Fields
+          
+          Go to **Settings → Custom fields** and add:
+          
+          **Priority** (Single select):
+          - 🔴 Critical (color: #FF0000)
+          - 🟠 High (color: #FF8C00)
+          - 🟡 Medium (color: #FFD700)
+          - 🟢 Low (color: #32CD32)
+          
+          **Size** (Single select):
+          - XS (color: #C0C0C0)
+          - S (color: #87CEEB)
+          - M (color: #98FB98)
+          - L (color: #FFB6C1)
+          - XL (color: #DDA0DD)
+          
+          **Component** (Single select):
+          - GTK2 (color: #8B4513)
+          - GTK3 (color: #CD853F)
+          - GTK4 (color: #D2691E)
+          - GNOME Shell (color: #4B0082)
+          - Cinnamon (color: #800080)
+          - XFWM (color: #9370DB)
+          - Documentation (color: #4169E1)
+          - Scripts (color: #228B22)
+          - CI/CD (color: #DC143C)
+          
+          **Effort** (Number): Story points or hours
+          **Started** (Date): When work began
+          **Completed** (Date): When work finished
+          
+          ### Step 4: Create Views
+          
+          Create these views via **"+ New view"**:
+          
+          1. **📋 Board** (Board view)
+             - Columns: Backlog, Todo, In Progress, In Review, Done
+          
+          2. **📅 Roadmap** (Roadmap view)
+             - Group by: Sprint
+          
+          3. **📊 Table** (Table view)
+             - Show all fields
+          
+          4. **🐛 Bugs Only** (Board view)
+             - Filter: Label = `type: bug`
+          
+          5. **✨ Features Only** (Board view)
+             - Filter: Label = `type: feature`
+          
+          ### Step 5: Configure Columns
+          
+          For the **📋 Board** view, create these columns:
+          
+          1. 📥 **Backlog** (default)
+          2. 📝 **Todo** 
+          3. 🏃 **In Progress**
+          4. 👀 **In Review**
+          5. ✅ **Done**
+          
+          ### Step 6: Enable Workflows
+          
+          The automation workflows are already in the repository at `.github/workflows/`:
+          
+          - ✅ `project-automation.yml` - Auto-labeling and status sync
+          - ✅ `sprint-management.yml` - Sprint planning automation
+          - ✅ `changelog-integration.yml` - CHANGELOG tracking
+          
+          These will activate once the project is linked.
+          
+          ## Alternative: Use Setup Script
+          
+          Run this locally for detailed instructions:
+          
+          ```bash
+          ./scripts/setup-project.sh
+          ```
+          
+          ## Troubleshooting
+          
+          ### "Project not found" errors
+          - Ensure you've linked the project to the repository
+          - Check that the project URL is correct
+          
+          ### Workflows not running
+          - Verify workflows are enabled in Actions tab
+          - Ensure `PAT_TOKEN` secret is configured with `project` scope
+          
+          ### Can't see project in repository
+          - Go to repository → Projects tab
+          - Click "Link a project"
+          - Select your project from the list
+          
+          ## Need Help?
+          
+          See full documentation: `docs/PROJECT_WORKFLOW.md`
+          EOF
+          
+          echo "✅ Generated PROJECT_SETUP_INSTRUCTIONS.md"
+          
+      - name: Upload instructions
+        uses: actions/upload-artifact@v3
+        with:
+          name: project-setup-instructions
+          path: PROJECT_SETUP_INSTRUCTIONS.md
+          
+      - name: Comment on issue or PR
+        if: github.event_name == 'issues' || github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const body = `## 📊 GitHub Project Setup Required
+            
+            This repository includes GitHub Projects automation, but the project board needs to be created manually.
+            
+            ### Quick Setup:
+            
+            1. **Create Project:** https://github.com/users/${context.repo.owner}/projects
+            2. **Use Template:** Table
+            3. **Name:** Hentai-Senpai GTK Theme
+            4. **Link Repository:** Settings → Manage access
+            
+            ### Detailed Instructions:
+            
+            📄 See: \`PROJECT_SETUP_INSTRUCTIONS.md\` (attached to this workflow run)
+            
+            📖 Full docs: \`docs/PROJECT_WORKFLOW.md\`
+            
+            💻 Setup script: \`./scripts/setup-project.sh\`
+            
+            ---
+            *This message was auto-generated because GitHub Projects cannot be created via repository files.*`;
+            
+            if (context.eventName === 'issues') {
+              github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body: body
+              });
+            }

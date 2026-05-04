@@ -55,6 +55,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Added project board configuration with custom fields
   - Implemented CHANGELOG integration workflow
   - Created detailed workflow documentation (docs/PROJECT_WORKFLOW.md)
+  - Added setup script (scripts/setup-project.sh)
+  - Added project creation workflow (.github/workflows/create-project.yml)
+  - Note: GitHub Projects must be created manually through GitHub UI
 
 ### Changed
 

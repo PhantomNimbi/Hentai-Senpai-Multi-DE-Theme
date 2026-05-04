@@ -40,29 +40,36 @@
 
 Тема включает коллекцию минималистичных обоев с монохромными цветами и темами ecchi.
 
-### Обои 001
-
-![Обои 001](https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/001.png)
-
-### Обои 002
-
-![Обои 002](https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/002.png)
-
-### Обои 003
-
-![Обои 003](https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/003.png)
-
-### Обои 004
-
-![Обои 004](https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/004.png)
-
-### Обои 005
-
-![Обои 005](https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/005.png)
-
-### Обои 006
-
-![Обои 006](https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/006.png)
+<table>
+  <tr>
+    <td width="33%" valign="top" style="padding: 10px;">
+      <img src="https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/001.png" alt="Обои 001" width="100%" style="border-radius: 8px;"/>
+      <p align="center"><strong>001</strong> — Минималистичный тёмный</p>
+    </td>
+    <td width="33%" valign="top" style="padding: 10px;">
+      <img src="https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/002.png" alt="Обои 002" width="100%" style="border-radius: 8px;"/>
+      <p align="center"><strong>002</strong> — Северный мороз</p>
+    </td>
+    <td width="33%" valign="top" style="padding: 10px;">
+      <img src="https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/003.png" alt="Обои 003" width="100%" style="border-radius: 8px;"/>
+      <p align="center"><strong>003</strong> — Градиент авроры</p>
+    </td>
+  </tr>
+  <tr>
+    <td width="33%" valign="top" style="padding: 10px;">
+      <img src="https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/004.png" alt="Обои 004" width="100%" style="border-radius: 8px;"/>
+      <p align="center"><strong>004</strong> — Полярная ночь</p>
+    </td>
+    <td width="33%" valign="top" style="padding: 10px;">
+      <img src="https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/005.png" alt="Обои 005" width="100%" style="border-radius: 8px;"/>
+      <p align="center"><strong>005</strong> — Снежная буря</p>
+    </td>
+    <td width="33%" valign="top" style="padding: 10px;">
+      <img src="https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/006.png" alt="Обои 006" width="100%" style="border-radius: 8px;"/>
+      <p align="center"><strong>006</strong> — Ecchi минимализм</p>
+    </td>
+  </tr>
+</table>
 
 ## Скачать обои
 

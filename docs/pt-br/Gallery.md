@@ -36,33 +36,40 @@ Uma vitrine visual do Tema GTK Hentai-Senpai.
   </tr>
 </table>
 
-## Papeis de Parede
+## Papéis de Parede
 
 O tema inclui uma coleção de papéis de parede minimalistas com cores monocromáticas e temas ecchi.
 
-### Papel de Parede 001
-
-![Papel de Parede 001](https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/001.png)
-
-### Papel de Parede 002
-
-![Papel de Parede 002](https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/002.png)
-
-### Papel de Parede 003
-
-![Papel de Parede 003](https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/003.png)
-
-### Papel de Parede 004
-
-![Papel de Parede 004](https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/004.png)
-
-### Papel de Parede 005
-
-![Papel de Parede 005](https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/005.png)
-
-### Papel de Parede 006
-
-![Papel de Parede 006](https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/006.png)
+<table>
+  <tr>
+    <td width="33%" valign="top" style="padding: 10px;">
+      <img src="https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/001.png" alt="Papel de Parede 001" width="100%" style="border-radius: 8px;"/>
+      <p align="center"><strong>001</strong> — Minimalista escuro</p>
+    </td>
+    <td width="33%" valign="top" style="padding: 10px;">
+      <img src="https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/002.png" alt="Papel de Parede 002" width="100%" style="border-radius: 8px;"/>
+      <p align="center"><strong>002</strong> — Gelo nórdico</p>
+    </td>
+    <td width="33%" valign="top" style="padding: 10px;">
+      <img src="https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/003.png" alt="Papel de Parede 003" width="100%" style="border-radius: 8px;"/>
+      <p align="center"><strong>003</strong> — Gradiente aurora</p>
+    </td>
+  </tr>
+  <tr>
+    <td width="33%" valign="top" style="padding: 10px;">
+      <img src="https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/004.png" alt="Papel de Parede 004" width="100%" style="border-radius: 8px;"/>
+      <p align="center"><strong>004</strong> — Noite polar</p>
+    </td>
+    <td width="33%" valign="top" style="padding: 10px;">
+      <img src="https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/005.png" alt="Papel de Parede 005" width="100%" style="border-radius: 8px;"/>
+      <p align="center"><strong>005</strong> — Tempestade de neve</p>
+    </td>
+    <td width="33%" valign="top" style="padding: 10px;">
+      <img src="https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/006.png" alt="Papel de Parede 006" width="100%" style="border-radius: 8px;"/>
+      <p align="center"><strong>006</strong> — Ecchi minimalista</p>
+    </td>
+  </tr>
+</table>
 
 ## Baixar Papeis de Parede
 

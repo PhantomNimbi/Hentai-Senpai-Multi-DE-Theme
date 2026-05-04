@@ -38,31 +38,38 @@ Eine visuelle Präsentation des Hentai-Senpai GTK-Themas.
 
 ## Hintergrundbilder
 
-Das Thema enthält eine Sammlung minimalistischer Hintergrundbilder mit monochromen Farben und Ecchi-Themen.
+Das Theme enthält eine Sammlung minimalistischer Hintergrundbilder mit monochromen Farben und Ecchi-Themen.
 
-### Hintergrundbild 001
-
-![Hintergrundbild 001](https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/001.png)
-
-### Hintergrundbild 002
-
-![Hintergrundbild 002](https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/002.png)
-
-### Hintergrundbild 003
-
-![Hintergrundbild 003](https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/003.png)
-
-### Hintergrundbild 004
-
-![Hintergrundbild 004](https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/004.png)
-
-### Hintergrundbild 005
-
-![Hintergrundbild 005](https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/005.png)
-
-### Hintergrundbild 006
-
-![Hintergrundbild 006](https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/006.png)
+<table>
+  <tr>
+    <td width="33%" valign="top" style="padding: 10px;">
+      <img src="https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/001.png" alt="Hintergrundbild 001" width="100%" style="border-radius: 8px;"/>
+      <p align="center"><strong>001</strong> — Minimalistisch dunkel</p>
+    </td>
+    <td width="33%" valign="top" style="padding: 10px;">
+      <img src="https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/002.png" alt="Hintergrundbild 002" width="100%" style="border-radius: 8px;"/>
+      <p align="center"><strong>002</strong> — Nordischer Frost</p>
+    </td>
+    <td width="33%" valign="top" style="padding: 10px;">
+      <img src="https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/003.png" alt="Hintergrundbild 003" width="100%" style="border-radius: 8px;"/>
+      <p align="center"><strong>003</strong> — Aurora-Farbverlauf</p>
+    </td>
+  </tr>
+  <tr>
+    <td width="33%" valign="top" style="padding: 10px;">
+      <img src="https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/004.png" alt="Hintergrundbild 004" width="100%" style="border-radius: 8px;"/>
+      <p align="center"><strong>004</strong> — Polarnacht</p>
+    </td>
+    <td width="33%" valign="top" style="padding: 10px;">
+      <img src="https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/005.png" alt="Hintergrundbild 005" width="100%" style="border-radius: 8px;"/>
+      <p align="center"><strong>005</strong> — Schneesturm</p>
+    </td>
+    <td width="33%" valign="top" style="padding: 10px;">
+      <img src="https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/006.png" alt="Hintergrundbild 006" width="100%" style="border-radius: 8px;"/>
+      <p align="center"><strong>006</strong> — Ecchi-minimalistisch</p>
+    </td>
+  </tr>
+</table>
 
 ## Hintergrundbilder herunterladen
 

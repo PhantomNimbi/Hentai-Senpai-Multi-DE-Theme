@@ -38,31 +38,38 @@ Hentai-Senpai GTK テーマのビジュアルショーケース。
 
 ## 壁紙
 
-このテーマには、モノクロカラーとエッチなテーマを特徴とするミニマリストな壁紙のコレクションが含まれています。
+テーマには、モノクロカラーとエッチなテーマを特徴とするミニマルな壁紙コレクションが含まれています。
 
-### 壁紙 001
-
-![壁紙 001](https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/001.png)
-
-### 壁紙 002
-
-![壁紙 002](https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/002.png)
-
-### 壁紙 003
-
-![壁紙 003](https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/003.png)
-
-### 壁紙 004
-
-![壁紙 004](https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/004.png)
-
-### 壁紙 005
-
-![壁紙 005](https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/005.png)
-
-### 壁紙 006
-
-![壁紙 006](https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/006.png)
+<table>
+  <tr>
+    <td width="33%" valign="top" style="padding: 10px;">
+      <img src="https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/001.png" alt="壁紙 001" width="100%" style="border-radius: 8px;"/>
+      <p align="center"><strong>001</strong> — ミニマルダーク</p>
+    </td>
+    <td width="33%" valign="top" style="padding: 10px;">
+      <img src="https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/002.png" alt="壁紙 002" width="100%" style="border-radius: 8px;"/>
+      <p align="center"><strong>002</strong> — ノルディックフロスト</p>
+    </td>
+    <td width="33%" valign="top" style="padding: 10px;">
+      <img src="https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/003.png" alt="壁紙 003" width="100%" style="border-radius: 8px;"/>
+      <p align="center"><strong>003</strong> — オーロラグラデーション</p>
+    </td>
+  </tr>
+  <tr>
+    <td width="33%" valign="top" style="padding: 10px;">
+      <img src="https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/004.png" alt="壁紙 004" width="100%" style="border-radius: 8px;"/>
+      <p align="center"><strong>004</strong> — ポーラーナイト</p>
+    </td>
+    <td width="33%" valign="top" style="padding: 10px;">
+      <img src="https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/005.png" alt="壁紙 005" width="100%" style="border-radius: 8px;"/>
+      <p align="center"><strong>005</strong> — スノーストーム</p>
+    </td>
+    <td width="33%" valign="top" style="padding: 10px;">
+      <img src="https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/006.png" alt="壁紙 006" width="100%" style="border-radius: 8px;"/>
+      <p align="center"><strong>006</strong> — エッチミニマル</p>
+    </td>
+  </tr>
+</table>
 
 ## 壁紙のダウンロード
 

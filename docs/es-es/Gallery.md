@@ -40,29 +40,36 @@ Una vitrina visual del Tema GTK Hentai-Senpai.
 
 El tema incluye una colección de fondos de pantalla minimalistas con colores monocromáticos y temas ecchi.
 
-### Fondo de Pantalla 001
-
-![Fondo de Pantalla 001](https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/001.png)
-
-### Fondo de Pantalla 002
-
-![Fondo de Pantalla 002](https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/002.png)
-
-### Fondo de Pantalla 003
-
-![Fondo de Pantalla 003](https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/003.png)
-
-### Fondo de Pantalla 004
-
-![Fondo de Pantalla 004](https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/004.png)
-
-### Fondo de Pantalla 005
-
-![Fondo de Pantalla 005](https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/005.png)
-
-### Fondo de Pantalla 006
-
-![Fondo de Pantalla 006](https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/006.png)
+<table>
+  <tr>
+    <td width="33%" valign="top" style="padding: 10px;">
+      <img src="https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/001.png" alt="Fondo de Pantalla 001" width="100%" style="border-radius: 8px;"/>
+      <p align="center"><strong>001</strong> — Minimalista oscuro</p>
+    </td>
+    <td width="33%" valign="top" style="padding: 10px;">
+      <img src="https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/002.png" alt="Fondo de Pantalla 002" width="100%" style="border-radius: 8px;"/>
+      <p align="center"><strong>002</strong> — Escarcha nórdica</p>
+    </td>
+    <td width="33%" valign="top" style="padding: 10px;">
+      <img src="https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/003.png" alt="Fondo de Pantalla 003" width="100%" style="border-radius: 8px;"/>
+      <p align="center"><strong>003</strong> — Gradiente aurora</p>
+    </td>
+  </tr>
+  <tr>
+    <td width="33%" valign="top" style="padding: 10px;">
+      <img src="https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/004.png" alt="Fondo de Pantalla 004" width="100%" style="border-radius: 8px;"/>
+      <p align="center"><strong>004</strong> — Noche polar</p>
+    </td>
+    <td width="33%" valign="top" style="padding: 10px;">
+      <img src="https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/005.png" alt="Fondo de Pantalla 005" width="100%" style="border-radius: 8px;"/>
+      <p align="center"><strong>005</strong> — Tormenta de nieve</p>
+    </td>
+    <td width="33%" valign="top" style="padding: 10px;">
+      <img src="https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/006.png" alt="Fondo de Pantalla 006" width="100%" style="border-radius: 8px;"/>
+      <p align="center"><strong>006</strong> — Ecchi minimalista</p>
+    </td>
+  </tr>
+</table>
 
 ## Descargar Fondos de Pantalla
 

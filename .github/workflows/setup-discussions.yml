@@ -1,0 +1,542 @@
+name: Setup GitHub Discussions
+
+on:
+  workflow_dispatch:
+    inputs:
+      action:
+        description: 'Action to perform'
+        required: true
+        default: 'setup-all'
+        type: choice
+        options:
+          - setup-all
+          - enable-discussions
+          - create-posts
+          - delete-duplicates
+          - check-status
+      force:
+        description: 'Force recreate existing discussions'
+        required: false
+        default: 'false'
+        type: choice
+        options:
+          - 'false'
+          - 'true'
+
+jobs:
+  setup-discussions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main repository
+        uses: actions/checkout@v4
+        
+      - name: Checkout templates branch
+        uses: actions/checkout@v4
+        with:
+          ref: templates
+          path: templates-content
+          
+      - name: Setup Discussions
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.PAT_TOKEN || secrets.GITHUB_TOKEN }}
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+            
+            const action = '${{ github.event.inputs.action }}';
+            const forceRecreate = '${{ github.event.inputs.force }}' === 'true';
+            const [owner, repo] = process.env.GITHUB_REPOSITORY.split('/');
+            
+            console.log('═══════════════════════════════════════════════════');
+            console.log('🚀 GitHub Discussions Setup');
+            console.log('═══════════════════════════════════════════════════');
+            console.log('Repository: ' + owner + '/' + repo);
+            console.log('Action: ' + action);
+            console.log('Force Recreate: ' + (forceRecreate ? 'Yes' : 'No'));
+            console.log('');
+            
+            async function checkStatus() {
+              console.log('🔍 Checking repository status...');
+              
+              try {
+                const result = await github.graphql(`
+                  query CheckDiscussions($owner: String!, $repo: String!) {
+                    repository(owner: $owner, name: $repo) {
+                      id
+                      hasDiscussionsEnabled
+                      discussionCategories(first: 20) {
+                        nodes {
+                          id
+                          name
+                          emoji
+                          description
+                        }
+                      }
+                      discussions(first: 100, orderBy: {field: CREATED_AT, direction: DESC}) {
+                        nodes {
+                          id
+                          number
+                          title
+                          url
+                          category {
+                            name
+                          }
+                        }
+                      }
+                    }
+                  }
+                `, { owner, repo });
+                
+                return {
+                  enabled: result.repository.hasDiscussionsEnabled,
+                  repoId: result.repository.id,
+                  categories: result.repository.discussionCategories.nodes,
+                  discussions: result.repository.discussions.nodes
+                };
+              } catch (error) {
+                console.error('❌ Error checking status:', error.message);
+                throw error;
+              }
+            }
+            
+            async function enableDiscussions(repoId) {
+              console.log('🔄 Enabling discussions...');
+              
+              try {
+                const result = await github.graphql(`
+                  mutation EnableDiscussions($repositoryId: ID!) {
+                    enableDiscussions(input: { repositoryId: $repositoryId }) {
+                      repository {
+                        id
+                        hasDiscussionsEnabled
+                      }
+                    }
+                  }
+                `, { repositoryId: repoId });
+                
+                console.log('✅ Discussions enabled successfully!');
+                return result.enableDiscussions.repository.hasDiscussionsEnabled;
+              } catch (error) {
+                console.error('❌ Error enabling discussions:', error.message);
+                throw error;
+              }
+            }
+            
+            async function deleteDiscussion(discussionId) {
+              try {
+                await github.graphql(`
+                  mutation DeleteDiscussion($id: ID!) {
+                    deleteDiscussion(input: { id: $id }) {
+                      discussion {
+                        id
+                      }
+                    }
+                  }
+                `, { id: discussionId });
+                return true;
+              } catch (error) {
+                console.log('   ⚠️  Failed to delete: ' + error.message);
+                return false;
+              }
+            }
+            
+            function readTemplate(filename) {
+              try {
+                return fs.readFileSync(path.join('templates-content/discussions', filename), 'utf8');
+              } catch (e) {
+                return null;
+              }
+            }
+            
+            async function createDiscussion(repoId, categoryId, title, body) {
+              try {
+                const result = await github.graphql(`
+                  mutation CreateDiscussion($repositoryId: ID!, $categoryId: ID!, $title: String!, $body: String!) {
+                    createDiscussion(input: {
+                      repositoryId: $repositoryId,
+                      categoryId: $categoryId,
+                      title: $title,
+                      body: $body
+                    }) {
+                      discussion {
+                        id
+                        number
+                        url
+                        title
+                      }
+                    }
+                  }
+                `, {
+                  repositoryId: repoId,
+                  categoryId: categoryId,
+                  title: title,
+                  body: body
+                });
+                
+                return { success: true, discussion: result.createDiscussion.discussion };
+              } catch (error) {
+                return { success: false, error: error.message };
+              }
+            }
+            
+            const setupConfig = [
+              {
+                categoryName: 'General',
+                emoji: '💬',
+                post: {
+                  title: '👋 Welcome to Hentai-Senpai Discussions!',
+                  template: 'general.md',
+                  fallback: 'Welcome to the Hentai-Senpai community! 🎨\n\n' +
+                    'This is a space for general conversations about the theme, sharing ideas, and connecting with other users.\n\n' +
+                    '## Quick Links\n' +
+                    '- 📖 [Installation Guide](https://github.com/' + owner + '/' + repo + '/wiki/Installation-Guide)\n' +
+                    '- 🐛 [Report Issues](https://github.com/' + owner + '/' + repo + '/issues)\n' +
+                    '- 🎨 [View Gallery](https://github.com/' + owner + '/' + repo + '/wiki/Gallery)\n\n' +
+                    '## Community Guidelines\n' +
+                    '- Be respectful and constructive\n' +
+                    '- Search before posting\n' +
+                    '- Use appropriate categories\n' +
+                    '- Have fun! ✨'
+                }
+              },
+              {
+                categoryName: 'Q&A',
+                emoji: '❓',
+                post: {
+                  title: '❓ Frequently Asked Questions',
+                  template: 'q-a.md',
+                  fallback: '## Common Questions\n\n' +
+                    '### How do I install the theme?\n' +
+                    'Run `./install.sh` from the repository root.\n\n' +
+                    '### Which desktop environments are supported?\n' +
+                    'GNOME, Cinnamon, XFCE, MATE, and Budgie.\n\n' +
+                    '### How do I apply the theme?\n' +
+                    'Use the included `scripts/apply.sh` script.\n\n' +
+                    '### Need more help?\n' +
+                    'Check the [Wiki](https://github.com/' + owner + '/' + repo + '/wiki) for detailed guides!'
+                }
+              },
+              {
+                categoryName: 'Showcase',
+                emoji: '🎨',
+                post: {
+                  title: '🎨 Desktop Showcase - Share Your Setup!',
+                  template: 'showcase.md',
+                  fallback: 'Show off your desktop setup featuring Hentai-Senpai theme!\n\n' +
+                    '## How to Participate\n' +
+                    '1. Take a screenshot of your desktop\n' +
+                    '2. Share details (DE, distro, customizations)\n' +
+                    '3. Post below\n\n' +
+                    'Best setups will be featured in our README! 🌟'
+                }
+              },
+              {
+                categoryName: 'Ideas',
+                emoji: '💡',
+                post: {
+                  title: '💡 Feature Request Hub',
+                  template: 'ideas.md',
+                  fallback: 'Have an idea for improving Hentai-Senpai? Share it here!\n\n' +
+                    '## How to Submit\n' +
+                    '- Describe your idea clearly\n' +
+                    '- Explain the use case\n' +
+                    '- Vote on existing ideas with 👍\n\n' +
+                    'Popular requests will be added to our roadmap! 🗺️'
+                }
+              },
+              {
+                categoryName: 'Development',
+                emoji: '🔧',
+                post: {
+                  title: '🔧 Developer Discussions',
+                  template: 'development.md',
+                  fallback: 'Welcome developers! 👋\n\n' +
+                    'This category is for technical discussions about:\n' +
+                    '- Theme development\n' +
+                    '- Code contributions\n' +
+                    '- Architecture decisions\n' +
+                    '- Testing and CI/CD\n\n' +
+                    'Check out [good first issues](https://github.com/' + owner + '/' + repo + '/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) to get started!'
+                }
+              }
+            ];
+            
+            try {
+              let status = await checkStatus();
+              
+              if (action === 'check-status') {
+                console.log('\n📊 Status Report:');
+                console.log('   Discussions Enabled: ' + (status.enabled ? '✅ Yes' : '❌ No'));
+                console.log('   Categories: ' + status.categories.length);
+                console.log('   Existing Discussions: ' + status.discussions.length);
+                
+                if (status.discussions.length > 0) {
+                  console.log('\n   Current Discussions:');
+                  status.discussions.forEach(d => {
+                    console.log('   - #' + d.number + ': ' + d.title + ' [' + d.category.name + ']');
+                  });
+                }
+                
+                const missingCategories = setupConfig.filter(config => 
+                  !status.categories.some(cat => 
+                    cat.name.toLowerCase().includes(config.categoryName.toLowerCase())
+                  )
+                );
+                
+                if (missingCategories.length > 0) {
+                  console.log('\n   Missing Categories:');
+                  missingCategories.forEach(config => {
+                    console.log('   - ' + config.emoji + ' ' + config.categoryName);
+                  });
+                }
+                
+                console.log('\n✅ Status check complete!');
+                return;
+              }
+              
+              if (action === 'delete-duplicates') {
+                console.log('\n🗑️  Finding and deleting duplicate discussions...\n');
+                
+                if (!status.enabled) {
+                  console.error('❌ ERROR: Discussions are not enabled!');
+                  core.setFailed('Discussions not enabled');
+                  return;
+                }
+                
+                const expectedTitles = setupConfig.map(c => c.post.title.toLowerCase());
+                const duplicates = [];
+                const seenTitles = new Map();
+                
+                // Find duplicates
+                for (const discussion of status.discussions) {
+                  const titleLower = discussion.title.toLowerCase();
+                  if (expectedTitles.includes(titleLower)) {
+                    if (seenTitles.has(titleLower)) {
+                      duplicates.push(discussion);
+                    } else {
+                      seenTitles.set(titleLower, discussion);
+                    }
+                  }
+                }
+                
+                if (duplicates.length === 0) {
+                  console.log('✅ No duplicate discussions found!');
+                  console.log('\n   Expected discussions (1 per category):');
+                  seenTitles.forEach((discussion, title) => {
+                    console.log('   - #' + discussion.number + ': ' + discussion.title);
+                  });
+                  return;
+                }
+                
+                console.log('Found ' + duplicates.length + ' duplicate discussion(s):');
+                duplicates.forEach(d => {
+                  console.log('   - #' + d.number + ': ' + d.title + ' [' + d.category.name + ']');
+                });
+                console.log('');
+                
+                console.log('🗑️  Deleting duplicates...\n');
+                let deletedCount = 0;
+                let failedCount = 0;
+                
+                for (const dup of duplicates) {
+                  console.log('Deleting: #' + dup.number + ' - ' + dup.title);
+                  const success = await deleteDiscussion(dup.id);
+                  if (success) {
+                    console.log('   ✅ Deleted');
+                    deletedCount++;
+                  } else {
+                    console.log('   ❌ Failed to delete');
+                    failedCount++;
+                  }
+                }
+                
+                console.log('\n═══════════════════════════════════════════════════');
+                console.log('📊 Deletion Summary');
+                console.log('═══════════════════════════════════════════════════');
+                console.log('Deleted: ' + deletedCount + ' ✅');
+                console.log('Failed:  ' + failedCount + ' ❌');
+                console.log('');
+                console.log('Kept (most recent):');
+                seenTitles.forEach((discussion, title) => {
+                  console.log('   - #' + discussion.number + ': ' + discussion.title);
+                });
+                
+                return;
+              }
+              
+              if (action === 'enable-discussions' || (action === 'setup-all' && !status.enabled)) {
+                if (!status.enabled) {
+                  console.log('Discussions are currently disabled.');
+                  await enableDiscussions(status.repoId);
+                  status = await checkStatus();
+                } else {
+                  console.log('✅ Discussions are already enabled.');
+                }
+                
+                if (action === 'enable-discussions') {
+                  console.log('\n⚠️  Create categories manually at:');
+                  console.log('   https://github.com/' + owner + '/' + repo + '/discussions/categories');
+                  return;
+                }
+              }
+              
+              if (action === 'create-posts' || action === 'setup-all') {
+                if (!status.enabled) {
+                  console.error('❌ ERROR: Discussions are not enabled!');
+                  core.setFailed('Discussions not enabled');
+                  return;
+                }
+                
+                console.log('\n📝 Managing Discussion Posts...\n');
+                
+                const results = [];
+                
+                for (const config of setupConfig) {
+                  const category = status.categories.find(cat => 
+                    cat.name.toLowerCase().includes(config.categoryName.toLowerCase()) ||
+                    config.categoryName.toLowerCase().includes(cat.name.toLowerCase())
+                  );
+                  
+                  if (!category) {
+                    console.log('⏭️  Skipping "' + config.post.title + '" - Category "' + config.categoryName + '" not found');
+                    results.push({ 
+                      category: config.categoryName, 
+                      title: config.post.title, 
+                      status: 'skipped', 
+                      reason: 'Category not found' 
+                    });
+                    continue;
+                  }
+                  
+                  // Check for existing discussion with same title
+                  const existingDiscussion = status.discussions.find(d => 
+                    d.title.toLowerCase() === config.post.title.toLowerCase()
+                  );
+                  
+                  if (existingDiscussion) {
+                    if (forceRecreate) {
+                      console.log('🗑️  Deleting existing: "' + config.post.title + '" (#' + existingDiscussion.number + ')');
+                      const deleted = await deleteDiscussion(existingDiscussion.id);
+                      if (!deleted) {
+                        console.log('   ⚠️  Could not delete, will skip');
+                        results.push({ 
+                          category: config.categoryName, 
+                          title: config.post.title, 
+                          status: 'skipped', 
+                          reason: 'Failed to delete existing' 
+                        });
+                        continue;
+                      }
+                      console.log('   ✅ Deleted');
+                    } else {
+                      console.log('✓ Already exists: "' + config.post.title + '" (#' + existingDiscussion.number + ')');
+                      console.log('   URL: ' + existingDiscussion.url);
+                      results.push({ 
+                        category: config.categoryName, 
+                        title: config.post.title, 
+                        status: 'exists', 
+                        url: existingDiscussion.url,
+                        number: existingDiscussion.number
+                      });
+                      continue;
+                    }
+                  }
+                  
+                  console.log('🔄 Creating: ' + config.post.title);
+                  console.log('   Category: ' + category.name);
+                  
+                  let body = readTemplate(config.post.template);
+                  if (!body) {
+                    console.log('   Using fallback content');
+                    body = config.post.fallback;
+                  } else {
+                    console.log('   Using template: ' + config.post.template);
+                  }
+                  
+                  const result = await createDiscussion(status.repoId, category.id, config.post.title, body);
+                  
+                  if (result.success) {
+                    console.log('   ✅ Created: ' + result.discussion.url);
+                    results.push({ 
+                      category: config.categoryName, 
+                      title: config.post.title, 
+                      status: 'created', 
+                      url: result.discussion.url 
+                    });
+                  } else {
+                    console.log('   ❌ Failed: ' + result.error);
+                    results.push({ 
+                      category: config.categoryName, 
+                      title: config.post.title, 
+                      status: 'failed', 
+                      error: result.error 
+                    });
+                  }
+                  console.log('');
+                }
+                
+                // Summary
+                const created = results.filter(r => r.status === 'created').length;
+                const existing = results.filter(r => r.status === 'exists').length;
+                const failed = results.filter(r => r.status === 'failed').length;
+                const skipped = results.filter(r => r.status === 'skipped').length;
+                
+                console.log('═══════════════════════════════════════════════════');
+                console.log('📊 Summary');
+                console.log('═══════════════════════════════════════════════════');
+                console.log('Created:   ' + created + ' ✅');
+                console.log('Existing:  ' + existing + ' ✓');
+                console.log('Failed:    ' + failed + ' ❌');
+                console.log('Skipped:   ' + skipped + ' ⏭️');
+                console.log('');
+                
+                if (created > 0) {
+                  console.log('✅ Newly Created:');
+                  results.filter(r => r.status === 'created').forEach(r => {
+                    console.log('   - ' + r.title);
+                    console.log('     ' + r.url);
+                  });
+                }
+                
+                if (existing > 0) {
+                  console.log('\n✓ Already Exist (skipped):');
+                  results.filter(r => r.status === 'exists').forEach(r => {
+                    console.log('   - #' + r.number + ': ' + r.title);
+                  });
+                }
+                
+                if (skipped > 0) {
+                  console.log('\n⚠️  Skipped:');
+                  results.filter(r => r.status === 'skipped').forEach(r => {
+                    console.log('   - ' + r.category + ': ' + r.reason);
+                  });
+                }
+                
+                if (forceRecreate && created > 0) {
+                  console.log('\n📝 Note: Force recreate was enabled. Some discussions were replaced.');
+                }
+                
+                fs.writeFileSync('setup-results.json', JSON.stringify({
+                  timestamp: new Date().toISOString(),
+                  action: action,
+                  forceRecreate: forceRecreate,
+                  results: results,
+                  summary: { created: created, existing: existing, failed: failed, skipped: skipped }
+                }, null, 2));
+                
+                console.log('\n📝 Results saved to: setup-results.json');
+              }
+              
+            } catch (error) {
+              console.error('\n❌ Workflow failed:', error.message);
+              core.setFailed(error.message);
+            }
+            
+      - name: Upload results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: setup-results
+          path: setup-results.json
+          if-no-files-found: ignore

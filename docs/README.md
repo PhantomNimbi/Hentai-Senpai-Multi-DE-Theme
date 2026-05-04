@@ -1,6 +1,8 @@
 # Hentai-Senpai Documentation
 
 > 📚 **[View on GitHub Wiki](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/wiki)** (better navigation & search)
+> 
+> **Note:** This documentation is synced to the GitHub Wiki automatically.
 
 > 🌐 **Languages:** English | [日本語](README.ja.md) | [Español](README.es.md) | [Français](README.fr.md) | [Deutsch](README.de.md) | [中文](README.zh.md) | [한국어](README.ko.md) | [Русский](README.ru.md) | [Português](README.pt.md)
 

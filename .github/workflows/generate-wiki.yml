@@ -115,7 +115,19 @@ jobs:
               cp docs-content/docs/es-es/CUSTOMIZATION.md wiki/Customization-es-es.md
               cp docs-content/docs/es-es/COLOR_PALETTE.md wiki/Color-Palette-es-es.md
               cp docs-content/docs/es-es/CONTRIBUTING.md wiki/Contributing-es-es.md
+              cp docs-content/docs/es-es/Home.md wiki/Home-es-es.md
               echo "✅ Spanish documentation copied"
+            fi
+            
+            # Copy Home pages from each locale
+            if [ -f "docs-content/docs/en-us/Home.md" ]; then
+              cp docs-content/docs/en-us/Home.md wiki/Home.md
+              echo "✅ Home page updated"
+            fi
+            
+            if [ -f "docs-content/docs/pt-br/Home.md" ]; then
+              cp docs-content/docs/pt-br/Home.md wiki/Home-pt-br.md
+              echo "✅ Portuguese Home page copied"
             fi
             
             echo "✅ Wiki content generated from docs branch"

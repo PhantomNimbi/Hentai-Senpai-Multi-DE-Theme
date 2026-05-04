@@ -1,0 +1,255 @@
+name: Generate GitHub Wiki
+
+on:
+  push:
+    branches:
+      - docs
+  workflow_dispatch:
+    inputs:
+      force_update:
+        description: 'Force update wiki from docs branch'
+        required: false
+        default: false
+        type: boolean
+
+jobs:
+  generate-wiki:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout main repository (for workflow context)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.PAT_TOKEN }}
+      
+      - name: Checkout docs branch
+        uses: actions/checkout@v4
+        with:
+          ref: docs
+          path: docs-content
+          token: ${{ secrets.PAT_TOKEN }}
+      
+      - name: Checkout wiki repository
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ github.repository }}.wiki
+          path: wiki
+          token: ${{ secrets.PAT_TOKEN }}
+      
+      - name: Generate wiki content from docs branch
+        run: |
+          # Create Home.md with language selector
+          cat > wiki/Home.md << 'EOF'
+          <div align="right" style="margin-bottom: 20px;">
+            <details>
+              <summary style="background: #2E3440; color: #D8DEE9; border: 1px solid #4C566A; border-radius: 6px; padding: 8px 16px; cursor: pointer; font-size: 14px; display: inline-flex; align-items: center; gap: 8px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; list-style: none;">🌐 Language</summary>
+              <div style="margin-top: 10px; padding: 12px; background: #3B4252; border: 1px solid #4C566A; border-radius: 6px; text-align: right;">
+                <div style="margin-bottom: 6px;"><a href="Home" style="color: #88C0D0; text-decoration: none;">🇺🇸 English</a></div>
+                <div style="margin-bottom: 6px;"><a href="Home-pt-br" style="color: #88C0D0; text-decoration: none;">🇧🇷 Português</a></div>
+                <div style="margin-bottom: 6px;"><a href="Home-es-es" style="color: #88C0D0; text-decoration: none;">🇪🇸 Español</a></div>
+                <div style="margin-bottom: 6px;"><a href="Home-fr-fr" style="color: #88C0D0; text-decoration: none;">🇫🇷 Français</a></div>
+                <div style="margin-bottom: 6px;"><a href="Home-de-de" style="color: #88C0D0; text-decoration: none;">🇩🇪 Deutsch</a></div>
+                <div style="margin-bottom: 6px;"><a href="Home-it-it" style="color: #88C0D0; text-decoration: none;">🇮🇹 Italiano</a></div>
+                <div style="margin-bottom: 6px;"><a href="Home-ja-jp" style="color: #88C0D0; text-decoration: none;">🇯🇵 日本語</a></div>
+                <div style="margin-bottom: 6px;"><a href="Home-zh-cn" style="color: #88C0D0; text-decoration: none;">🇨🇳 中文</a></div>
+                <div><a href="Home-ru-ru" style="color: #88C0D0; text-decoration: none;">🇷🇺 Русский</a></div>
+              </div>
+            </details>
+          </div>
+          
+          # Hentai-Senpai Theme
+          
+          A beautiful dark GTK theme based on Orchis with Nord colors.
+          
+          ## Quick Links
+          
+          - [Installation Guide](Installation-Guide)
+          - [Troubleshooting](Troubleshooting)
+          - [Customization](Customization)
+          - [Color Palette](Color-Palette)
+          - [Contributing](Contributing)
+          - [Gallery](Gallery) - Theme previews & wallpapers
+          
+          ## Quick Start
+          
+          ```bash
+          ./install.sh --update -l -f --dock
+          ./scripts/apply.sh
+          ```
+          
+          ## Features
+          
+          - Dark & Elegant Nord colors
+          - Material Design principles
+          - Multi-DE Support (GNOME, Cinnamon, XFCE, Budgie, MATE)
+          - GTK 2/3/4, GNOME Shell, window decorations
+          - Modern GTK4/libadwaita support
+          - Flatpak Ready
+          
+          [View on GitHub](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme)
+          EOF
+          
+          # Function to copy documentation for a locale
+          copy_locale_docs() {
+            local locale=$1
+            local suffix=$2
+            
+            if [ -d "docs-content/docs/$locale" ]; then
+              cp "docs-content/docs/$locale/INSTALLATION.md" "wiki/Installation-Guide$suffix.md"
+              cp "docs-content/docs/$locale/TROUBLESHOOTING.md" "wiki/Troubleshooting$suffix.md"
+              cp "docs-content/docs/$locale/CUSTOMIZATION.md" "wiki/Customization$suffix.md"
+              cp "docs-content/docs/$locale/COLOR_PALETTE.md" "wiki/Color-Palette$suffix.md"
+              cp "docs-content/docs/$locale/CONTRIBUTING.md" "wiki/Contributing$suffix.md"
+              if [ -f "docs-content/docs/$locale/Gallery.md" ]; then
+                cp "docs-content/docs/$locale/Gallery.md" "wiki/Gallery$suffix.md"
+              fi
+              echo "✅ $locale documentation copied"
+            fi
+          }
+          
+          # Copy all docs from docs branch to wiki (locale-based structure)
+          if [ -d "docs-content/docs" ]; then
+            # English (default)
+            copy_locale_docs "en-us" ""
+            
+            # Portuguese (Brazil)
+            copy_locale_docs "pt-br" "-pt-br"
+            
+            # Spanish
+            copy_locale_docs "es-es" "-es-es"
+            
+            # French
+            copy_locale_docs "fr-fr" "-fr-fr"
+            
+            # German
+            copy_locale_docs "de-de" "-de-de"
+            
+            # Italian
+            copy_locale_docs "it-it" "-it-it"
+            
+            # Japanese
+            copy_locale_docs "ja-jp" "-ja-jp"
+            
+            # Chinese (Simplified)
+            copy_locale_docs "zh-cn" "-zh-cn"
+            
+            # Russian
+            copy_locale_docs "ru-ru" "-ru-ru"
+            
+            # Copy Home pages from each locale
+            for locale in en-us pt-br es-es fr-fr de-de it-it ja-jp zh-cn ru-ru; do
+              if [ -f "docs-content/docs/$locale/Home.md" ]; then
+                suffix=""
+                [ "$locale" != "en-us" ] && suffix="-${locale}"
+                cp "docs-content/docs/$locale/Home.md" "wiki/Home${suffix}.md"
+                echo "✅ Home page for $locale copied"
+              fi
+            done
+            
+            echo "✅ Wiki content generated from docs branch"
+          else
+            echo "⚠️  docs/ directory not found in docs branch"
+            exit 1
+          fi
+      
+      - name: Ensure wiki navigation exists
+        run: |
+          # Create _Sidebar.md
+          cat > wiki/_Sidebar.md << 'EOF'
+          ## Navigation
+          
+          [Home](Home)
+          
+          ### Guides
+          - [Installation Guide](Installation-Guide)
+            - [🇧🇷 Português](Installation-Guide-pt-br)
+            - [🇪🇸 Español](Installation-Guide-es-es)
+            - [🇫🇷 Français](Installation-Guide-fr-fr)
+            - [🇩🇪 Deutsch](Installation-Guide-de-de)
+            - [🇮🇹 Italiano](Installation-Guide-it-it)
+            - [🇯🇵 日本語](Installation-Guide-ja-jp)
+            - [🇨🇳 中文](Installation-Guide-zh-cn)
+            - [🇷🇺 Русский](Installation-Guide-ru-ru)
+          - [Troubleshooting](Troubleshooting)
+            - [🇧🇷 Português](Troubleshooting-pt-br)
+            - [🇪🇸 Español](Troubleshooting-es-es)
+            - [🇫🇷 Français](Troubleshooting-fr-fr)
+            - [🇩🇪 Deutsch](Troubleshooting-de-de)
+            - [🇮🇹 Italiano](Troubleshooting-it-it)
+            - [🇯🇵 日本語](Troubleshooting-ja-jp)
+            - [🇨🇳 中文](Troubleshooting-zh-cn)
+            - [🇷🇺 Русский](Troubleshooting-ru-ru)
+          - [Customization](Customization)
+            - [🇧🇷 Português](Customization-pt-br)
+            - [🇪🇸 Español](Customization-es-es)
+            - [🇫🇷 Français](Customization-fr-fr)
+            - [🇩🇪 Deutsch](Customization-de-de)
+            - [🇮🇹 Italiano](Customization-it-it)
+            - [🇯🇵 日本語](Customization-ja-jp)
+            - [🇨🇳 中文](Customization-zh-cn)
+            - [🇷🇺 Русский](Customization-ru-ru)
+          
+          ### Reference
+          - [Color Palette](Color-Palette)
+            - [🇧🇷 Português](Color-Palette-pt-br)
+            - [🇪🇸 Español](Color-Palette-es-es)
+            - [🇫🇷 Français](Color-Palette-fr-fr)
+            - [🇩🇪 Deutsch](Color-Palette-de-de)
+            - [🇮🇹 Italiano](Color-Palette-it-it)
+            - [🇯🇵 日本語](Color-Palette-ja-jp)
+            - [🇨🇳 中文](Color-Palette-zh-cn)
+            - [🇷🇺 Русский](Color-Palette-ru-ru)
+          - [Gallery](Gallery) - Theme previews & wallpapers
+            - [🇧🇷 Português](Gallery-pt-br)
+            - [🇪🇸 Español](Gallery-es-es)
+            - [🇫🇷 Français](Gallery-fr-fr)
+            - [🇩🇪 Deutsch](Gallery-de-de)
+            - [🇮🇹 Italiano](Gallery-it-it)
+            - [🇯🇵 日本語](Gallery-ja-jp)
+            - [🇨🇳 中文](Gallery-zh-cn)
+            - [🇷🇺 Русский](Gallery-ru-ru)
+          
+          ### Contributing
+          - [Contributing Guide](Contributing)
+            - [🇧🇷 Português](Contributing-pt-br)
+            - [🇪🇸 Español](Contributing-es-es)
+            - [🇫🇷 Français](Contributing-fr-fr)
+            - [🇩🇪 Deutsch](Contributing-de-de)
+            - [🇮🇹 Italiano](Contributing-it-it)
+            - [🇯🇵 日本語](Contributing-ja-jp)
+            - [🇨🇳 中文](Contributing-zh-cn)
+            - [🇷🇺 Русский](Contributing-ru-ru)
+          
+          ---
+          
+          [GitHub Repository](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme)
+          EOF
+          
+          # Create _Footer.md
+          cat > wiki/_Footer.md << 'EOF'
+          **Hentai-Senpai Theme** - A beautiful dark GTK theme
+          
+          [GitHub](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme) • [Issues](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/issues)
+          EOF
+          
+          echo "✅ Navigation created"
+      
+      - name: Commit and push wiki
+        working-directory: wiki
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          
+          git add .
+          
+          if git diff --cached --quiet; then
+            echo "ℹ️  No changes to wiki"
+          else
+            git commit -m "Update wiki from docs branch
+          
+          - Synchronized documentation from docs branch
+          - Updated: $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
+            git push
+            echo "✅ Wiki updated successfully"
+          fi

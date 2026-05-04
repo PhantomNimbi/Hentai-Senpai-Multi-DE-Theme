@@ -18,10 +18,10 @@
 
 # Hentai-Senpai Theme
 
-[![Release](https://img.shields.io/github/v/release/PhantomNimbi/Hentai-Senpai-GTK-Theme?style=flat-square&color=88C0D0)](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/releases)
-[![License](https://img.shields.io/github/license/PhantomNimbi/Hentai-Senpai-GTK-Theme?style=flat-square&color=88C0D0)](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/blob/main/src/COPYING)
-[![Stars](https://img.shields.io/github/stars/PhantomNimbi/Hentai-Senpai-GTK-Theme?label=Stars&style=flat-square&color=88C0D0)](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/stargazers)
-[![Issues](https://img.shields.io/github/issues/PhantomNimbi/Hentai-Senpai-GTK-Theme?style=flat-square&color=88C0D0)](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/issues)
+[![Release](https://img.shields.io/github/v/release/PhantomNimbi/Hentai-Senpai-GTK-Theme?label=%F0%9F%93%A6%20Release&style=flat-square&color=88C0D0)](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/releases)
+[![License](https://img.shields.io/github/license/PhantomNimbi/Hentai-Senpai-GTK-Theme?label=%E2%9A%96%EF%B8%8F%20License&style=flat-square&color=88C0D0)](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/blob/main/src/COPYING)
+[![Stars](https://img.shields.io/github/stars/PhantomNimbi/Hentai-Senpai-GTK-Theme?label=%E2%AD%90%20Stars&style=flat-square&color=88C0D0)](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/stargazers)
+[![Issues](https://img.shields.io/github/issues/PhantomNimbi/Hentai-Senpai-GTK-Theme?label=%F0%9F%90%9B%20Issues&style=flat-square&color=88C0D0)](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/issues)
 
 [![GTK](https://img.shields.io/badge/GTK-2%2F3%2F4-88C0D0?style=flat-square&logo=gtk)](https://gtk.org)
 [![Supports](https://img.shields.io/badge/Supports-GNOME%20%7C%20Cinnamon%20%7C%20XFCE%20%7C%20Budgie%20%7C%20MATE-88C0D0?style=flat-square)](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/wiki/Installation-Guide)

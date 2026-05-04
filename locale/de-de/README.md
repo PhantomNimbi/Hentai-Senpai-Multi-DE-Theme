@@ -17,11 +17,30 @@
 
 # Hentai-Senpai Theme
 
-[![Version](https://img.shields.io/github/v/release/PhantomNimbi/Hentai-Senpai-GTK-Theme?include_prereleases&label=Version&style=flat-square&color=blue)](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/releases) [![License](https://img.shields.io/badge/License-GPL%203.0-blue.svg?style=flat-square)](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/blob/main/src/COPYING) [![Stars](https://img.shields.io/github/stars/PhantomNimbi/Hentai-Senpai-GTK-Theme?style=flat-square&color=yellow)](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/stargazers)
+<p align="center">
+  <a href="https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/releases"><img src="https://img.shields.io/github/v/release/PhantomNimbi/Hentai-Senpai-GTK-Theme?label=%F0%9F%93%A6%20Version&style=flat-square&color=88C0D0" alt="Version"></a>
+  <a href="https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/blob/main/src/COPYING"><img src="https://img.shields.io/github/license/PhantomNimbi/Hentai-Senpai-GTK-Theme?label=%E2%9A%96%EF%B8%8F%20Lizenz&style=flat-square&color=88C0D0" alt="Lizenz"></a>
+  <a href="https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/stargazers"><img src="https://img.shields.io/github/stars/PhantomNimbi/Hentai-Senpai-GTK-Theme?label=%E2%AD%90%20Sterne&style=flat-square&color=88C0D0" alt="Sterne"></a>
+  <a href="https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/issues"><img src="https://img.shields.io/github/issues/PhantomNimbi/Hentai-Senpai-GTK-Theme?label=%F0%9F%90%9B%20Probleme&style=flat-square&color=88C0D0" alt="Probleme"></a>
+  <a href="https://gtk.org"><img src="https://img.shields.io/badge/GTK-2%2F3%2F4-88C0D0?style=flat-square&logo=gtk" alt="GTK"></a>
+</p>
 
 Ein schönes dunkles GTK-Theme basierend auf [Orchis](https://github.com/vinceliuice/Orchis-theme) mit der eleganten [Nord](https://www.nordtheme.com/) Farbpalette.
 
 ![Theme-Vorschau](../../wallpapers/001.png)
+
+## 🐧 Unterstützte Distributionen
+
+<p align="left">
+  <a href="https://ubuntu.com"><img src="https://assets.ubuntu.com/v1/29985a98-ubuntu-logo32.png" height="40" alt="Ubuntu" title="Ubuntu"></a>&nbsp;&nbsp;
+  <a href="https://www.debian.org"><img src="https://www.debian.org/logos/openlogo-nd-100.png" height="40" alt="Debian" title="Debian"></a>&nbsp;&nbsp;
+  <a href="https://getfedora.org"><img src="https://getfedora.org/static/images/fedora-logotitle.png" height="40" alt="Fedora" title="Fedora"></a>&nbsp;&nbsp;
+  <a href="https://archlinux.org"><img src="https://archlinux.org/static/logos/archlinux-logo-dark-1200dpi.31f6835b0109.png" height="40" alt="Arch Linux" title="Arch Linux"></a>&nbsp;&nbsp;
+  <a href="https://manjaro.org"><img src="https://manjaro.org/img/logo.svg" height="40" alt="Manjaro" title="Manjaro"></a>&nbsp;&nbsp;
+  <a href="https://www.opensuse.org"><img src="https://www.opensuse.org/build/images/opensuse-logo.png" height="40" alt="openSUSE" title="openSUSE"></a>&nbsp;&nbsp;
+  <a href="https://linuxmint.com"><img src="https://linuxmint.com/web/img/logo-mono.svg" height="40" alt="Linux Mint" title="Linux Mint"></a>&nbsp;&nbsp;
+  <a href="https://pop.system76.com"><img src="https://pop.system76.com/assets/pop-logo.f4da084f.png" height="40" alt="Pop!_OS" title="Pop!_OS"></a>
+</p>
 
 ## Funktionen
 

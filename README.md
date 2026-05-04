@@ -18,12 +18,14 @@
 
 # Hentai-Senpai Theme
 
-[![Release](https://img.shields.io/github/v/release/PhantomNimbi/Hentai-Senpai-GTK-Theme?label=%F0%9F%93%A6%20Release&style=flat-square&color=88C0D0)](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/releases)
-[![License](https://img.shields.io/github/license/PhantomNimbi/Hentai-Senpai-GTK-Theme?label=%E2%9A%96%EF%B8%8F%20License&style=flat-square&color=88C0D0)](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/blob/main/src/COPYING)
-[![Stars](https://img.shields.io/github/stars/PhantomNimbi/Hentai-Senpai-GTK-Theme?label=%E2%AD%90%20Stars&style=flat-square&color=88C0D0)](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/stargazers)
-[![Issues](https://img.shields.io/github/issues/PhantomNimbi/Hentai-Senpai-GTK-Theme?label=%F0%9F%90%9B%20Issues&style=flat-square&color=88C0D0)](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/issues)
+<p align="center">
+  <a href="https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/releases"><img src="https://img.shields.io/github/v/release/PhantomNimbi/Hentai-Senpai-GTK-Theme?label=%F0%9F%93%A6%20Release&style=flat-square&color=88C0D0" alt="Release"></a>
+  <a href="https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/blob/main/src/COPYING"><img src="https://img.shields.io/github/license/PhantomNimbi/Hentai-Senpai-GTK-Theme?label=%E2%9A%96%EF%B8%8F%20License&style=flat-square&color=88C0D0" alt="License"></a>
+  <a href="https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/stargazers"><img src="https://img.shields.io/github/stars/PhantomNimbi/Hentai-Senpai-GTK-Theme?label=%E2%AD%90%20Stars&style=flat-square&color=88C0D0" alt="Stars"></a>
+  <a href="https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/issues"><img src="https://img.shields.io/github/issues/PhantomNimbi/Hentai-Senpai-GTK-Theme?label=%F0%9F%90%9B%20Issues&style=flat-square&color=88C0D0" alt="Issues"></a>
+  <a href="https://gtk.org"><img src="https://img.shields.io/badge/GTK-2%2F3%2F4-88C0D0?style=flat-square&logo=gtk" alt="GTK"></a>
+</p>
 
-[![GTK](https://img.shields.io/badge/GTK-2%2F3%2F4-88C0D0?style=flat-square&logo=gtk)](https://gtk.org)
 ## 🐧 Supported Distributions
 
 <p align="left">
@@ -36,13 +38,6 @@
   <a href="https://linuxmint.com"><img src="https://cdn.simpleicons.org/linuxmint/87CF3E" height="40" alt="Linux Mint" title="Linux Mint"></a>&nbsp;&nbsp;
   <a href="https://pop.system76.com"><img src="https://cdn.simpleicons.org/popos/48B9C7" height="40" alt="Pop!_OS" title="Pop!_OS"></a>
 </p>
-
-[![Share on X](https://img.shields.io/badge/Share-X-000000?style=flat-square&logo=x)](https://twitter.com/intent/tweet?text=Check%20out%20Hentai-Senpai%20-%20A%20beautiful%20dark%20GTK%20theme!&url=https%3A%2F%2Fgithub.com%2FPhantomNimbi%2FHentai-Senpai-GTK-Theme)
-[![Share on Reddit](https://img.shields.io/badge/Share-Reddit-FF4500?style=flat-square&logo=reddit)](https://reddit.com/submit?title=Hentai-Senpai%20GTK%20Theme&url=https%3A%2F%2Fgithub.com%2FPhantomNimbi%2FHentai-Senpai-GTK-Theme)
-[![Share on Facebook](https://img.shields.io/badge/Share-Facebook-1877F2?style=flat-square&logo=facebook)](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fgithub.com%2FPhantomNimbi%2FHentai-Senpai-GTK-Theme)
-[![Share on LinkedIn](https://img.shields.io/badge/Share-LinkedIn-0A66C2?style=flat-square&logo=linkedin)](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fgithub.com%2FPhantomNimbi%2FHentai-Senpai-GTK-Theme)
-[![Share on Mastodon](https://img.shields.io/badge/Share-Mastodon-6364FF?style=flat-square&logo=mastodon)](https://mastodonshare.com/?text=Hentai-Senpai%20GTK%20Theme&url=https%3A%2F%2Fgithub.com%2FPhantomNimbi%2FHentai-Senpai-GTK-Theme)
-[![Share on Telegram](https://img.shields.io/badge/Share-Telegram-26A5E4?style=flat-square&logo=telegram)](https://t.me/share/url?url=https%3A%2F%2Fgithub.com%2FPhantomNimbi%2FHentai-Senpai-GTK-Theme&text=Hentai-Senpai%20GTK%20Theme)
 
 A beautiful dark GTK theme based on [Orchis](https://github.com/vinceliuice/Orchis-theme) with the elegant [Nord](https://www.nordtheme.com/) color palette.
 
@@ -131,6 +126,16 @@ Contributions welcome! See the [Contributing Guide](https://github.com/PhantomNi
 ⚖️ GPL-3.0 License — see [COPYING](src/COPYING) file for details.
 
 ---
+
+<p align="center">
+  <strong>Share this theme:</strong><br>
+  <a href="https://twitter.com/intent/tweet?text=Check%20out%20Hentai-Senpai%20-%20A%20beautiful%20dark%20GTK%20theme!&url=https%3A%2F%2Fgithub.com%2FPhantomNimbi%2FHentai-Senpai-GTK-Theme"><img src="https://img.shields.io/badge/Share-X-000000?style=flat-square&logo=x" alt="Share on X"></a>
+  <a href="https://reddit.com/submit?title=Hentai-Senpai%20GTK%20Theme&url=https%3A%2F%2Fgithub.com%2FPhantomNimbi%2FHentai-Senpai-GTK-Theme"><img src="https://img.shields.io/badge/Share-Reddit-FF4500?style=flat-square&logo=reddit" alt="Share on Reddit"></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fgithub.com%2FPhantomNimbi%2FHentai-Senpai-GTK-Theme"><img src="https://img.shields.io/badge/Share-Facebook-1877F2?style=flat-square&logo=facebook" alt="Share on Facebook"></a>
+  <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fgithub.com%2FPhantomNimbi%2FHentai-Senpai-GTK-Theme"><img src="https://img.shields.io/badge/Share-LinkedIn-0A66C2?style=flat-square&logo=linkedin" alt="Share on LinkedIn"></a>
+  <a href="https://mastodonshare.com/?text=Hentai-Senpai%20GTK%20Theme&url=https%3A%2F%2Fgithub.com%2FPhantomNimbi%2FHentai-Senpai-GTK-Theme"><img src="https://img.shields.io/badge/Share-Mastodon-6364FF?style=flat-square&logo=mastodon" alt="Share on Mastodon"></a>
+  <a href="https://t.me/share/url?url=https%3A%2F%2Fgithub.com%2FPhantomNimbi%2FHentai-Senpai-GTK-Theme&text=Hentai-Senpai%20GTK%20Theme"><img src="https://img.shields.io/badge/Share-Telegram-26A5E4?style=flat-square&logo=telegram" alt="Share on Telegram"></a>
+</p>
 
 🎨 **Enjoy your new theme!**
 

@@ -35,17 +35,17 @@ A beautiful dark GTK theme based on [Orchis](https://github.com/vinceliuice/Orch
 
 ![Theme Preview](wallpapers/001.png)
 
-## Features
+## ✨ Features
 
-- **Dark & Elegant** — Deep blue-gray backgrounds with comfortable contrast
-- **Nord Colors** — Arctic-inspired color scheme designed for clarity
-- **Material Design** — Rounded corners, smooth shadows, ripple effects
-- **Multi-DE Support** — GNOME, Cinnamon, XFCE, Budgie, and MATE
-- **Complete Theming** — GTK 2/3/4, GNOME Shell, window decorations, wallpapers
-- **Modern GTK4** — Full support for libadwaita-based applications
-- **Flatpak Ready** — Theme support for sandboxed applications
+- 🌙 **Dark & Elegant** — Deep blue-gray backgrounds with comfortable contrast
+- 🎨 **Nord Colors** — Arctic-inspired color scheme designed for clarity
+- 🔷 **Material Design** — Rounded corners, smooth shadows, ripple effects
+- 🖥️ **Multi-DE Support** — GNOME, Cinnamon, XFCE, Budgie, and MATE
+- 🎯 **Complete Theming** — GTK 2/3/4, GNOME Shell, window decorations, wallpapers
+- ⚡ **Modern GTK4** — Full support for libadwaita-based applications
+- 📦 **Flatpak Ready** — Theme support for sandboxed applications
 
-## Quick Start
+## 🚀 Quick Start
 
 ```bash
 # Install with all recommended fixes
@@ -55,13 +55,13 @@ A beautiful dark GTK theme based on [Orchis](https://github.com/vinceliuice/Orch
 ./scripts/apply.sh
 ```
 
-## Requirements
+## 📋 Requirements
 
 - GTK 3.20+ or GTK 4.0+
 - GNOME Shell 40+ (for GNOME users)
 - Bash 4.0+
 
-## Installation
+## 💾 Installation
 
 ```bash
 # Basic install
@@ -71,7 +71,7 @@ A beautiful dark GTK theme based on [Orchis](https://github.com/vinceliuice/Orch
 ./install.sh --update -l -f --dock
 ```
 
-### Installation Options
+### ⚙️ Installation Options
 
 | Option | Short | Description |
 |--------|-------|-------------|
@@ -82,25 +82,25 @@ A beautiful dark GTK theme based on [Orchis](https://github.com/vinceliuice/Orch
 | `--dock [TYPE]` | | Dock theme (transparent\|solid) |
 | `--wallpapers` | `-w` | Install wallpapers |
 
-## Documentation
+## 📚 Documentation
 
-📚 **[Full Documentation Wiki](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/wiki)** — Comprehensive guides and troubleshooting
+📖 **[Full Documentation Wiki](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/wiki)** — Comprehensive guides and troubleshooting
 
-- **[Installation Guide](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/wiki/Installation-Guide)** — Detailed setup instructions
-- **[Troubleshooting](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/wiki/Troubleshooting)** — Common issues and solutions
-- **[Color Palette](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/wiki/Color-Palette)** — Nord color reference
-- **[Customization](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/wiki/Customization)** — Personalize the theme
-- **[Contributing](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/wiki/Contributing)** — How to contribute
+- 📘 **[Installation Guide](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/wiki/Installation-Guide)** — Detailed setup instructions
+- 🔧 **[Troubleshooting](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/wiki/Troubleshooting)** — Common issues and solutions
+- 🎨 **[Color Palette](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/wiki/Color-Palette)** — Nord color reference
+- ⚙️ **[Customization](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/wiki/Customization)** — Personalize the theme
+- 🤝 **[Contributing](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/wiki/Contributing)** — How to contribute
 
-## Quick Fixes
+## 🔧 Quick Fixes
 
-**GTK4 apps not themed?** `./install.sh -l` then log out and back in
+💡 **GTK4 apps not themed?** `./install.sh -l` then log out and back in
 
-**Flatpak apps not themed?** `./install.sh -f` then restart Flatpak apps
+💡 **Flatpak apps not themed?** `./install.sh -f` then restart Flatpak apps
 
-**Dock not styled?** `./install.sh --dock transparent` or `--dock solid`
+💡 **Dock not styled?** `./install.sh --dock transparent` or `--dock solid`
 
-## Contributing
+## 🤝 Contributing
 
 Contributions welcome! See the [Contributing Guide](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/wiki/Contributing) for guidelines.
 
@@ -108,17 +108,17 @@ Contributions welcome! See the [Contributing Guide](https://github.com/PhantomNi
 - ✨ [Suggest features](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/discussions)
 - 📝 Improve documentation
 
-## Credits
+## 🙏 Credits
 
-- Based on [Orchis Theme](https://github.com/vinceliuice/Orchis-theme) by vinceliuice
-- [Nord Theme](https://www.nordtheme.com/) color palette by Arctic Ice Studio
+- 🎨 Based on [Orchis Theme](https://github.com/vinceliuice/Orchis-theme) by vinceliuice
+- 🌈 [Nord Theme](https://www.nordtheme.com/) color palette by Arctic Ice Studio
 
-## License
+## 📄 License
 
-GPL-3.0 License — see [COPYING](src/COPYING) file for details.
+⚖️ GPL-3.0 License — see [COPYING](src/COPYING) file for details.
 
 ---
 
-**Enjoy your new theme!** 🎨
+🎨 **Enjoy your new theme!**
 
-For help, check the [documentation wiki](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/wiki).
+💬 For help, check the [documentation wiki](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/wiki)

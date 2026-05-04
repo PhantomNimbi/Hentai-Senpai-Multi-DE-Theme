@@ -44,29 +44,29 @@ Hentai-Senpai GTK 主题的视觉展示。
   <tr>
     <td width="33%" valign="top" style="padding: 10px;">
       <img src="https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/001.png" alt="壁纸 001" width="100%" style="border-radius: 8px;"/>
-      <p align="center"><strong>001</strong> — 极简暗黑</p>
+      <p align="center"><strong>001</strong></p>
     </td>
     <td width="33%" valign="top" style="padding: 10px;">
       <img src="https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/002.png" alt="壁纸 002" width="100%" style="border-radius: 8px;"/>
-      <p align="center"><strong>002</strong> — 北欧霜冻</p>
+      <p align="center"><strong>002</strong></p>
     </td>
     <td width="33%" valign="top" style="padding: 10px;">
       <img src="https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/003.png" alt="壁纸 003" width="100%" style="border-radius: 8px;"/>
-      <p align="center"><strong>003</strong> — 极光渐变</p>
+      <p align="center"><strong>003</strong></p>
     </td>
   </tr>
   <tr>
     <td width="33%" valign="top" style="padding: 10px;">
       <img src="https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/004.png" alt="壁纸 004" width="100%" style="border-radius: 8px;"/>
-      <p align="center"><strong>004</strong> — 极夜</p>
+      <p align="center"><strong>004</strong></p>
     </td>
     <td width="33%" valign="top" style="padding: 10px;">
       <img src="https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/005.png" alt="壁纸 005" width="100%" style="border-radius: 8px;"/>
-      <p align="center"><strong>005</strong> — 暴风雪</p>
+      <p align="center"><strong>005</strong></p>
     </td>
     <td width="33%" valign="top" style="padding: 10px;">
       <img src="https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/006.png" alt="壁纸 006" width="100%" style="border-radius: 8px;"/>
-      <p align="center"><strong>006</strong> — 极简 Ecchi</p>
+      <p align="center"><strong>006</strong></p>
     </td>
   </tr>
 </table>

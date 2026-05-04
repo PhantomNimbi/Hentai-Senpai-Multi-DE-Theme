@@ -44,29 +44,29 @@ O tema inclui uma coleção de papéis de parede minimalistas com cores monocrom
   <tr>
     <td width="33%" valign="top" style="padding: 10px;">
       <img src="https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/001.png" alt="Papel de Parede 001" width="100%" style="border-radius: 8px;"/>
-      <p align="center"><strong>001</strong> — Minimalista escuro</p>
+      <p align="center"><strong>001</strong></p>
     </td>
     <td width="33%" valign="top" style="padding: 10px;">
       <img src="https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/002.png" alt="Papel de Parede 002" width="100%" style="border-radius: 8px;"/>
-      <p align="center"><strong>002</strong> — Gelo nórdico</p>
+      <p align="center"><strong>002</strong></p>
     </td>
     <td width="33%" valign="top" style="padding: 10px;">
       <img src="https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/003.png" alt="Papel de Parede 003" width="100%" style="border-radius: 8px;"/>
-      <p align="center"><strong>003</strong> — Gradiente aurora</p>
+      <p align="center"><strong>003</strong></p>
     </td>
   </tr>
   <tr>
     <td width="33%" valign="top" style="padding: 10px;">
       <img src="https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/004.png" alt="Papel de Parede 004" width="100%" style="border-radius: 8px;"/>
-      <p align="center"><strong>004</strong> — Noite polar</p>
+      <p align="center"><strong>004</strong></p>
     </td>
     <td width="33%" valign="top" style="padding: 10px;">
       <img src="https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/005.png" alt="Papel de Parede 005" width="100%" style="border-radius: 8px;"/>
-      <p align="center"><strong>005</strong> — Tempestade de neve</p>
+      <p align="center"><strong>005</strong></p>
     </td>
     <td width="33%" valign="top" style="padding: 10px;">
       <img src="https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/006.png" alt="Papel de Parede 006" width="100%" style="border-radius: 8px;"/>
-      <p align="center"><strong>006</strong> — Ecchi minimalista</p>
+      <p align="center"><strong>006</strong></p>
     </td>
   </tr>
 </table>

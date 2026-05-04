@@ -44,29 +44,29 @@ Hentai-Senpai GTK テーマのビジュアルショーケース。
   <tr>
     <td width="33%" valign="top" style="padding: 10px;">
       <img src="https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/001.png" alt="壁紙 001" width="100%" style="border-radius: 8px;"/>
-      <p align="center"><strong>001</strong> — ミニマルダーク</p>
+      <p align="center"><strong>001</strong></p>
     </td>
     <td width="33%" valign="top" style="padding: 10px;">
       <img src="https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/002.png" alt="壁紙 002" width="100%" style="border-radius: 8px;"/>
-      <p align="center"><strong>002</strong> — ノルディックフロスト</p>
+      <p align="center"><strong>002</strong></p>
     </td>
     <td width="33%" valign="top" style="padding: 10px;">
       <img src="https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/003.png" alt="壁紙 003" width="100%" style="border-radius: 8px;"/>
-      <p align="center"><strong>003</strong> — オーロラグラデーション</p>
+      <p align="center"><strong>003</strong></p>
     </td>
   </tr>
   <tr>
     <td width="33%" valign="top" style="padding: 10px;">
       <img src="https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/004.png" alt="壁紙 004" width="100%" style="border-radius: 8px;"/>
-      <p align="center"><strong>004</strong> — ポーラーナイト</p>
+      <p align="center"><strong>004</strong></p>
     </td>
     <td width="33%" valign="top" style="padding: 10px;">
       <img src="https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/005.png" alt="壁紙 005" width="100%" style="border-radius: 8px;"/>
-      <p align="center"><strong>005</strong> — スノーストーム</p>
+      <p align="center"><strong>005</strong></p>
     </td>
     <td width="33%" valign="top" style="padding: 10px;">
       <img src="https://raw.githubusercontent.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/main/wallpapers/006.png" alt="壁紙 006" width="100%" style="border-radius: 8px;"/>
-      <p align="center"><strong>006</strong> — エッチミニマル</p>
+      <p align="center"><strong>006</strong></p>
     </td>
   </tr>
 </table>

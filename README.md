@@ -2,15 +2,16 @@
   <details>
     <summary style="background: #2E3440; color: #D8DEE9; border: 1px solid #4C566A; border-radius: 6px; padding: 6px 12px; cursor: pointer; font-size: 13px; display: inline-flex; align-items: center; gap: 6px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; list-style: none;">🌐 Language</summary>
     <div style="margin-top: 8px; padding: 10px; background: #3B4252; border: 1px solid #4C566A; border-radius: 6px; text-align: right;">
-      <div style="margin-bottom: 4px;"><a href="https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/wiki" style="color: #88C0D0; text-decoration: none;">🇺🇸 English</a></div>
-      <div style="margin-bottom: 4px;"><a href="https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/wiki/Home-pt-br" style="color: #88C0D0; text-decoration: none;">🇧🇷 Português</a></div>
-      <div style="margin-bottom: 4px;"><a href="https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/wiki/Home-es-es" style="color: #88C0D0; text-decoration: none;">🇪🇸 Español</a></div>
-      <div style="margin-bottom: 4px;"><a href="https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/wiki/Home-fr-fr" style="color: #88C0D0; text-decoration: none;">🇫🇷 Français</a></div>
-      <div style="margin-bottom: 4px;"><a href="https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/wiki/Home-de-de" style="color: #88C0D0; text-decoration: none;">🇩🇪 Deutsch</a></div>
-      <div style="margin-bottom: 4px;"><a href="https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/wiki/Home-it-it" style="color: #88C0D0; text-decoration: none;">🇮🇹 Italiano</a></div>
-      <div style="margin-bottom: 4px;"><a href="https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/wiki/Home-ja-jp" style="color: #88C0D0; text-decoration: none;">🇯🇵 日本語</a></div>
-      <div style="margin-bottom: 4px;"><a href="https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/wiki/Home-zh-cn" style="color: #88C0D0; text-decoration: none;">🇨🇳 中文</a></div>
-      <div><a href="https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/wiki/Home-ru-ru" style="color: #88C0D0; text-decoration: none;">🇷🇺 Русский</a></div>
+      <div style="margin-bottom: 4px;"><a href="README.md" style="color: #88C0D0; text-decoration: none;"><strong>🇺🇸 English</strong></a></div>
+      <div style="margin-bottom: 4px;"><a href="locale/pt-br/README.md" style="color: #88C0D0; text-decoration: none;">🇧🇷 Português</a></div>
+      <div style="margin-bottom: 4px;"><a href="locale/es-es/README.md" style="color: #88C0D0; text-decoration: none;">🇪🇸 Español</a></div>
+      <div style="margin-bottom: 4px;"><a href="locale/fr-fr/README.md" style="color: #88C0D0; text-decoration: none;">🇫🇷 Français</a></div>
+      <div style="margin-bottom: 4px;"><a href="locale/de-de/README.md" style="color: #88C0D0; text-decoration: none;">🇩🇪 Deutsch</a></div>
+      <div style="margin-bottom: 4px;"><a href="locale/it-it/README.md" style="color: #88C0D0; text-decoration: none;">🇮🇹 Italiano</a></div>
+      <div style="margin-bottom: 4px;"><a href="locale/ja-jp/README.md" style="color: #88C0D0; text-decoration: none;">🇯🇵 日本語</a></div>
+      <div style="margin-bottom: 4px;"><a href="locale/ko-kr/README.md" style="color: #88C0D0; text-decoration: none;">🇰🇷 한국어</a></div>
+      <div style="margin-bottom: 4px;"><a href="locale/zh-cn/README.md" style="color: #88C0D0; text-decoration: none;">🇨🇳 中文</a></div>
+      <div><a href="locale/ru-ru/README.md" style="color: #88C0D0; text-decoration: none;">🇷🇺 Русский</a></div>
     </div>
   </details>
 </div>

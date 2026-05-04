@@ -39,12 +39,21 @@ jobs:
       
       - name: Generate wiki content from docs branch
         run: |
-          # Create Home.md with translate button
+          # Create Home.md with Google Translate
           cat > wiki/Home.md << 'EOF'
           <div align="right">
-            <button onclick="switchLanguage(prompt('Enter language code (en, pt, es):') || 'en')" style="background: #2E3440; color: #D8DEE9; border: 1px solid #4C566A; border-radius: 6px; padding: 8px 16px; cursor: pointer; font-size: 14px; display: inline-flex; align-items: center; gap: 8px;">
-              🌐 Translate
-            </button>
+            <div id="google_translate_element"></div>
+            <script type="text/javascript">
+              function googleTranslateElementInit() {
+                new google.translate.TranslateElement({
+                  pageLanguage: 'en',
+                  includedLanguages: 'en,pt,es',
+                  layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                  autoDisplay: false
+                }, 'google_translate_element');
+              }
+            </script>
+            <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
           </div>
           
           # Hentai-Senpai Theme

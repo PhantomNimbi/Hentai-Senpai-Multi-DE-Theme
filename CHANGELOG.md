@@ -52,6 +52,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Added discussion templates for each category
   - Created DISCUSSION_GUIDE.md with usage instructions
   - Defined best practices and community guidelines
+  - Moved to separate `discussions` branch for template management
 
 ### Changed
 

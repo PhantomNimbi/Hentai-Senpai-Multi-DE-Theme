@@ -8,6 +8,12 @@ on:
       - 'docs/**'
       - '.github/workflows/generate-wiki.yml'
   workflow_dispatch:
+    inputs:
+      sync_from_docs:
+        description: 'Sync documentation from docs/ directory (uncheck if docs/ removed)'
+        required: true
+        default: true
+        type: boolean
 
 jobs:
   generate-wiki:
@@ -26,9 +32,25 @@ jobs:
           path: wiki
           token: ${{ secrets.PAT_TOKEN }}
       
-      - name: Generate wiki content
+      - name: Check if docs directory exists
+        id: check_docs
         run: |
-          # Create Home.md from README and docs/HOME.md
+          if [ -d "docs" ] && [ "${{ github.event.inputs.sync_from_docs }}" != "false" ]; then
+            echo "exists=true" >> $GITHUB_OUTPUT
+            echo "✅ docs/ directory found - will sync from docs/"
+          else
+            echo "exists=false" >> $GITHUB_OUTPUT
+            if [ "${{ github.event.inputs.sync_from_docs }}" == "false" ]; then
+              echo "ℹ️  docs/ sync disabled via workflow input"
+            else
+              echo "ℹ️  docs/ directory not found - wiki will use existing content"
+            fi
+          fi
+      
+      - name: Generate wiki content from docs
+        if: steps.check_docs.outputs.exists == 'true'
+        run: |
+          # Create Home.md from README and docs content
           cat > wiki/Home.md << 'EOF'
           # Hentai-Senpai Theme
           
@@ -59,17 +81,26 @@ jobs:
           - Flatpak Ready
           
           [View on GitHub](https://github.com/${{ github.repository }})
+          
+          ---
+          
+          **Note:** This wiki is generated from the repository docs/ directory. Once the wiki is created, the docs/ directory can be removed from the repository if desired. The wiki will remain as the primary documentation source.
           EOF
           
-          # Convert docs to wiki pages
-          cp docs/INSTALLATION.md wiki/Installation-Guide.md
-          cp docs/TROUBLESHOOTING.md wiki/Troubleshooting.md
-          cp docs/CUSTOMIZATION.md wiki/Customization.md
-          cp docs/COLOR_PALETTE.md wiki/Color-Palette.md
-          cp docs/CONTRIBUTING.md wiki/Contributing.md
+          # Convert docs to wiki pages (only if they exist)
+          [ -f docs/INSTALLATION.md ] && cp docs/INSTALLATION.md wiki/Installation-Guide.md
+          [ -f docs/TROUBLESHOOTING.md ] && cp docs/TROUBLESHOOTING.md wiki/Troubleshooting.md
+          [ -f docs/CUSTOMIZATION.md ] && cp docs/CUSTOMIZATION.md wiki/Customization.md
+          [ -f docs/COLOR_PALETTE.md ] && cp docs/COLOR_PALETTE.md wiki/Color-Palette.md
+          [ -f docs/CONTRIBUTING.md ] && cp docs/CONTRIBUTING.md wiki/Contributing.md
           
-          # Create _Sidebar.md for navigation
-          cat > wiki/_Sidebar.md << 'EOF'
+          echo "✅ Wiki content generated from docs/"
+      
+      - name: Ensure wiki navigation exists
+        run: |
+          # Create _Sidebar.md for navigation (only if not exists or docs changed)
+          if [ ! -f wiki/_Sidebar.md ] || [ "${{ steps.check_docs.outputs.exists }}" == "true" ]; then
+            cat > wiki/_Sidebar.md << 'EOF'
           ## Navigation
           
           [Home](Home)
@@ -89,15 +120,16 @@ jobs:
           
           [GitHub Repository](https://github.com/${{ github.repository }})
           EOF
+          fi
           
-          # Create _Footer.md
-          cat > wiki/_Footer.md << 'EOF'
+          # Create _Footer.md (only if not exists or docs changed)
+          if [ ! -f wiki/_Footer.md ] || [ "${{ steps.check_docs.outputs.exists }}" == "true" ]; then
+            cat > wiki/_Footer.md << 'EOF'
           **Hentai-Senpai Theme** - A beautiful dark GTK theme
           
           [GitHub](https://github.com/${{ github.repository }}) • [Issues](https://github.com/${{ github.repository }}/issues)
           EOF
-          
-          echo "✅ Wiki content generated"
+          fi
       
       - name: Commit and push wiki
         working-directory: wiki
@@ -110,32 +142,30 @@ jobs:
           
           # Check if there are changes
           if git diff --cached --quiet; then
-            echo "No changes to wiki"
+            echo "ℹ️  No changes to wiki"
           else
-            git commit -m "Update wiki from docs
+            if [ "${{ steps.check_docs.outputs.exists }}" == "true" ]; then
+              git commit -m "Update wiki from docs directory
           
           - Synchronized documentation with main repository
+          - Source: docs/ directory
           - Updated: $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
+            else
+              git commit -m "Update wiki
+          
+          - Wiki maintained independently
+          - Updated: $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
+            fi
             git push
             echo "✅ Wiki updated successfully"
           fi
       
-      - name: Update docs/README with wiki link
+      - name: Update repository README with wiki link
+        if: steps.check_docs.outputs.exists == 'true'
         run: |
-          # Check if docs/README.md exists and update it
-          if [ -f docs/README.md ]; then
-            # Add wiki link at the top if not present
-            if ! grep -q "GitHub Wiki" docs/README.md; then
-              cat > docs/README.md.new << 'EOF'
-          # Hentai-Senpai Documentation
-          
-          > 📚 **[View Documentation on GitHub Wiki](https://github.com/${{ github.repository }}/wiki)**
-          
-          This documentation is also available on our GitHub Wiki for better navigation and search.
-          
-          EOF
-              tail -n +2 docs/README.md >> docs/README.md.new
-              mv docs/README.md.new docs/README.md
-              echo "✅ Added wiki link to docs/README.md"
-            fi
+          # Add wiki link to main README.md if not present
+          if [ -f README.md ] && ! grep -q "github.com/${{ github.repository }}/wiki" README.md; then
+            sed -i '2a\
+📚 **[Documentation Wiki](https://github.com/'${{ github.repository }}'/wiki)**' README.md
+            echo "✅ Added wiki link to README.md"
           fi

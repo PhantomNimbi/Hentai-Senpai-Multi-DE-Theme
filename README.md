@@ -97,13 +97,16 @@ This installs:
 
 ## Documentation
 
-📖 **[Full Documentation](docs/)** — Comprehensive guides and references
+📚 **[Full Documentation Wiki](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/wiki)** — Comprehensive guides with better navigation
 
-- **[Documentation Home](docs/HOME.md)** — Complete overview and getting started guide
-- **[Installation Guide](docs/INSTALLATION.md)** — Detailed installation instructions
-- **[Troubleshooting](docs/TROUBLESHOOTING.md)** — Solutions to common problems
-- **[Color Palette](docs/COLOR_PALETTE.md)** — Complete Nord color reference
-- **[Customization](docs/CUSTOMIZATION.md)** — Personalize the theme
+The documentation is maintained on the GitHub Wiki for better organization and searchability:
+
+- **[Home](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/wiki)** — Overview and quick start
+- **[Installation Guide](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/wiki/Installation-Guide)** — Detailed installation instructions
+- **[Troubleshooting](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/wiki/Troubleshooting)** — Solutions to common problems
+- **[Color Palette](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/wiki/Color-Palette)** — Complete Nord color reference
+- **[Customization](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/wiki/Customization)** — Personalize the theme
+- **[Contributing](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/wiki/Contributing)** — Guidelines for contributors
 
 ## Screenshots
 

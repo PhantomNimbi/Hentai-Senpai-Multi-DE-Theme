@@ -40,6 +40,6 @@ jobs:
             -H "Accept: application/vnd.github+json" \
             -H "X-GitHub-Api-Version: 2022-11-28" \
             repos/${{ github.repository }}/topics \
-            --input - <<< '{"names":["gtk-theme","gtk","gtk3","gtk4","gnome","cinnamon","xfce","budgie","mate","linux","theme","dark-theme","nord","orchis","material-design","desktop-environment","ricing","unixporn","customization","linux-theme"]}'
+            --input - <<< '{"names":["gtk-theme","nord-theme","orchis-theme","dark-theme","gnome","cinnamon","xfce","budgie","mate","material-design","ricing","unixporn"]}'
           
-          echo "✅ Repository topics updated (20 topics)"
+          echo "✅ Repository topics updated (12 curated topics)"

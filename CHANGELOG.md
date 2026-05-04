@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Renamed screenshot files to use consistent preview naming convention:
+  - `Screenshot from 2026-05-03 18-59-32.png` → `preview-1.png`
+  - `Screenshot from 2026-05-03 18-59-42.png` → `preview-2.png`
+- Updated README screenshots section to display the new PNG preview images instead of SVG graphics
+
 ## [1.0.0] - 2026-05-03
 
 ### Added

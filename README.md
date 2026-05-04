@@ -70,9 +70,9 @@ A beautiful dark GTK theme based on [Orchis](https://github.com/vinceliuice/Orch
 
 ## Screenshots
 
-| GTK Applications | GNOME Shell | Window Controls |
-|----------------|-------------|-----------------|
-| ![](images/preview-gtk.svg) | ![](images/preview-gnome-shell.svg) | ![](images/preview-buttons.svg) |
+| Preview 1 | Preview 2 |
+|-----------|-----------|
+| ![](images/preview-1.png) | ![](images/preview-2.png) |
 
 ## Credits
 

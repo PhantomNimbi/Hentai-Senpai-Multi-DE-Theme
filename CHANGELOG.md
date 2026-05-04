@@ -44,6 +44,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Displays preview-1.png and preview-2.png images
   - Shows all 6 available wallpapers
   - Available in all 9 languages
+  - Fixed: Actually created the Gallery.md files in all locale folders
 
 ### Changed
 

@@ -25,6 +25,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.1] - 2026-05-04
+
 ### 📸 Updated
 
 - **Gallery Images**
@@ -33,6 +35,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Gallery displays both preview images side-by-side with captions
   - Preview-1.png: GTK applications showcase
   - Preview-2.png: Full desktop experience showcase
+
+### 🐛 Fixed
+
+- **License Badge**
+  - Fixed dynamic license badge showing "not specified"
+  - Changed to static GPL-3.0 badge
+  - Moved LICENSE file to root directory
+  - Updated all license references from src/COPYING to LICENSE
+
+### 🎨 Changed
+
+- **Badge Styles**
+  - Updated all badge styles from flat-square to plastic
+  - More modern 3D appearance with subtle depth
 
 ## [1.0.0] - 2026-05-04
 

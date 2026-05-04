@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.0.1] - 2026-05-04
+
+### Changes
+- Initial release
+
+
 > 🌐 **Languages:** English | [日本語](CHANGELOG.ja.md) | [Español](CHANGELOG.es.md) | [Français](CHANGELOG.fr.md) | [Deutsch](CHANGELOG.de.md) | [中文](CHANGELOG.zh.md) | [한국어](CHANGELOG.ko.md) | [Русский](CHANGELOG.ru.md) | [Português](CHANGELOG.pt.md)
 
 All notable changes to the Hentai-Senpai GTK Theme project will be documented in this file.

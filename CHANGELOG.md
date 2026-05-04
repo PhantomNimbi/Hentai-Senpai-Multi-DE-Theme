@@ -47,6 +47,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Fixed: Actually created the Gallery.md files in all locale folders
   - Fixed: Corrected preview image assignments (preview-2.png = Desktop, preview-1.png = Applications)
   - Fixed: Corrected wallpaper description (minimalistic, monochrome colors, ecchi themes)
+- **GitHub Discussions**
+  - Created comprehensive discussion categories: General, Showcase, Q&A, Ideas, Development, Announcements
+  - Added discussion templates for each category
+  - Created DISCUSSION_GUIDE.md with usage instructions
+  - Defined best practices and community guidelines
 
 ### Changed
 

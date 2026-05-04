@@ -11,64 +11,35 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
       - name: Update repository description
         env:
-          TOKEN: ${{ secrets.PAT_TOKEN }}
-          REPO: ${{ github.repository }}
+          GH_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
-          curl -L \
-            -X PATCH \
+          gh api \
+            --method PATCH \
             -H "Accept: application/vnd.github+json" \
-            -H "Authorization: Bearer $TOKEN" \
             -H "X-GitHub-Api-Version: 2022-11-28" \
-            "https://api.github.com/repos/$REPO" \
-            -d '{
-              "description": "A beautiful dark GTK theme based on Orchis with Nord colors",
-              "homepage": "https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme",
-              "has_issues": true,
-              "has_projects": true,
-              "has_wiki": true
-            }'
+            repos/${{ github.repository }} \
+            -f description="A beautiful dark GTK theme based on Orchis with Nord colors" \
+            -f homepage="https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme" \
+            -f has_issues=true \
+            -f has_projects=true \
+            -f has_wiki=true
           
           echo "✅ Repository description updated"
       
       - name: Update repository topics
         env:
-          TOKEN: ${{ secrets.PAT_TOKEN }}
-          REPO: ${{ github.repository }}
+          GH_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
-          curl -L \
-            -X PUT \
+          gh api \
+            --method PUT \
             -H "Accept: application/vnd.github+json" \
-            -H "Authorization: Bearer $TOKEN" \
             -H "X-GitHub-Api-Version: 2022-11-28" \
-            "https://api.github.com/repos/$REPO/topics" \
-            -d '{
-              "names": [
-                "gtk-theme",
-                "gtk",
-                "gtk3",
-                "gtk4",
-                "gnome",
-                "gnome-shell",
-                "cinnamon",
-                "xfce",
-                "xfwm4",
-                "budgie",
-                "mate",
-                "linux",
-                "linux-theme",
-                "theme",
-                "dark-theme",
-                "nord",
-                "nord-theme",
-                "orchis",
-                "material-design",
-                "desktop-environment",
-                "ricing",
-                "unixporn",
-                "customization"
-              ]
-            }'
+            repos/${{ github.repository }}/topics \
+            --input - <<< '{"names":["gtk-theme","gtk","gtk3","gtk4","gnome","gnome-shell","cinnamon","xfce","xfwm4","budgie","mate","linux","linux-theme","theme","dark-theme","nord","nord-theme","orchis","material-design","desktop-environment","ricing","unixporn","customization"]}'
           
           echo "✅ Repository topics updated"

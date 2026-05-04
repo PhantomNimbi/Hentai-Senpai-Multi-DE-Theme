@@ -20,7 +20,7 @@
 
 [![Release](https://img.shields.io/github/v/release/PhantomNimbi/Hentai-Senpai-GTK-Theme?style=flat-square&color=88C0D0)](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/releases)
 [![License](https://img.shields.io/github/license/PhantomNimbi/Hentai-Senpai-GTK-Theme?style=flat-square&color=88C0D0)](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/blob/main/src/COPYING)
-[![Stars](https://img.shields.io/github/stars/PhantomNimbi/Hentai-Senpai-GTK-Theme?style=flat-square&color=88C0D0)](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/stargazers)
+[![Stars](https://img.shields.io/github/stars/PhantomNimbi/Hentai-Senpai-GTK-Theme?label=⭐%20Stars&style=flat-square&color=88C0D0)](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/stargazers)
 [![Issues](https://img.shields.io/github/issues/PhantomNimbi/Hentai-Senpai-GTK-Theme?style=flat-square&color=88C0D0)](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/issues)
 
 [![GTK](https://img.shields.io/badge/GTK-2%2F3%2F4-88C0D0?style=flat-square&logo=gtk)](https://gtk.org)

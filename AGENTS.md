@@ -31,16 +31,6 @@
 │   ├── flatpak-tweaks.sh     # Flatpak theme fixes
 │   └── plank.sh              # Plank dock theming
 ├── wallpapers/            # Theme wallpapers
-├── locale/                # Translated documentation
-│   ├── ja-jp/            # Japanese
-│   ├── es-es/            # Spanish
-│   ├── fr-fr/            # French
-│   ├── de-de/            # German
-│   ├── it-it/            # Italian
-│   ├── ko-kr/            # Korean
-│   ├── pt-br/            # Portuguese (Brazil)
-│   ├── ru-ru/            # Russian
-│   └── zh-cn/            # Chinese (Simplified)
 ├── .github/               # GitHub configuration
 │   ├── workflows/         # GitHub Actions
 │   └── ISSUE_TEMPLATE/    # Issue templates
@@ -66,7 +56,6 @@
 
 ### Markdown Documentation
 - Use ATX-style headers (`# Header`)
-- Include language dropdown in all locale files
 - Use Nord color (#88C0D0) for badges and accents
 - Keep line length under 100 characters when possible
 - Use emoji consistently: 🐧 (distros), ✨ (features), 📦 (install), 🔧 (fixes)
@@ -87,22 +76,6 @@ Use shields.io with Nord color (#88C0D0) and emojis:
 [![License](https://img.shields.io/github/license/...?label=%E2%9A%96%EF%B8%8F%20License&style=plastic&color=88C0D0)]
 [![Stars](https://img.shields.io/github/stars/...?label=%E2%AD%90%20Stars&style=plastic&color=88C0D0)]
 [![Issues](https://img.shields.io/github/issues/...?label=%F0%9F%90%9B%20Issues&style=plastic&color=88C0D0)]
-```
-
-### Language Dropdown Format
-Always use this exact HTML structure for language selectors:
-```html
-<div align="right" style="margin-bottom: 10px;">
-  <details>
-    <summary style="background: #2E3440; color: #D8DEE9; border: 1px solid #4C566A; 
-                    border-radius: 6px; padding: 6px 12px; cursor: pointer; font-size: 13px;
-                    display: inline-flex; align-items: center; gap: 6px; ...">🌐 Language</summary>
-    <div style="margin-top: 8px; padding: 10px; background: #3B4252; 
-                border: 1px solid #4C566A; border-radius: 6px; text-align: right;">
-      <!-- Language links -->
-    </div>
-  </details>
-</div>
 ```
 
 ## Installation & Testing
@@ -154,54 +127,18 @@ Use conventional commits format:
 3. Push tag: `git push origin v1.0.0`
 4. GitHub Actions will create release automatically (if workflow exists)
 
-## Translation Guidelines
-
-When updating translations:
-1. Always maintain the language dropdown in the same format
-2. Keep badge URLs pointing to the correct relative paths
-3. Translate section headers but keep emoji consistent
-4. Update ALL language files when adding a new language
-5. Test links work correctly (relative paths: `../xx-yy/FILENAME.md`)
-
-### Translation Status
-Current translations (9 languages):
-- 🇺🇸 English (source)
-- 🇯🇵 Japanese (ja-jp)
-- 🇪🇸 Spanish (es-es)
-- 🇫🇷 French (fr-fr)
-- 🇩🇪 German (de-de)
-- 🇮🇹 Italian (it-it)
-- 🇰🇷 Korean (ko-kr)
-- 🇧🇷 Portuguese (pt-br)
-- 🇷🇺 Russian (ru-ru)
-- 🇨🇳 Chinese Simplified (zh-cn)
-
 ## Common Tasks
-
-### Adding a New Language
-1. Create `locale/xx-yy/README.md` and `CHANGELOG.md`
-2. Copy English version as template
-3. Translate content while preserving:
-   - HTML dropdown structure
-   - Badge markdown format
-   - Section emojis
-   - Relative link paths
-4. Update ALL other language files to include new language in dropdown
-5. Update main README.md dropdown
 
 ### Updating Badges
 When updating badge styles:
 1. Update main README.md first
-2. Apply same changes to all 9 translated README.md files
 3. Ensure color consistency (#88C0D0)
 4. Maintain center alignment with `<p align="center">`
 
 ### Adding New Sections
 When adding documentation sections:
-1. Add to English README first
-2. Use emoji in header: `## 🚀 Section Name`
-3. Translate to all other languages
-4. Keep section order consistent across all files
+1. Use emoji in header: `## 🚀 Section Name`
+2. Keep section order consistent across all files
 
 ## Important Notes
 
@@ -224,9 +161,7 @@ When adding documentation sections:
 ### Key Files to Update Together
 When making documentation changes, update all of these:
 - `README.md`
-- `locale/*/README.md` (9 files)
 - `CHANGELOG.md`
-- `locale/*/CHANGELOG.md` (9 files)
 
 ### Useful Commands
 ```bash

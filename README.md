@@ -132,11 +132,9 @@ Complete install (recommended) - includes GTK4, Flatpak, and dock fixes
 
 ## 🔧 Quick Fixes
 
-💡 **GTK4 apps not themed?** `./install.sh -l` then log out and back in
-
-💡 **Flatpak apps not themed?** `./install.sh -f` then restart Flatpak apps
-
-💡 **Dock not styled?** `./install.sh --dock transparent` or `--dock solid`
+- 💡 **GTK4 apps not themed?** `./install.sh -l` then log out and back in
+- 💡 **Flatpak apps not themed?** `./install.sh -f` then restart Flatpak apps
+- 💡 **Dock not styled?** `./install.sh --dock transparent` or `--dock solid`
 
 🤝 Contributing
 

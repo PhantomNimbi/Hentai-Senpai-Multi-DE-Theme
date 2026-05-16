@@ -74,11 +74,20 @@
 
 ## 🚀 Quick Start
 
-```bash
-# Install with all recommended fixes
-./install.sh --update -l -f --dock
 
-# Apply the theme
+Download the theme and CD into the root folder
+```bash
+git clone https://github.com/PhantomNimbi/Hentai-Senpai-Multi-DE-Theme.git
+cd Hentai-Senpai-Multi-DE-Theme
+```
+
+Install with all recommended fixes
+```bash
+./install.sh --update -l -f --dock
+```
+
+Apply the theme
+```bash
 ./scripts/apply.sh
 ```
 
@@ -88,13 +97,15 @@
 - GNOME Shell 40+ (for GNOME users)
 - Bash 4.0+
 
-## 💾 Installation
+💾 Installation
 
+Basic install
 ```bash
-# Basic install
 ./install.sh
+```
 
-# Complete install (recommended) - includes GTK4, Flatpak, and dock fixes
+Complete install (recommended) - includes GTK4, Flatpak, and dock fixes
+```bash
 ./install.sh --update -l -f --dock
 ```
 
@@ -127,7 +138,7 @@
 
 💡 **Dock not styled?** `./install.sh --dock transparent` or `--dock solid`
 
-## 🤝 Contributing
+🤝 Contributing
 
 Contributions welcome! See the [Contributing Guide](https://github.com/PhantomNimbi/Hentai-Senpai-GTK-Theme/wiki/Contributing) for guidelines.
 
@@ -142,7 +153,7 @@ Contributions welcome! See the [Contributing Guide](https://github.com/PhantomNi
 
 ## 📄 License
 
-⚖️ GPL-3.0 License — see [LICENSE](LICENSE) file for details.
+⚖️ GPL-3.0 License — see [LICENSE](https://github.com/PhantomNimbi/Hentai-Senpai-Multi-DE-Theme/blob/main/LICENSE) file for details.
 
 ---
 

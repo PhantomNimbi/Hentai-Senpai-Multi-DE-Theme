@@ -117,7 +117,7 @@ Complete install (recommended) - includes GTK4, Flatpak, and dock fixes
 | `--uninstall` | `-u` | Remove theme |
 | `--libadwaita` | `-l` | Fix GTK4/libadwaita apps |
 | `--flatpak` | `-f` | Fix Flatpak apps |
-| `--dock [TYPE]` | | Dock theme (transparent\|solid) |
+| `--dock [TYPE]` | | Dock theme (transparent/solid) |
 | `--wallpapers` | `-w` | Install wallpapers |
 
 ## 📚 Documentation
